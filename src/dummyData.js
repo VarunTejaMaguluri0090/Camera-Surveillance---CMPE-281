@@ -12,6 +12,5 @@ export const Maintainancerows =
   { id: 10, Date:'05/04/2023' ,Reason: 'Camera not working', Status: 'Active', Location: 'camera 1' },
   { id: 11, Date:'05/04/2023' ,Reason: 'Camera not working', Status: 'Resolved', Location: 'camera 1' },
   { id: 12, Date:'05/04/2023' ,Reason: 'Camera not working', Status: 'Active', Location: 'camera 1' },
-  { id: 13, Date:'05/04/2023' ,Reason: 'Camera not working', Status: 'Resolved', Location: 'camera 1' },
-  { id: 14, Date:'05/04/2023' ,Reason: 'Camera not working', Status: 'Active', Location: 'camera 1' },
+
 ];
