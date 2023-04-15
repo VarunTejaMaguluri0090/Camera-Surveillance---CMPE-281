@@ -1,0 +1,59 @@
+.topbar{
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    /* Make the position of the top bar fixed even if we scroll down */
+    position: sticky;
+    top: 0;
+    /* So that nothing ever goes over the topbar */
+    z-index: 999;
+}
+
+.topBarWrapper{
+    height: 100%;
+    padding: 10px 20px;
+    /* To display items side by side */
+    display: flex;
+    /* To center items and put a space between them */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 20px;
+    /* To make a cursor hover effect */
+    cursor: pointer;
+    color: darkblue;
+}
+
+.topRight{
+    display: flex;
+}
+
+.topRightIconWrapper{
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.topIconBadge{
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+    display: flex;
+}
+
+.Image{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
