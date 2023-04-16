@@ -20,7 +20,7 @@ export default function SideBar() {
 
           <h3 className="sideBarTitle">Maintainance</h3>
           <a href="">Reports</a>
-          <a href="">Alerts</a>
+          <a href="/alert">Alerts</a>
           <a href="/maintain">Maintainance Requests</a>
           
           

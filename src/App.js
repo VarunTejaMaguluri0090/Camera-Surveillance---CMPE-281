@@ -9,13 +9,24 @@ import "./App.css"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MaintainancePage from "./pages/maintainancePage/MaintainancePage";
 import MaintainanceUpdate from "./pages/maintainanceUpdate/MaintainanceUpdate";
+import LoginScreen from "./pages/login/login";
+import Alert from "./pages/alert/Alert";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import ReportPage from "./pages/report/reportPage";
+
 
 function App() {
   return (
     <Router>
        <TopBar />
      
-        <div className = "container">     
+        <div className = "container">   
+
+         <Routes>
+           <Route exact path="/login" element={<LoginScreen/>} />
+          </Routes> 
+
           <SideBar />
           
           <Routes>
@@ -42,6 +53,14 @@ function App() {
 
           <Routes>
            <Route exact path="/viewCameraFootage" element={<ViewCameraFootage/>} />
+          </Routes>
+
+          <Routes>
+           <Route exact path="/alert" element={<Alert/>} />
+          </Routes>
+
+          <Routes>
+           <Route exact path="/report" element={<ReportPage/>} />
           </Routes>
 
         </div>  
