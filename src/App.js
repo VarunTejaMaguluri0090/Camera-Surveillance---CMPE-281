@@ -9,8 +9,11 @@ import "./App.css"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import MaintainancePage from "./pages/maintainancePage/MaintainancePage";
 import MaintainanceUpdate from "./pages/maintainanceUpdate/MaintainanceUpdate";
+import { useMemo } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 function App() {
+  
   return (
     <Router>
        <TopBar />
@@ -48,6 +51,7 @@ function App() {
     </Router>
      
   );
+  
 }
 
 export default App;
