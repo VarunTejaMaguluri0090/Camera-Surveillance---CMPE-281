@@ -1,0 +1,51 @@
+.MaintainanceUpdate{
+    flex: 4;
+    padding: 20px;
+}
+
+.updateContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CreateNewRequest{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    font-size: 16px;
+}
+
+.showUpdate{
+    display: flex;
+}
+
+.show{
+    flex: 1;
+    padding: 20px;
+    box-shadow: 23px 6px 24px 7px rgba(0,0,0,0.1);
+    margin-left: 30px;
+}
+
+.update{
+    flex: 1;
+    padding: 20px;
+    box-shadow: 23px 6px 24px 7px rgba(0,0,0,0.1);
+}
+
+.showUpdate{
+    display: flex;
+    align-items: center;
+}
+
+.ShowContentTop{
+    display: flex;
+    align-items: center;
+}
+
+.ShowContentBottom{
+    display: flex;
+    align-items: center;
+}
