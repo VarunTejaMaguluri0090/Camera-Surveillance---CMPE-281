@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useParams, useNavigate } from 'react-router-dom';
-import {Maintainancerows} from "../../dummyData"
+import {Schedulerows} from "./scheduleDummyData"
 
 
 
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const EditMaintainance = () => {
+const EditSchedule = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState({});
@@ -35,50 +34,42 @@ const EditMaintainance = () => {
 
   useEffect(() => {
     async function fetchData() {
-      var selectedObject = Maintainancerows.filter(row => row.id == id)[0]
+      var selectedObject = Schedulerows.filter(row => row.id == id)[0]
       setData(selectedObject);
+      console.log(selectedObject)
     }
     fetchData();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedMaintainanceRows = Maintainancerows.map(row => {
+    const updatedScheduleRows = Schedulerows.map(row => {
       if(row.id === id) {
         return {
           ...row,
-          Date: data.Date,
-          Reason: data.Reason,
-          Status: data.Status,
-          Location: data.Location
+          ScheduleDate: data.ScheduleDate,
+          CameraNumber: data.CameraNumber,
+          Status: data.Status
         }
       }
       return row;
     });
-    console.log(Maintainancerows);
+    console.log(updatedScheduleRows);
   
-    // navigate('/maintain');
+    navigate('/schedule');
   };
 
   return (
-    <div className="editMaintainancePage" align="center" style={divStyle}>
-      <h2>Maintainance Request - ID - {id}</h2>
+    <div className="schedulePage" align="center" style={divStyle}>
+      <h2>Schedule Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
-        {/* <TextField
-          className={classes.textField}
-          label="Date"
-          variant="outlined"
-          type="text"
-          value={data.Date}
-          onChange={(e) => setData({ ...data, Date: e.target.value })}
-        /> */}
         <TextField
         className={classes.textField}
-        label="Date"
+        label="Schedule Date"
         type="date"
-        value={data.Date}
+        value={data.ScheduleDate}
         variant="outlined"
-        onChange={(e) => setData({ ...data, Date: e.target.value })}
+        onChange={(e) => setData({ ...data, ScheduleDate: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
@@ -87,12 +78,15 @@ const EditMaintainance = () => {
       />
         <TextField
           className={classes.textField}
-          label="Reason"
+          label="Camera Number"
           variant="outlined"
           type="text"
           required
-          value={data.Reason}
-          onChange={(e) => setData({ ...data, Reason: e.target.value })}
+          value={data.CameraNumber}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, CameraNumber: e.target.value })}
         />
         <TextField
           className={classes.textField}
@@ -101,16 +95,10 @@ const EditMaintainance = () => {
           type="text"
           value={data.Status}
           required
+          InputLabelProps={{
+            shrink: true,
+          }}
           onChange={(e) => setData({ ...data, Status: e.target.value })}
-        />
-        <TextField
-          className={classes.textField}
-          label="Location"
-          variant="outlined"
-          type="text"
-          value={data.Location}
-          required
-          onChange={(e) => setData({ ...data, Location: e.target.value })}
         />
         <Button
           className={classes.button}
@@ -126,4 +114,4 @@ const EditMaintainance = () => {
 
 };
 
-export default EditMaintainance;
+export default EditSchedule;

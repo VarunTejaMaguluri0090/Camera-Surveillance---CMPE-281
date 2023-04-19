@@ -14,6 +14,13 @@ import Alert from "./pages/alert/Alert";
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReportPage from "./pages/report/reportPage";
+import MaintainanceNew from './pages/maintainancePage/MaintainanceNew';
+import SchedulePage from './pages/schedule/SchedulePage';
+import ScheduleUpdate from './pages/schedule/ScheduleUpdate';
+import ScheduleNew from './pages/schedule/ScheduleNew';
+import ManageProfile from './pages/manageProfile/ManageProfile'
+import ManageProfileEdit from './pages/manageProfile/ManageProfileEdit'
+import ManageProfileCreate from './pages/manageProfile/ManageProfileCreate'
 
 
 function App() {
@@ -34,13 +41,21 @@ function App() {
           </Routes>
           
           <Routes>
-           <Route path="/maintain" element={<MaintainancePage/>} />
+            <Route path="/maintain" element={<MaintainancePage/>} />
+           <Route path="/maintain/new" element={<MaintainanceNew/>} />
+           <Route path="/maintain/:id" element={<MaintainanceUpdate/>} />
+
+           <Route path="/schedule" element={<SchedulePage/>} />
+           <Route path="/schedule/:id" element={<ScheduleUpdate/>} />
+           <Route path="/schedule/new" element={<ScheduleNew/>} />
+
+           <Route path="/manageProfile" element={<ManageProfile/>} />
+           <Route path="/manageProfile/new" element={<ManageProfileCreate/>} />
+           <Route path="/manageProfile/:id" element={<ManageProfileEdit/>} />
+            
           </Routes>
 
-          <Routes>
-           <Route path="/maintain/:requestId" element={<MaintainanceUpdate/>} />
-          </Routes>
-
+         
           <Routes>
            <Route exact path="/viewCameras" element={<ViewCameras/>} />
           </Routes>
