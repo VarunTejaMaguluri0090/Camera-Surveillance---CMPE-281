@@ -6,12 +6,14 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+
 export default function Alert() {
 const [alertsData, setData] = useState([]);
 const [currentPage, setCurrentPage] = useState(1);
-const [alertsPerPage] = useState(5); // Change this value to adjust the number of alerts per page
+const [alertsPerPage] = useState(3); // Change this value to adjust the number of alerts per page
 const [startDate, setStartDate] = useState(null);
 const [endDate, setEndDate] = useState(null);
+
 
 const getRowColor = (level) => {
   switch (level) {
@@ -116,7 +118,7 @@ useEffect(()=>{
     }
   
     return (
-      <div>
+      <div >
         <label>Start Date:</label>
         <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} />
         <label>End Date:</label>
@@ -129,8 +131,10 @@ useEffect(()=>{
       <>
       {/* <SideBar /> */}
       {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+
+
       <form onSubmit={handleDateRangeSubmit}>
-        <div>
+        <div style={{marginLeft: 50}}>
           <label htmlFor="startDate">Start Date:</label>
           <DatePicker
             id="startDate"
@@ -142,8 +146,8 @@ useEffect(()=>{
           />
         </div>
 
-        <div>
-          <label htmlFor="endDate">End Date:</label>
+        <div style={{marginLeft: 50}}>
+          <label htmlFor="endDate">End Date: </label>
           <DatePicker
             id="endDate"
             selected={endDate}
@@ -155,7 +159,7 @@ useEffect(()=>{
           />
         </div>
 
-        <button type="submit">Filter Alerts</button>
+        <button style={{marginLeft: 50}} type="submit">Filter Alerts</button>
         <div className="alert-page">
         <h1>Alerts</h1>
         <table>
@@ -187,9 +191,40 @@ useEffect(()=>{
       </form>
 
             </>
+
+            
   );
 
-  
+
+
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
   //   return (

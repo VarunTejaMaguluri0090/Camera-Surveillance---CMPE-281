@@ -1,3 +1,4 @@
-/* .Home{
-    flex: 4;
-} */
+.Home{
+    height:100%;
+    overflow-y: scroll;
+}

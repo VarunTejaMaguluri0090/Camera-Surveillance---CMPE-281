@@ -1,6 +1,7 @@
 import React from "react";
 import "./reportPage.css";
 import SideBar from "../../components/sideBar/SideBar";
+//import InfiniteScroll from 'react-infinite-scroll-component'
 
 const ReportPage = () => {
   const systemMetrics = {
@@ -85,8 +86,9 @@ const ReportPage = () => {
 
   return (
     <>
-    <SideBar />
+    {/* <SideBar /> */}
     <div className="report-page">
+     {/*  <h1>Infinite Scroll</h1> */}
       <div className="metric-column">
         
         <h2>System performance metrics</h2>
@@ -104,6 +106,7 @@ const ReportPage = () => {
             <p>Location: {camera.location}</p>
             <p>Status: {camera.status}</p>
             <p>Details: {camera.details}</p>
+            
           </div>
         ))}
       </div>
@@ -133,8 +136,7 @@ const ReportPage = () => {
               <td>Vandalism</td>
               <td>Medium</td>
             </tr>
-           
-        
+
             <tr>
               <td>2023-04-10 14:32:12</td>
               <td>Entrance</td>
@@ -154,7 +156,7 @@ const ReportPage = () => {
         </table>
       </div>
 
-      <div className="user-activity-logs">
+      <div className="user-activity-logs" >
         <h2>User Activity Logs</h2>
         <table>
           <thead>
@@ -197,44 +199,6 @@ const ReportPage = () => {
       </div>
 
 
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div>
       <h2>User Activity Logs</h2>
       <div className="user-activity-logs-container">
@@ -257,14 +221,8 @@ const ReportPage = () => {
       </div>
     </div>
 
-
-
-
-
-
-
-
       </div>
+      
       </>
        )}
 

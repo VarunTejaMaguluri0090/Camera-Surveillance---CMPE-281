@@ -6,6 +6,9 @@ import {Maintainancerows} from "../../dummyData"
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { async } from "q";
+import React from 'react';
+
+// Your code using JSX
 
 export default function ViewCameras() {
 
