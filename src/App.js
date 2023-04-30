@@ -11,8 +11,11 @@ import MaintainancePage from "./pages/maintainancePage/MaintainancePage";
 import MaintainanceUpdate from "./pages/maintainanceUpdate/MaintainanceUpdate";
 import LoginScreen from "./pages/login/login";
 import Alert from "./pages/alert/Alert";
-import React from 'react'
-import ReactDOM from 'react-dom'
+import AlertMapView from "./pages/alertMapView/alertMapView";
+import AlertView from "./pages/alertView/AlertView";
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 import ReportPage from "./pages/report/reportPage";
 import MaintainanceNew from './pages/maintainancePage/MaintainanceNew';
 import SchedulePage from './pages/schedule/SchedulePage';
@@ -21,6 +24,9 @@ import ScheduleNew from './pages/schedule/ScheduleNew';
 import ManageProfile from './pages/manageProfile/ManageProfile'
 import ManageProfileEdit from './pages/manageProfile/ManageProfileEdit'
 import ManageProfileCreate from './pages/manageProfile/ManageProfileCreate'
+
+import AlertViewTest1 from "./pages/alertsViewTest/alertViewTest1";
+
 
 
 function App() {
@@ -72,6 +78,9 @@ function App() {
 
           <Routes>
            <Route exact path="/alert" element={<Alert/>} />
+           <Route exact path="/alertMapView" element={<AlertMapView/>} />
+           <Route exact path="/alerts/:id" element={<AlertView/>} />
+           {/* <Route exact path="/alertViewTest1" element={<AlertViewTest1/>} /> */}
           </Routes>
 
           <Routes>
