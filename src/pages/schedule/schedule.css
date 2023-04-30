@@ -1,0 +1,26 @@
+.schedulePage{
+    flex: 4;
+    align-items: center;
+}
+
+.EditButton{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(63, 157, 63);
+    cursor: pointer;
+    padding: 5px 15px;
+    color: white;
+    margin-right: 20px;
+}
+
+.DeleteButton{
+    cursor: pointer;
+    color: red;
+}
+
+.headRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}

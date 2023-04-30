@@ -1,0 +1,18 @@
+
+/* This is for the entire container - other pages + sidebar(make it display content side by side) */
+* {
+    overflow-y: auto;
+    
+    position: relative;
+}
+
+.container{
+    display: flex;
+    overflow:auto;
+}
+/* 
+This is for the other pages part, make it of width 4 times of the sidebar - flex =4
+.temp{
+    flex: 4;
+    background-color: red;
+} */
