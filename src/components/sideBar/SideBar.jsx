@@ -9,7 +9,7 @@ export default function SideBar() {
           <a href="/home">Home</a>
           <a href="/schedule">Schedule</a>
           <a href="/manageProfile">Manage Profile</a>
-          <a href="">Map View</a>
+        
           
 
           <h3 className="sideBarTitle" >Camera</h3>
