@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // Import the topBar css file
 import "./topBar.css"
 import { NotificationsNone, Settings, Home, LockSharp} from "@material-ui/icons";
 
+import { useNavigate } from 'react-router-dom';
 
-export default function topBar() {
+export default function TopBar() {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // Set initial login status
+
+
+  function handleLogout() {
+    // Clear any authentication data, such as a token or session data
+    // Update the state to reflect that the user is no longer logged in
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('isAdmin');
+    setIsLoggedIn(false);
+    navigate('/login');
+  }
+  
   return (
     // <div>
     // Creating a topbar wraapper - with 2 parts - left and right
         <div className="topBarWrapper">
-            
+            <div>
+      {localStorage.getItem('userToken') ? (
+        <div>
+          <h1>Welcome, User!</h1>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <h1>You are not logged in.</h1>
+      )}
+    </div>
             <div className="topLeft">
             <span className="logo">Admin Dashboard</span>
             </div>

@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		maxLength: 50,
 	},
-	emailId: {
+	c: {
 		type: String,
 		maxLength: 50,
 	},

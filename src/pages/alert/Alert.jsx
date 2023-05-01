@@ -10,7 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 export default function Alert() {
 const [alertsData, setData] = useState([]);
 const [currentPage, setCurrentPage] = useState(1);
-const [alertsPerPage] = useState(3); // Change this value to adjust the number of alerts per page
+const [alertsPerPage] = useState(5); // Change this value to adjust the number of alerts per page
 const [startDate, setStartDate] = useState(null);
 const [endDate, setEndDate] = useState(null);
 
@@ -37,7 +37,7 @@ async function handleDateRangeChange(start, end) {
   .catch(error => console.error(error));
 }
 // Get the index of the last alert on the current page
-const indexOfLastAlert = currentPage * alertsPerPage;
+const indexOfLastAlert = currentPage * 5;
 
 // Get the index of the first alert on the current page
 const indexOfFirstAlert = indexOfLastAlert - alertsPerPage;
@@ -45,6 +45,7 @@ const indexOfFirstAlert = indexOfLastAlert - alertsPerPage;
 // Get the alerts for the current page
 const currentAlerts = alertsData.slice(indexOfFirstAlert, indexOfLastAlert);
 
+console.log("currentAlertscurrentAlerts", currentAlerts)
 async function getAllAlerts(){
     const result = await axios.get("http://127.0.0.1:3002/alerts/")
     console.log(result.data)
@@ -100,8 +101,8 @@ useEffect(()=>{
   }
 
   function DateRangePicker({ onChange }) {
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
+    // const [startDate, setStartDate] = useState(null);
+    // const [endDate, setEndDate] = useState(null);
   
     function handleStartDateChange(date) {
       setStartDate(date);
@@ -128,39 +129,37 @@ useEffect(()=>{
   }
   
   return (
-      <>
+    <>
       {/* <SideBar /> */}
-      {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+      <div>
+        {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+      </div>
 
+      {/* <div>
+      <form onSubmit={handleDateRangeChange}>
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+        />
+        <span> - </span>
+        <DatePicker
+          selected={endDate}
+          onChange={(date) => setEndDate(date)}
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          minDate={startDate}
+        />
+        <button type="submit">Submit</button>
+      </form>
+      </div> */}
 
-      <form onSubmit={handleDateRangeSubmit}>
-        <div style={{marginLeft: 50}}>
-          <label htmlFor="startDate">Start Date:</label>
-          <DatePicker
-            id="startDate"
-            selected={startDate}
-            onChange={date => setStartDate(date)}
-            selectsStart
-            startDate={startDate}
-            endDate={endDate}
-          />
-        </div>
-
-        <div style={{marginLeft: 50}}>
-          <label htmlFor="endDate">End Date: </label>
-          <DatePicker
-            id="endDate"
-            selected={endDate}
-            onChange={date => setEndDate(date)}
-            selectsEnd
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate}
-          />
-        </div>
-
-        <button style={{marginLeft: 50}} type="submit">Filter Alerts</button>
-        <div className="alert-page">
+      {/* <button style={{marginLeft: 50}} type="submit">Filter Alerts</button> */}
+      <div className="alert-page">
+      <DateRangePicker onChange={handleDateRangeChange} />
         <h1>Alerts</h1>
         <table>
           <thead>
@@ -177,22 +176,13 @@ useEffect(()=>{
               <th>Additional Details</th>
             </tr>
           </thead>
-          <tbody>
-      {renderedAlerts}
-
-          </tbody>
+          <tbody>{renderedAlerts}</tbody>
         </table>
         {/* <ul> */}
-        <div class="pagination">
-          {renderedPageNumbers}
-        </div>
+        <div class="pagination">{renderedPageNumbers}</div>
         {/* </ul> */}
-            </div>
-      </form>
-
-            </>
-
-            
+      </div>
+    </>
   );
 
 

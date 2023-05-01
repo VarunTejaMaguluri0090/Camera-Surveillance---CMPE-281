@@ -1,10 +1,16 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 // import './script.js';
 import './style.css';
 
 function LoginScreen() {
-
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+  
     const containerRef = useRef(null);
   
     useEffect(() => {
@@ -16,33 +22,81 @@ function LoginScreen() {
       containerRef.current.classList.toggle('sign-up');
     };
 
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      // Send login request to server with username and password
+      const response = await fetch('http://localhost:3002/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.ok) {
+        // Set user token in local storage and redirect to home page
+        const { token, isAdmin } = await response.json();
+        localStorage.setItem('userToken', token);
+        localStorage.setItem('isAdmin', isAdmin);
+        navigate('/home');
+      } else {
+        // Handle login error
+        console.error('Login error:', response.status);
+      }
+    };
+
+    const handleSignUpSubmit = async (e) => {
+      e.preventDefault();
+      // Send login request to server with username and password
+      const response = await fetch('http://localhost:3002/signup', {
+        method: 'POST',
+        body: JSON.stringify({ username, password, email }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      let data = await response.json();
+      console.log(data.message)
+      if (data.message) {
+        console.log("@@#$#")
+        // Set user token in local storage and redirect to home page
+        // containerRef.current.classList.toggle('sign-in');
+        toggle()
+
+
+        // navigate('/login');
+      } else {
+        // Handle login error
+        console.error('Login error:', response.status);
+      }
+    };
+
   return (
     <div id="login-container" className="login-container" ref={containerRef}>
       {/* FORM SECTION */}
       <div className="row">
         {/* SIGN UP */}
         <div className="col align-items-center flex-col sign-up">
+        <form onSubmit={handleSignUpSubmit}>
           <div className="form-wrapper align-items-center">
             <div className="form sign-up">
               <div className="input-group">
                 <i className='bx bxs-user'></i>
-                <input type="text" placeholder="Username" />
+                <input type="text" placeholder="Username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
               </div>
               <div className="input-group">
                 <i className='bx bx-mail-send'></i>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="input-group">
                 <i className='bx bxs-lock-alt'></i>
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
               <div className="input-group">
                 <i className='bx bxs-lock-alt'></i>
-                <input type="password" placeholder="Confirm password" />
+                <input type="password" placeholder="Confirm password" value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
-              <Link to="/home" className='btn-cust' >
-                Sign up
-              </Link>
+              <button type="submit">Sign Up</button>
+
               <p>
                 <span>
                   Already have an account?
@@ -53,41 +107,46 @@ function LoginScreen() {
               </p>
             </div>
           </div>
+          </form>
         </div>
         {/* END SIGN UP */}
         {/* SIGN IN */}
-        <div className="col align-items-center flex-col sign-in">
-          <div className="form-wrapper align-items-center">
-            <div className="form sign-in">
-              <div className="input-group">
-                <i className='bx bxs-user'></i>
-                <input type="text" placeholder="Username" />
+        
+          <div className="col align-items-center flex-col sign-in">
+          <form onSubmit={handleSubmit}>
+            <div className="form-wrapper align-items-center">
+              <div className="form sign-in">
+                <div className="input-group">
+                  <i className='bx bxs-user'></i>
+                  <input type="text" placeholder="Username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                </div>
+                <div className="input-group">
+                  <i className='bx bxs-lock-alt'></i>
+                  <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                <button type="submit">Log In</button>
+                {/* <Link className='btn-cust' to={"/home"}>
+                  Sign in
+                </Link> */}
+                <p>
+                  <b>
+                    Forgot password?
+                  </b>
+                </p>
+                <p>
+                  <span>
+                    Don't have an account?
+                  </span>
+                  <b onClick={toggle} className="pointer">
+                    Sign up here
+                  </b>
+                </p>
               </div>
-              <div className="input-group">
-                <i className='bx bxs-lock-alt'></i>
-                <input type="password" placeholder="Password" />
-              </div>
-              <Link className='btn-cust' to={"/home"}>
-                Sign in
-              </Link>
-              <p>
-                <b>
-                  Forgot password?
-                </b>
-              </p>
-              <p>
-                <span>
-                  Don't have an account?
-                </span>
-                <b onClick={toggle} className="pointer">
-                  Sign up here
-                </b>
-              </p>
             </div>
+            <div className="form-wrapper">
+            </div>
+            </form>
           </div>
-          <div className="form-wrapper">
-          </div>
-        </div>
         {/* END SIGN IN */}
       </div>
       {/* END FORM SECTION */}

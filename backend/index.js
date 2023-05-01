@@ -12,6 +12,7 @@ var getCameraFootage = require('./routes/CameraFootagePage/CameraFootagePage')
 var getMapView = require('./routes/MapView/MapView')
 var alerts = require('./routes/alert.js');
 var getReports = require('./routes/Reports/Reports')
+var loginAndSignup = require('./routes/LoginAndSignup')
 
 //use cors to allow cross origin resource sharing
 app.options('*', cors())
@@ -37,17 +38,18 @@ app.use("/cameraFootage",getCameraFootage);
 app.use("/mapView",getMapView);
 app.use("/",alerts);
 app.use("/reports", getReports);
+app.use("/", loginAndSignup);
 
 
 //backedn would run on port 3002
 app.listen(3002 , function () {
-
+  
   // Create a database connection
   const connection = mysql.createConnection({
 
     host     :  'localhost',
     user     : 'root',
-    password : 'root1234',
+    password : 'password',
     port : 3306,
     database : 'cloud281'
 
