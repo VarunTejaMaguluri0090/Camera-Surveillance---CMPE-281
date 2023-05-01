@@ -7,6 +7,8 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import { async } from "q";
 import React from 'react';
+import { CameraFeaturedInfo } from "../../pages/ViewCameras/CameraFeaturedInfo";
+
 
 // Your code using JSX
 
@@ -129,19 +131,21 @@ export default function ViewCameras() {
         // We are passing parameters here to the row like for each row we need to render the edit and delete option. 
         renderCell: (params) =>{
             return(
-                <div>
-                <Link to ={"/viewCameraStream"}>
-                <button className="ViewButtonForCamera">View</button>
-               
-                
-                </Link>
-                <Link to ={""+ params.row.id}>
-                <button className="EditButtonForCamera">Edit</button>
-                </Link>
-                <Link to ={""+ params.row.id}>
-                <button className="RemoveButtonForCamera">Remove</button>
-                </Link>
-                {/* <Delete className="DeleteButton" onClick= {()=>{ deleteFunction(params.row.id)}}/> */}
+
+             <div>
+
+                  <Link to={"/viewCameraStream"}>
+                    <button className="ViewButtonForCamera">View</button>
+
+
+                  </Link>
+                  <Link to={"" + params.row.id}>
+                    <button className="EditButtonForCamera">Edit</button>
+                  </Link>
+                  <Link to={"" + params.row.id}>
+                    <button className="RemoveButtonForCamera">Remove</button>
+                  </Link>
+                  {/* <Delete className="DeleteButton" onClick= {()=>{ deleteFunction(params.row.id)}}/> */}
                 </div>
             )
         } 
@@ -153,10 +157,12 @@ export default function ViewCameras() {
         
     
     return (
-      
+     
         <div className="viewCamerasPage"  >
-            View Cameras
-            <DataGrid
+           <CameraFeaturedInfo />
+          
+            
+            <DataGrid 
             columns={columns}
             rows={data} disableSelectionOnClick
                 
@@ -168,3 +174,5 @@ export default function ViewCameras() {
     
   );
 }
+
+
