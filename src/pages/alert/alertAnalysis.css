@@ -3,3 +3,21 @@
     height:700px;
     align-items: center;
 }
+
+.line{
+    width:1000px;
+    height:1000px;
+    align-items: center;
+}
+
+.bar{
+    width:1000px;
+    height:1000px;
+    align-items: center;
+}
+
+.pie{
+    width:1000px;
+    height:1000px;
+    align-items: center;
+}

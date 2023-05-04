@@ -64,7 +64,7 @@ const Map = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <img src={floorImage} alt="Map" style={{ maxWidth: '70%' }} />
+      <img src={floorImage} alt="Map" style={{ maxWidth: '90%' }} />
       {alerts.map(alert => (
         <Alert alertId={alert.id} x={alert.x} y={alert.y} title={alert.title} />
       ))}

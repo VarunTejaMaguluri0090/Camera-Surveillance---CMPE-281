@@ -1,8 +1,20 @@
 import {Link} from "react-router-dom";
     import "./viewCameraFootage.css"
+    import React, { useRef, useState } from 'react';
+
+
+
     export default function ViewCameraFootage() {
+        
        
-  
+              const [date, setDate] = useState('');
+              const dateInputRef = useRef(null);
+            
+              const handleChange = (e) => {
+                setDate(e.target.value);
+              };
+            
+        
     //         var myvid = document.getElementById('myvideo');
  
           
@@ -35,31 +47,251 @@ import {Link} from "react-router-dom";
   
 // };
 
+
+
     return(
-        <div class = "videos">
-    <video id="video1" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/state-collecting-big-data-information-public-surveillance_hulw3zcj5__b68c0b8e48126e7edfdebef46fa8c728__P360.mp4" controls></video>
-    <video id="video2" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
-    <video id="video3" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/surveillance-monitoring-observation-supervision-security-camera-view-persons_sdlznwdi__231c5ac906f27897c37f21420a859804__P360.mp4" controls></video>
-    <video id="video4" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/hHeEEOX/videoblocks-cctv-camera-real-time-tracking-of-vehicles-and-people-on-the-street-authentic-pixelated-image-from-a-real-monitor_rj-z-t42v__2c0f2884e65871cb50edad18acd7d9df__P360.mp4" controls></video>
-    <video id="video5" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/piShJKb/videoblocks-drone-with-thermal-night-vision-view-of-terrorist-squad-walking-with-weapons_hrzjznl5oe__cd6fdc4c9e97df4b0ffa494000a80f82__P360.mp4" controls></video>
-    <video id="video6" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbd7ee3c8574796ea0224a_hn4ua2k2i__cf28fa06c4756b4f95b8b4815263dd2f__P360.mp4" controls></video>
-    <video id="video7" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbdbe73c8574796ea05d51_b4ttp2y2j__359af475ce9c0921ec71d6079f416d22__P360.mp4" controls></video>
-    <video id="video8" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-wide-view-slow-motion-shot-of-a-masked-hacker-walking-through-corporate-data-center-with-rows-of-working-rack-servers_hfpehsaj7__d768b34a501481545cf0d033e2e65b33__P360.mp4" controls></video>
-    <video id="video9" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/HzG7GjKdbj6nk9is6/videoblocks-the-work-of-the-team-in-the-situation-room-real-time-monitoring-of-the-situation-in-the-country_rnux_i12g__22045e9d8b4afa1c7054465597a960d0__P360.mp4" controls></video>
-    <video id="video10" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/state-collecting-big-data-information-public-surveillance_hulw3zcj5__b68c0b8e48126e7edfdebef46fa8c728__P360.mp4" controls></video>
-    <video id="video11" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
-    <video id="video12" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/surveillance-monitoring-observation-supervision-security-camera-view-persons_sdlznwdi__231c5ac906f27897c37f21420a859804__P360.mp4" controls></video>
-    <video id="video13" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/hHeEEOX/videoblocks-cctv-camera-real-time-tracking-of-vehicles-and-people-on-the-street-authentic-pixelated-image-from-a-real-monitor_rj-z-t42v__2c0f2884e65871cb50edad18acd7d9df__P360.mp4" controls></video>
-    <video id="video14" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/piShJKb/videoblocks-drone-with-thermal-night-vision-view-of-terrorist-squad-walking-with-weapons_hrzjznl5oe__cd6fdc4c9e97df4b0ffa494000a80f82__P360.mp4" controls></video>
-    <video id="video15" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbd7ee3c8574796ea0224a_hn4ua2k2i__cf28fa06c4756b4f95b8b4815263dd2f__P360.mp4" controls></video>
-    <video id="video16" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbdbe73c8574796ea05d51_b4ttp2y2j__359af475ce9c0921ec71d6079f416d22__P360.mp4" controls></video>
-    <video id="video17" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-wide-view-slow-motion-shot-of-a-masked-hacker-walking-through-corporate-data-center-with-rows-of-working-rack-servers_hfpehsaj7__d768b34a501481545cf0d033e2e65b33__P360.mp4" controls></video>
-    <video id="video18" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/HzG7GjKdbj6nk9is6/videoblocks-the-work-of-the-team-in-the-situation-room-real-time-monitoring-of-the-situation-in-the-country_rnux_i12g__22045e9d8b4afa1c7054465597a960d0__P360.mp4" controls></video>
-    <video id="video19" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/state-collecting-big-data-information-public-surveillance_hulw3zcj5__b68c0b8e48126e7edfdebef46fa8c728__P360.mp4" controls></video>
-    <video id="video20" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
-   
+        <div> 
+            <div class="date">
+            <div>
+            <label class="date_correction">Start Date:</label>
+<input
+    type="date"
+    onChange={handleChange}
+    ref={dateInputRef} class="field_correction" />
+
+
+<label class="date_correction">End Date:</label>
+<input
+    type="date"
+    onChange={handleChange}
+    ref={dateInputRef} class="field_correction"/>
+    </div>
+
+            </div>
+       <div class="videos">
+       <div class="container">
     
-  </div>
+    <video id="video1" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/state-collecting-big-data-information-public-surveillance_hulw3zcj5__b68c0b8e48126e7edfdebef46fa8c728__P360.mp4" controls></video>
+
+    <div class="overlay">
+        <button  class="camButton">Cam 1</button>
+        </div>
+
+        
+        </div>
+
+        <div class="container">
+    
+        <video id="video2" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
+
+    <div class="overlay">
+        <button class="camButton">Cam 2</button>
+        </div>
+
+        
+        </div>
+                
+        <div class="container">
+    
+        <video id="video3" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/surveillance-monitoring-observation-supervision-security-camera-view-persons_sdlznwdi__231c5ac906f27897c37f21420a859804__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 3</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video4" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/hHeEEOX/videoblocks-cctv-camera-real-time-tracking-of-vehicles-and-people-on-the-street-authentic-pixelated-image-from-a-real-monitor_rj-z-t42v__2c0f2884e65871cb50edad18acd7d9df__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 4</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video5" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/piShJKb/videoblocks-drone-with-thermal-night-vision-view-of-terrorist-squad-walking-with-weapons_hrzjznl5oe__cd6fdc4c9e97df4b0ffa494000a80f82__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 5</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video6" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbd7ee3c8574796ea0224a_hn4ua2k2i__cf28fa06c4756b4f95b8b4815263dd2f__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 6</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video7" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbdbe73c8574796ea05d51_b4ttp2y2j__359af475ce9c0921ec71d6079f416d22__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 7</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video8" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-wide-view-slow-motion-shot-of-a-masked-hacker-walking-through-corporate-data-center-with-rows-of-working-rack-servers_hfpehsaj7__d768b34a501481545cf0d033e2e65b33__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 8</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video9" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/HzG7GjKdbj6nk9is6/videoblocks-the-work-of-the-team-in-the-situation-room-real-time-monitoring-of-the-situation-in-the-country_rnux_i12g__22045e9d8b4afa1c7054465597a960d0__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 9</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video10" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/state-collecting-big-data-information-public-surveillance_hulw3zcj5__b68c0b8e48126e7edfdebef46fa8c728__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 10</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video11" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 11</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video12" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/surveillance-monitoring-observation-supervision-security-camera-view-persons_sdlznwdi__231c5ac906f27897c37f21420a859804__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 12</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video13" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/hHeEEOX/videoblocks-cctv-camera-real-time-tracking-of-vehicles-and-people-on-the-street-authentic-pixelated-image-from-a-real-monitor_rj-z-t42v__2c0f2884e65871cb50edad18acd7d9df__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 13</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video14" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/piShJKb/videoblocks-drone-with-thermal-night-vision-view-of-terrorist-squad-walking-with-weapons_hrzjznl5oe__cd6fdc4c9e97df4b0ffa494000a80f82__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 14</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video16" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-63dbdbe73c8574796ea05d51_b4ttp2y2j__359af475ce9c0921ec71d6079f416d22__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 15</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video2" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 16</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video17" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-wide-view-slow-motion-shot-of-a-masked-hacker-walking-through-corporate-data-center-with-rows-of-working-rack-servers_hfpehsaj7__d768b34a501481545cf0d033e2e65b33__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 17</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video18" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/HzG7GjKdbj6nk9is6/videoblocks-the-work-of-the-team-in-the-situation-room-real-time-monitoring-of-the-situation-in-the-country_rnux_i12g__22045e9d8b4afa1c7054465597a960d0__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 18</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video19" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/D8qa-2E/state-collecting-big-data-information-public-surveillance_hulw3zcj5__b68c0b8e48126e7edfdebef46fa8c728__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 19</button>
+    </div>
+
+    
+    </div>
+
+    <div class="container">
+    
+    <video id="video20" width="320" height="250" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BloSxjK/a-computer-scans-a-crowded-subway-tunnel-using-facial-recognition-to-show-each-persons-personal-data-in-a-floating-display-that-follows-the-individual_nkvtj1y6__cedb377e9dae151528d68094e04a205e__P360.mp4" controls></video>
+
+<div class="overlay">
+    <button class="camButton">Cam 20</button>
+    </div>
+
+    
+    </div>
+
+
+
+            </div></div>
     )
 } 
 

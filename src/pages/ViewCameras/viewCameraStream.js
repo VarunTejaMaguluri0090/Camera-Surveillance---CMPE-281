@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import "./viewCameraStream.css"
 import {
   Box,
   Button,
@@ -16,6 +17,7 @@ import {
 
   Typography
 } from '@mui/material';
+import { borderColor, borderRadius } from '@mui/system';
 
 const user = {
   avatar: '/assets/avatars/avatar-anika-visser.png',
@@ -94,10 +96,13 @@ const states = [
       onSubmit={handleSubmit}
     >
       <Card >
-        <CardHeader align="center"
+        <CardHeader class = "cameraInfoText" align="center"
           subheader=""
           title="Camera Info"
-        />
+        
+         />
+
+
         <CardContent sx={{ pt: 2 }}>
           <Box sx={{ m: -1.5 }}>
             <Grid
@@ -108,53 +113,105 @@ const states = [
                 xs={12}
                 md={6}
               >
+                <label class = "cameraStreamText">
+                Camera ID
+                </label>
                 <TextField
                   fullWidth
+                  
                   helperText=""
-                  label="Camera ID"
+                  label=""
+                  
                   name="cameraId"
                   // onChange={handleChange}
                   
                   value={"65rhhjkjgdfd644rchh66"}
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "#F8F8F8",
+                      border: "solid 1px black",
+                      fontWeight:"bold",
+                      borderWidth:"2.3px"
+                      
+                    }
+                  }}
                 />
               </Grid>
               <Grid
                 xs={12}
                 md={6}
               >
+                <label class = "cameraStreamText">
+                Camera Location
+                </label>
                 <TextField
                   fullWidth
-                  label="Camera Location"
+                  label=""
                   name="cameraLocation"
                   // onChange={handleChange}
                   
                   value={"Engg. Building, 2nd Floor"}
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "#F8F8F8",
+                      border: "solid 1px black",
+                      fontWeight:"bold",
+                      borderWidth:"2.3px"
+                    }
+                  }}
                 />
               </Grid>
               <Grid
                 xs={12}
                 md={6}
               >
+                  <label class = "cameraStreamText">
+                  Camera Number
+                </label>
                 <TextField
                   fullWidth
-                  label="Camera Number"
+                  label=""
                   name="cameraNumber"
                   onChange={handleChange}
                   
                   value={"Camera 7"}
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "#F8F8F8",
+                      border: "solid 1px black",
+                      fontWeight:"bold",
+                      borderWidth:"2.3px"
+                    }
+                  }}
                 />
               </Grid>
               <Grid
                 xs={12}
                 md={6}
               >
+                   <label class = "cameraStreamText">
+                   Status
+                </label>
                 <TextField
                   fullWidth
-                  label="Status"
+                  label=""
                   name="status"
                   onChange={handleChange}
                   
                   value={"Active"}
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "#F8F8F8",
+                      border: "solid 1px black",
+                      fontWeight:"bold",
+                      borderWidth:"2.3px"
+              
+                    }
+                  }}
                 />
               </Grid>
               <Grid

@@ -136,13 +136,13 @@ data = [
 
   return (
     <div class="Graphs">
-      <div>
+      <div class="line">
         <canvas ref={lineChartRef} id="line-chart"></canvas>
       </div>
-      <div>
+      <div class="bar">
         <canvas ref={barChartRef} id="bar-chart"></canvas>
       </div>
-      <div>
+      <div class="pie">
         <canvas ref={pieChartRef} id="pie-chart"></canvas>
       </div>
     </div>

@@ -119,11 +119,14 @@ useEffect(()=>{
     }
   
     return (
-      <div >
-        <label>Start Date:</label>
-        <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} />
-        <label>End Date:</label>
-        <input type="date" value={endDate} onChange={e => handleEndDateChange(e.target.value)} />
+     
+      <div class="date">
+      <div>
+        <label class="date_correction">Start Date:</label>
+        <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} class="field_correction"/>
+        <label class="date_correction">End Date:</label>
+        <input type="date" value={endDate} onChange={e => handleEndDateChange(e.target.value)} class="field_correction"/>
+      </div>
       </div>
     );
   }
