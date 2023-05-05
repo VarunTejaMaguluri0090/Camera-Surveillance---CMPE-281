@@ -3,20 +3,36 @@ import "./manageProfile.css"
 import { DataGrid } from '@material-ui/data-grid'
 import {Link} from "react-router-dom";
 import {Profilerows} from "./profileDummyData"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from 'axios';
+
 
 export default function ProfilePage() {
 
 
-    const [data, setData] = useState(Profilerows);
-    
-    async function detelewait(id){
+    //const [data, setData] = useState(Profilerows);
+    const [data, setData] = useState([]);
 
+    useEffect(() => {
+        getAllData()
+      }, []);
+
+    async function getAllData(){
+        await axios.get("http://127.0.0.1:3002/manageProfile/").then((res) => {
+        setData(res.data);
+        console.log(res.data)
+      })
+    }
+
+    async function detelewait(id){
+        await axios.delete(`http://127.0.0.1:3002/manageProfile/${id}`)
     }
 
     const deleteFunction = (id) =>{
-        
+        detelewait(id)
+        getAllData()
     }
+
 
 
     const columns =[

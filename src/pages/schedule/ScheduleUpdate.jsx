@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useParams, useNavigate } from 'react-router-dom';
-import {Schedulerows} from "./scheduleDummyData"
+import axios from 'axios';
 
-
+//Edit Part is executed here
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -33,31 +33,25 @@ const EditSchedule = () => {
   };
 
   useEffect(() => {
-    async function fetchData() {
-      var selectedObject = Schedulerows.filter(row => row.id == id)[0]
-      setData(selectedObject);
-      console.log(selectedObject)
-    }
-    fetchData();
+    axios.get(`http://127.0.0.1:3002/schedule/${id}`).then((res)=>{
+      setData(res.data)
+    })
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) =>{
     e.preventDefault();
-    const updatedScheduleRows = Schedulerows.map(row => {
-      if(row.id === id) {
-        return {
-          ...row,
-          ScheduleDate: data.ScheduleDate,
-          CameraNumber: data.CameraNumber,
-          Status: data.Status
-        }
-      }
-      return row;
-    });
-    console.log(updatedScheduleRows);
-  
-    navigate('/schedule');
-  };
+    const editEntry = {
+      schedule_date : data.schedule_date,
+      camera_number : data.camera_number,
+      status : data.status
+    }
+
+   
+      axios.put(`http://127.0.0.1:3002/schedule/${id}`, editEntry).then((res)=>{
+       alert("data has been succesfully updated")
+      })
+      navigate('/schedule')
+  }
 
   return (
     <div className="schedulePage" align="center" style={divStyle}>
@@ -67,9 +61,9 @@ const EditSchedule = () => {
         className={classes.textField}
         label="Schedule Date"
         type="date"
-        value={data.ScheduleDate}
+        value={data.schedule_date}
         variant="outlined"
-        onChange={(e) => setData({ ...data, ScheduleDate: e.target.value })}
+        onChange={(e) => setData({ ...data, schedule_date: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
@@ -82,23 +76,23 @@ const EditSchedule = () => {
           variant="outlined"
           type="text"
           required
-          value={data.CameraNumber}
+          value={data.camera_number}
           InputLabelProps={{
             shrink: true,
           }}
-          onChange={(e) => setData({ ...data, CameraNumber: e.target.value })}
+          onChange={(e) => setData({ ...data, camera_number: e.target.value })}
         />
         <TextField
           className={classes.textField}
           label="Status"
           variant="outlined"
           type="text"
-          value={data.Status}
+          value={data.status}
           required
           InputLabelProps={{
             shrink: true,
           }}
-          onChange={(e) => setData({ ...data, Status: e.target.value })}
+          onChange={(e) => setData({ ...data, status: e.target.value })}
         />
         <Button
           className={classes.button}

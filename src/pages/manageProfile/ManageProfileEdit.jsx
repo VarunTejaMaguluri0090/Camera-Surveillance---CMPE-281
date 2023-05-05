@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useParams, useNavigate } from 'react-router-dom';
 import {Profilerows} from "./profileDummyData"
+import axios from 'axios';
 
 
 
@@ -28,33 +29,28 @@ const EditProfile = () => {
   const [data, setData] = useState({});
   const classes = useStyles();
 
+  useEffect( ()=>{
+    axios.get(`http://127.0.0.1:3002/manageProfile/${id}`).then(res =>{
+      // console.log(res.data[0])
+      setData(res.data[0])
+    })
+  },[])
+
   const divStyle = {
     width: '100%'
   };
 
-  useEffect(() => {
-    async function fetchData() {
-      var selectedObject = Profilerows.filter(row => row.id == id)[0]
-      setData(selectedObject);
-      console.log(selectedObject)
-    }
-    fetchData();
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedProfilerows = Profilerows.map(row => {
-      if(row.id === id) {
-        return {
-          ...row,
-          name: data.name,
-          age: data.age,
-        }
-      }
-      return row;
-    });
-    console.log(updatedProfilerows);
-  
+    const editEntry = {
+      name : data.name,
+      age: data.age
+    }
+
+    //axios = request, request body. post .then() we get the response
+    axios.put(`http://127.0.0.1:3002/manageProfile/${id}`, editEntry).then(res =>{
+      alert("your data has been upadated")
+    })
     navigate('/manageProfile');
   };
 

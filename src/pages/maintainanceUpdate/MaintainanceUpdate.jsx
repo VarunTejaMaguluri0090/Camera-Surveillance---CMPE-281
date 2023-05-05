@@ -35,50 +35,41 @@ const EditMaintainance = () => {
 
   useEffect(() => {
     async function fetchData() {
-      var selectedObject = Maintainancerows.filter(row => row.id == id)[0]
-      setData(selectedObject);
+      const url = `http://127.0.0.1:3002/maintainancePage/${id}`;
+      await axios.get(url)
+      .then(response => {
+        setData(response.data[0]);
+      })
+      .catch(error => {
+        console.log(error);
+    });
     }
     fetchData();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedMaintainanceRows = Maintainancerows.map(row => {
-      if(row.id === id) {
-        return {
-          ...row,
-          Date: data.Date,
-          Reason: data.Reason,
-          Status: data.Status,
-          Location: data.Location
-        }
-      }
-      return row;
+    const url = `http://127.0.0.1:3002/maintainancePage/${id}`;
+    
+    await axios.put(url, data).then(()=>{
+      alert("The entry has been updated !")
     });
-    console.log(Maintainancerows);
   
-    // navigate('/maintain');
+    navigate('/maintain');
   };
 
   return (
     <div className="editMaintainancePage" align="center" style={divStyle}>
       <h2>Maintainance Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
-        {/* <TextField
-          className={classes.textField}
-          label="Date"
-          variant="outlined"
-          type="text"
-          value={data.Date}
-          onChange={(e) => setData({ ...data, Date: e.target.value })}
-        /> */}
+        
         <TextField
         className={classes.textField}
         label="Date"
         type="date"
-        value={data.Date}
+        value={data.date}
         variant="outlined"
-        onChange={(e) => setData({ ...data, Date: e.target.value })}
+        onChange={(e) => setData({ ...data, date: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
@@ -91,26 +82,35 @@ const EditMaintainance = () => {
           variant="outlined"
           type="text"
           required
-          value={data.Reason}
-          onChange={(e) => setData({ ...data, Reason: e.target.value })}
+          value={data.reason}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, reason: e.target.value })}
         />
         <TextField
           className={classes.textField}
           label="Status"
           variant="outlined"
           type="text"
-          value={data.Status}
+          value={data.status}
           required
-          onChange={(e) => setData({ ...data, Status: e.target.value })}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, status: e.target.value })}
         />
         <TextField
           className={classes.textField}
           label="Location"
           variant="outlined"
           type="text"
-          value={data.Location}
+          value={data.location}
           required
-          onChange={(e) => setData({ ...data, Location: e.target.value })}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, location: e.target.value })}
         />
         <Button
           className={classes.button}

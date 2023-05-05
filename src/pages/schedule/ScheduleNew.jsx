@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
 import {Schedulerows} from "./scheduleDummyData"
 import { TextField, Button, Radio, RadioGroup, FormControlLabel, FormControl } from '@material-ui/core';
+import axios from 'axios';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
 const ScheduleNew = () => {
   const navigate = useNavigate();
-  const [scheduleDate, setScheduleDate] = useState('');
-    const [cameraNumber, setCameraNumber] = useState('');
+  const [schedule_date, setschedule_date] = useState('');
+    const [camera_number, setcamera_number] = useState('');
     const [status, setStatus] = useState('Low');
   const classes = useStyles();
 
@@ -35,11 +36,11 @@ const ScheduleNew = () => {
 
 
   const handleScheduleDateChange = (event) => {
-    setScheduleDate(event.target.value);
+    setschedule_date(event.target.value);
   };
   
   const handleCameraNumberChange = (event) => {
-    setCameraNumber(event.target.value);
+    setcamera_number(event.target.value);
   };
   
   const handleStatusChange = (e) => {
@@ -50,12 +51,18 @@ const ScheduleNew = () => {
     e.preventDefault();
     const newEntry = {
         id: Schedulerows.length + 1,
-        ScheduleDate: scheduleDate,
-        CameraNumber: cameraNumber,
-        Status: 'Active',
+        schedule_date: schedule_date,
+        camera_number: camera_number,
+        status: 'Active',
       };
     console.log(newEntry);
-    // Schedulerows.push(newEntry);
+    
+
+    axios.post('http://127.0.0.1:3002/schedule/', newEntry).then((res)=>{
+      alert("new record is succesfully created")
+    }).catch(error => {
+      console.log(error);
+  });
     navigate('/schedule');
   };
 
@@ -66,7 +73,7 @@ const ScheduleNew = () => {
       <TextField
         label="Schedule Date"
         type="date"
-        value={scheduleDate}
+        value={schedule_date}
         onChange={handleScheduleDateChange}
         required
         fullWidth
@@ -79,7 +86,7 @@ const ScheduleNew = () => {
       <TextField
         label="Camera Number"
         type="text"
-        value={cameraNumber}
+        value={camera_number}
         onChange={handleCameraNumberChange}
         required
         fullWidth

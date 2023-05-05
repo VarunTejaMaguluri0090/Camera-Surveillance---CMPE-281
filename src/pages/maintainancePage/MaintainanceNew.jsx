@@ -6,6 +6,11 @@ import {Maintainancerows} from "../../dummyData"
 import { TextField, Button, Radio, RadioGroup, FormControlLabel, FormControl } from '@material-ui/core';
 
 
+//date
+//1.) initial variable date, state is '', function setDate will set the final changed date
+//onChange-> sligtest change to date is dynaically reflected via SetDate, when I press submit, final date is changed via API
+//e.target.value will set it via handle submit setDate and setState will set it
+
 const useStyles = makeStyles((theme) => ({
   form: {
     display: 'flex',
@@ -35,17 +40,6 @@ const MaintainanceNew = () => {
   };
 
 
-  const handleDateChange = (event) => {
-    setDate(event.target.value);
-  };
-  
-  const handleReasonChange = (event) => {
-    setReason(event.target.value);
-  };
-  
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
-  };
   
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
@@ -54,14 +48,20 @@ const MaintainanceNew = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newEntry = {
-        id: Maintainancerows.length + 1,
-        Date: date,
-        Reason: reason,
-        Status: 'Active',
-        Location: location,
+        date: date,
+        reason: reason,
+        status: status,
+        location: location,
       };
-    
-    Maintainancerows.push(newEntry);
+      
+    axios.post('http://127.0.0.1:3002/maintainancePage/', newEntry)
+      .then(response => {
+        alert("New Entry Created !");
+      })
+      .catch(error => {
+        console.log(error);
+    });
+
     navigate('/maintain');
   };
 

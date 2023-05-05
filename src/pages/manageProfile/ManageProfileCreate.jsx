@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
 import {Profilerows} from "./profileDummyData"
@@ -49,6 +49,16 @@ const ProfileNew = () => {
         age: age,
       };
     console.log(newEntry);
+
+    
+
+    axios.post('http://127.0.0.1:3002/manageProfile/', newEntry)
+      .then(response => {
+        alert("New Entry Created !");
+      })
+      .catch(error => {
+        console.log(error);
+    });
 
     navigate('/manageProfile');
   };

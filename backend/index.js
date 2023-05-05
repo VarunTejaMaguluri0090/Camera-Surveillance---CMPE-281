@@ -13,6 +13,8 @@ var getMapView = require('./routes/MapView/MapView')
 var alerts = require('./routes/alert.js');
 var getReports = require('./routes/Reports/Reports')
 var loginAndSignup = require('./routes/LoginAndSignup')
+var getManageProfile = require('./routes/ManageProfile/ManageProfile')
+var getSchedule = require('./routes/Schedule/Schedule')
 
 //use cors to allow cross origin resource sharing
 app.options('*', cors())
@@ -39,6 +41,8 @@ app.use("/mapView",getMapView);
 app.use("/",alerts);
 app.use("/reports", getReports);
 app.use("/", loginAndSignup);
+app.use("/manageProfile", getManageProfile);
+app.use("/schedule", getSchedule);
 
 
 //backedn would run on port 3002
@@ -49,7 +53,7 @@ app.listen(3002 , function () {
 
     host     :  'localhost',
     user     : 'root',
-    password : 'password',
+    password : 'root1234',
     port : 3306,
     database : 'cloud281'
 

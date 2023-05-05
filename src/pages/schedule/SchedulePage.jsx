@@ -3,29 +3,40 @@ import "./schedule.css"
 import { DataGrid } from '@material-ui/data-grid'
 import {Link} from "react-router-dom";
 import {Schedulerows} from "./scheduleDummyData"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+//Schedule detele and getAll(Read) is executed
 
 export default function MaintainancePage() {
 
+    
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+     getAllData()
+    }, []);
+    
+    async function deletewait(id){
+        await axios.delete(`http://127.0.0.1:3002/schedule/${id}`)
+    }
 
-    const [data, setData] = useState(Schedulerows);
-    
-    
-    
-    async function detelewait(id){
-        // await axios.delete(`http://127.0.0.1:3002/maintainancePage/${id}`)
+    async function getAllData(){
+        await axios.get(`http://127.0.0.1:3002/schedule`).then((res)=>{
+            setData(res.data)
+        })
     }
 
     const deleteFunction = (id) =>{
-        
+        deletewait(id)
+        getAllData()
     }
-
 
     const columns =[
         { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'CameraNumber', headerName: 'Camera Number', width: 350, type:'number' },
-        { field: 'ScheduleDate', headerName: 'Schedule Date', width: 250 },
-        { field: 'Status', headerName: 'Status', width: 150 },
+        { field: 'camera_number', headerName: 'Camera Number', width: 350, type:'number' },
+        { field: 'schedule_date', headerName: 'Schedule Date', width: 250 },
+        { field: 'status', headerName: 'Status', width: 150 },
         { field: 'Action', 
         headerName: 'Action', 
         width: 200,
