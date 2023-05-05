@@ -58,25 +58,50 @@ const EditProfile = () => {
     <div className="ProfilePage" align="center" style={divStyle}>
       <h2>User - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
-        
+      <label class = "cameraStreamText">
+      Name
+                </label>
         <TextField
           className={classes.textField}
-          label="Name"
+          label=""
           variant="outlined"
           type="text"
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
           required
-          value={data.name}
+          // value={data.name}
           InputLabelProps={{
             shrink: true,
           }}
           onChange={(e) => setData({ ...data, name: e.target.value })}
         />
+         <label class = "cameraStreamText">
+         Age
+                </label>
         <TextField
           className={classes.textField}
-          label="Age"
+          label=""
           variant="outlined"
           type="number"
           value={data.age}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
           required
           InputLabelProps={{
             shrink: true,
@@ -94,6 +119,7 @@ const EditProfile = () => {
       </form>
     </div>
   );
+
 
 };
 

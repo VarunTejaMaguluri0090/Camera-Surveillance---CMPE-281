@@ -57,42 +57,82 @@ const EditSchedule = () => {
     <div className="schedulePage" align="center" style={divStyle}>
       <h2>Schedule Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
+
+      <label class = "cameraStreamText">
+      Schedule Date
+                </label>
         <TextField
         className={classes.textField}
-        label="Schedule Date"
+        label=""
         type="date"
-        value={data.schedule_date}
+        value={data.ScheduleDate}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         variant="outlined"
-        onChange={(e) => setData({ ...data, schedule_date: e.target.value })}
+        onChange={(e) => setData({ ...data, ScheduleDate: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
         }}
         margin="normal"
       />
+      <label class = "cameraStreamText">
+      Camera Number
+                </label>
         <TextField
           className={classes.textField}
-          label="Camera Number"
+          label=""
           variant="outlined"
           type="text"
           required
-          value={data.camera_number}
+          value={data.CameraNumber}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
           InputLabelProps={{
             shrink: true,
           }}
-          onChange={(e) => setData({ ...data, camera_number: e.target.value })}
+          onChange={(e) => setData({ ...data, CameraNumber: e.target.value })}
         />
+         <label class = "cameraStreamText">
+         Status
+                </label>
         <TextField
           className={classes.textField}
-          label="Status"
+          label=""
           variant="outlined"
           type="text"
-          value={data.status}
+          value={data.Status}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
           required
           InputLabelProps={{
             shrink: true,
           }}
-          onChange={(e) => setData({ ...data, status: e.target.value })}
+          onChange={(e) => setData({ ...data, Status: e.target.value })}
         />
         <Button
           className={classes.button}

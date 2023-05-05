@@ -62,55 +62,106 @@ const EditMaintainance = () => {
     <div className="editMaintainancePage" align="center" style={divStyle}>
       <h2>Maintainance Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
-        
+        {/* <TextField
+          className={classes.textField}
+          label="Date"
+          variant="outlined"
+          type="text"
+          value={data.Date}
+          onChange={(e) => setData({ ...data, Date: e.target.value })}
+        /> */}
+         <label class = "cameraStreamText">
+         Date
+                </label>
         <TextField
         className={classes.textField}
-        label="Date"
+        label=""
         type="date"
-        value={data.date}
+        value={data.Date}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         variant="outlined"
-        onChange={(e) => setData({ ...data, date: e.target.value })}
+        onChange={(e) => setData({ ...data, Date: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
         }}
         margin="normal"
       />
+       <label class = "cameraStreamText">
+       Reason
+                </label>
         <TextField
           className={classes.textField}
-          label="Reason"
+          label=""
           variant="outlined"
           type="text"
           required
-          value={data.reason}
-          InputLabelProps={{
-            shrink: true,
+          value={data.Reason}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
           }}
-          onChange={(e) => setData({ ...data, reason: e.target.value })}
+          onChange={(e) => setData({ ...data, Reason: e.target.value })}
         />
+
+<label class = "cameraStreamText">
+Status
+                </label>
         <TextField
           className={classes.textField}
-          label="Status"
+          label=""
           variant="outlined"
           type="text"
-          value={data.status}
-          required
-          InputLabelProps={{
-            shrink: true,
+          value={data.Status}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
           }}
-          onChange={(e) => setData({ ...data, status: e.target.value })}
+          required
+          onChange={(e) => setData({ ...data, Status: e.target.value })}
         />
+        <label class = "cameraStreamText">
+        Location
+                </label>
         <TextField
           className={classes.textField}
-          label="Location"
+          label=""
           variant="outlined"
           type="text"
-          value={data.location}
-          required
-          InputLabelProps={{
-            shrink: true,
+          value={data.Location}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
           }}
-          onChange={(e) => setData({ ...data, location: e.target.value })}
+          required
+          onChange={(e) => setData({ ...data, Location: e.target.value })}
         />
         <Button
           className={classes.button}

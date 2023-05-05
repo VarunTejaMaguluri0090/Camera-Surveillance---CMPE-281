@@ -6,6 +6,9 @@ import {Maintainancerows} from "../../dummyData"
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { async } from "q";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { MaintainanceFeaturedInfo } from "../../pages/maintainancePage/MaintainanceFeaturedInfo";
 
 export default function MaintainancePage() {
 
@@ -13,6 +16,19 @@ export default function MaintainancePage() {
     //useState -> data is a variable and setData is a fucntion. Need to set tha data that we recieved in response
     //to setData via useEffect
     const [data, setData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+const [alertsPerPage] = useState(5); // Change this value to adjust the number of alerts per page
+const [startDate, setStartDate] = useState(null);
+const [endDate, setEndDate] = useState(null);
+
+async function handleDateRangeChange(start, end) {
+    setStartDate(start);
+    setEndDate(end);
+    // axios.get(`http://127.0.0.1:3002/alerts?startDate=${new Date(startDate).toISOString()}&endDate=${new Date(endDate).toISOString()}`)
+    // .then(response => response.json())
+    // .then(data => setData(data))
+    // .catch(error => console.error(error));
+  }
     
     //getAllData is to be rendered only for the first time when the page loads up
     useEffect(() => {
@@ -38,6 +54,38 @@ export default function MaintainancePage() {
         detelewait(id)
         getAllData()
     }
+
+    function DateRangePicker({ onChange }) {
+        // const [startDate, setStartDate] = useState(null);
+        // const [endDate, setEndDate] = useState(null);
+      
+        function handleStartDateChange(date) {
+          setStartDate(date);
+          if (endDate && date < endDate) {
+            onChange(date, endDate);
+          }
+        }
+      
+        function handleEndDateChange(date) {
+          setEndDate(date);
+          if (startDate && date > startDate) {
+            onChange(startDate, date);
+          }
+        }
+      
+        return (
+         
+          <div class="date">
+          <div>
+            <label class="date_correction">Start Date:</label>
+            <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} class="field_correction"/>
+            <label class="date_correction">End Date:</label>
+            <input type="date" value={endDate} onChange={e => handleEndDateChange(e.target.value)} class="field_correction"/>
+          </div>
+          </div>
+        );
+      }
+
 
 
     const columns =[
@@ -74,6 +122,8 @@ export default function MaintainancePage() {
 
     return (
         <div className="maintainancePage" >
+             <MaintainanceFeaturedInfo />
+             <DateRangePicker onChange={handleDateRangeChange} />
             <div class="headRow">
                 <h2>Maintainance Requests</h2>
                 <Link to ={"/maintain/new"}>

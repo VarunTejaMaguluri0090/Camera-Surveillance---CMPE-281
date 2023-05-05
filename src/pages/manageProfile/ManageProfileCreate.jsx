@@ -67,26 +67,49 @@ const ProfileNew = () => {
     <div className="ProfilePage" align="center" style={divStyle}>
       <h2>New User </h2>
       <form className={classes.form} onSubmit={handleSubmit}>
+      <label class = "cameraStreamText">
+      Name
+                </label>
       <TextField
-        label="Name"
+        label=""
         type="text"
         value={name}
         onChange={handleNameChange}
         required
-        
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         InputLabelProps={{
           shrink: true,
         }}
         margin="normal"
       />
-
+<label class = "cameraStreamText">
+Age
+                </label>
       <TextField
-        label="Age"
+        label=""
         type="number"
         value={age}
         onChange={handleAgeChange}
         required
-        
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         margin="normal"
       />
       <Button type="submit" variant="contained" color="primary">
@@ -95,6 +118,7 @@ const ProfileNew = () => {
       </form>
     </div>
   );
+
 
 };
 
