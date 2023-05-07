@@ -69,10 +69,23 @@ const MaintainanceNew = () => {
     <div className="editMaintainancePage" align="center" style={divStyle}>
       <h2>Maintainance Request </h2>
       <form className={classes.form} onSubmit={handleSubmit}>
+      <label class = "cameraStreamText">
+      Date
+                </label>
       <TextField
-        label="Date"
+        label=""
         type="date"
         value={date}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         onChange={(e) => setDate(e.target.value)}
         required
         fullWidth
@@ -81,11 +94,23 @@ const MaintainanceNew = () => {
         }}
         margin="normal"
       />
-
+ <label class = "cameraStreamText">
+ Reason
+                </label>
       <TextField
-        label="Reason"
+        label=""
         type="text"
         value={reason}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         onChange={(e) => setReason(e.target.value)}
         required
         fullWidth
@@ -98,11 +123,23 @@ const MaintainanceNew = () => {
           <FormControlLabel value="Resolved" control={<Radio />} label="Resolved" />
         </RadioGroup>
       </FormControl>
-
+      <label class = "cameraStreamText">
+      Location
+                </label>
       <TextField
-        label="Location"
+        label=""
         type="text"
         value={location}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         onChange={(e) => setLocation(e.target.value)}
         required
         fullWidth

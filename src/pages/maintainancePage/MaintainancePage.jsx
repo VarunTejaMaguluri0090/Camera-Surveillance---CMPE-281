@@ -1,6 +1,8 @@
 import { Delete, Http } from "@material-ui/icons";
 import "./maintainance.css"
-import { DataGrid } from '@material-ui/data-grid'
+// import { DataGrid } from '@material-ui/data-grid'
+import { DataGrid, gridClasses } from '@mui/x-data-grid';
+import { alpha, styled } from '@mui/material/styles';
 import {Link} from "react-router-dom";
 import {Maintainancerows} from "../../dummyData"
 import axios from 'axios';
@@ -9,6 +11,43 @@ import { async } from "q";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { MaintainanceFeaturedInfo } from "../../pages/maintainancePage/MaintainanceFeaturedInfo";
+
+
+const ODD_OPACITY = 0.2;
+
+const StripedDataGrid = styled(DataGrid)(({ theme }) => ({
+  [`& .${gridClasses.row}.even`]: {
+    backgroundColor: theme.palette.grey[200],
+    '&:hover, &.Mui-hovered': {
+      backgroundColor: alpha(theme.palette.primary.main, ODD_OPACITY),
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+    },
+    '&.Mui-selected': {
+      backgroundColor: alpha(
+        theme.palette.primary.main,
+        ODD_OPACITY + theme.palette.action.selectedOpacity,
+      ),
+      '&:hover, &.Mui-hovered': {
+        backgroundColor: alpha(
+          theme.palette.primary.main,
+          ODD_OPACITY +
+            theme.palette.action.selectedOpacity +
+            theme.palette.action.hoverOpacity,
+        ),
+        // Reset on touch devices, it doesn't add specificity
+        '@media (hover: none)': {
+          backgroundColor: alpha(
+            theme.palette.primary.main,
+            ODD_OPACITY + theme.palette.action.selectedOpacity,
+          ),
+        },
+      },
+    },
+  },
+}));
+
 
 export default function MaintainancePage() {
 
@@ -131,12 +170,26 @@ async function handleDateRangeChange(start, end) {
                 </Link>
             </div>
             
-            <DataGrid
+            <StripedDataGrid 
+            sx={{
+              "& .MuiDataGrid-row": {
+                border: "1px solid lightgray",
+                borderRadius: "10px",
+                backgroundColor: "white",
+                width: "calc(100% - 2px)",
+                height:"0.5px",
+                marginTop: 2,
+      
+              },
+            }}
                 rows={data} disableSelectionOnClick
                 columns={columns}
                 pageSize={10}
                 rowsPerPageOptions={[5]}
                 checkboxSelection
+                getRowClassName={(params) =>
+                  params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'odd'
+                }
             />
         </div>
     

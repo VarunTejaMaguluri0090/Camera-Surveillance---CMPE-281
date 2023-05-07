@@ -53,7 +53,7 @@ app.listen(3002 , function () {
 
     host     :  'localhost',
     user     : 'root',
-    password : 'root1234',
+    password : 'password',
     port : 3306,
     database : 'cloud281'
 

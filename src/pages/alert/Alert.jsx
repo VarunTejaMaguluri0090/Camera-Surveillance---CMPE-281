@@ -5,6 +5,47 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { DataGrid, gridClasses } from '@mui/x-data-grid';
+import { alpha, styled } from '@mui/material/styles';
+
+import 'react-datepicker/dist/react-datepicker.css';
+import { AlertFeaturedInfo } from "../../pages/alert/AlertFeaturedInfo";
+
+
+const ODD_OPACITY = 0.2;
+
+const StripedDataGrid = styled(DataGrid)(({ theme }) => ({
+  [`& .${gridClasses.row}.even`]: {
+    backgroundColor: theme.palette.grey[200],
+    '&:hover, &.Mui-hovered': {
+      backgroundColor: alpha(theme.palette.primary.main, ODD_OPACITY),
+      '@media (hover: none)': {
+        backgroundColor: 'transparent',
+      },
+    },
+    '&.Mui-selected': {
+      backgroundColor: alpha(
+        theme.palette.primary.main,
+        ODD_OPACITY + theme.palette.action.selectedOpacity,
+      ),
+      '&:hover, &.Mui-hovered': {
+        backgroundColor: alpha(
+          theme.palette.primary.main,
+          ODD_OPACITY +
+            theme.palette.action.selectedOpacity +
+            theme.palette.action.hoverOpacity,
+        ),
+        // Reset on touch devices, it doesn't add specificity
+        '@media (hover: none)': {
+          backgroundColor: alpha(
+            theme.palette.primary.main,
+            ODD_OPACITY + theme.palette.action.selectedOpacity,
+          ),
+        },
+      },
+    },
+  },
+}));
 
 
 export default function Alert() {
@@ -162,7 +203,9 @@ useEffect(()=>{
 
       {/* <button style={{marginLeft: 50}} type="submit">Filter Alerts</button> */}
       <div className="alert-page">
+      <AlertFeaturedInfo />
       <DateRangePicker onChange={handleDateRangeChange} />
+      
         <h1>Alerts</h1>
         <table>
           <thead>
@@ -179,6 +222,7 @@ useEffect(()=>{
               <th>Additional Details</th>
             </tr>
           </thead>
+          
           <tbody>{renderedAlerts}</tbody>
         </table>
         {/* <ul> */}

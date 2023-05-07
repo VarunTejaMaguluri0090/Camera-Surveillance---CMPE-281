@@ -70,27 +70,53 @@ const ScheduleNew = () => {
     <div className="schedulePage" align="center" style={divStyle}>
       <h2>Schedule Request </h2>
       <form className={classes.form} onSubmit={handleSubmit}>
+      <label class = "cameraStreamText">
+      Schedule Date
+                </label>
       <TextField
-        label="Schedule Date"
+        label=""
         type="date"
         value={schedule_date}
+        
         onChange={handleScheduleDateChange}
         required
         fullWidth
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
         InputLabelProps={{
           shrink: true,
         }}
         margin="normal"
       />
-
+  <label class = "cameraStreamText">
+  Camera Number
+                </label>
       <TextField
-        label="Camera Number"
+        label=""
         type="text"
         value={camera_number}
         onChange={handleCameraNumberChange}
         required
         fullWidth
         margin="normal"
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
       />
 
       <FormControl component="fieldset" margin="normal">
