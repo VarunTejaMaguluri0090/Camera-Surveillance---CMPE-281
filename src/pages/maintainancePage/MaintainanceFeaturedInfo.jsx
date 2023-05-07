@@ -39,7 +39,7 @@ import {
               gutterBottom
               variant="overline"
             >
-              Number of Maint. Requests
+              No. of Maint. Requests
             </Typography>
             <Typography variant="h4">
               {value}55
@@ -168,7 +168,7 @@ import {
               gutterBottom
               variant="overline"
             >
-        Unassigned Maint. Requests
+        Unassigned Requests
             </Typography>
             <Typography variant="h4">
               {value}10

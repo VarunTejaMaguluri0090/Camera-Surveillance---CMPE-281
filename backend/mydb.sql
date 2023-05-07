@@ -42,6 +42,13 @@ CREATE TABLE Reports (
     report_analysis_info VARCHAR(1000)
 );
 
+CREATE TABLE Users (
+    id INT,
+    user_name VARCHAR(20),
+    email VARCHAR(100),
+    user_password VARCHAR(20)
+);
+
 
 INSERT INTO Camera_Info (camera_id, camera_number, camera_location, camera_status, action) 
 VALUES (1, 'CAM001', 'Entrance', 'Active', 'None'),
@@ -62,3 +69,8 @@ VALUES (1, 1001, '2023-04-25 09:30:00', 'Motion', 'Entrance', 'New', 'Motion det
 INSERT INTO Reports (camera_id, camera_number, from_date, to_date, report_type, report_analysis_info)
 VALUES (1, 'CAM001', '2023-04-01', '2023-04-30', 'Monthly', 'Average motion events per day: 5'),
        (2, 'CAM002', '2023-04-01', '2023-04-30', 'Monthly', 'Average sound events per day: 3');
+
+INSERT INTO Users (id, user_name, email, user_password)
+VALUES (1, 'amika', 'amikamehta701@gmail.com', 'amika'),
+       (2, 'ramya', 'ramya.kotha@sjsu.edu', 'ramya'),
+       (3, 'varun', 'varun@sjsu.edu', 'varun');

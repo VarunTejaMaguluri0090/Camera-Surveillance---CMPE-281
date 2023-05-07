@@ -10,7 +10,7 @@ var getMaintainanceRequests = require('./routes/MaintainancePageRoutes/Maintaina
 var getCameraInfoRequest = require('./routes/CameraInfoPage/CameraInfoPage')
 var getCameraFootage = require('./routes/CameraFootagePage/CameraFootagePage')
 var getMapView = require('./routes/MapView/MapView')
-var alerts = require('./routes/alert.js');
+var getAlerts = require('./routes/Alerts/Alerts');
 var getReports = require('./routes/Reports/Reports')
 var loginAndSignup = require('./routes/LoginAndSignup')
 var getManageProfile = require('./routes/ManageProfile/ManageProfile')
@@ -38,11 +38,11 @@ app.use("/maintainancePage",getMaintainanceRequests);
 app.use("/cameraInfo", getCameraInfoRequest);
 app.use("/cameraFootage",getCameraFootage);
 app.use("/mapView",getMapView);
-app.use("/",alerts);
 app.use("/reports", getReports);
 app.use("/", loginAndSignup);
 app.use("/manageProfile", getManageProfile);
 app.use("/schedule", getSchedule);
+app.use("/alerts", getAlerts);
 
 
 //backedn would run on port 3002
@@ -53,7 +53,7 @@ app.listen(3002 , function () {
 
     host     :  'localhost',
     user     : 'root',
-    password : 'password',
+    password : 'root1234',
     port : 3306,
     database : 'cloud281'
 

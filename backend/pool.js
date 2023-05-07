@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host     :  'localhost',
     user     : 'root',
-    password : 'password',
+    password : 'root1234',
     port : 3306,
     database : 'cloud281'
 });

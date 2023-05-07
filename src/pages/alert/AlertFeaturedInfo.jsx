@@ -84,7 +84,7 @@ import {
               gutterBottom
               variant="overline"
             >
-              Active Alerts
+              Number of Active Alerts
             </Typography>
             <Typography variant="h4">
               {value}30
@@ -168,7 +168,7 @@ import {
               gutterBottom
               variant="overline"
             >
-        False Alerts
+        Number of False Alerts
             </Typography>
             <Typography variant="h4">
               {value}8
