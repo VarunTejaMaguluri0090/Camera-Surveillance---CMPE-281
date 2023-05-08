@@ -125,11 +125,13 @@ async function handleDateRangeChange(start, end) {
         );
       }
 
-
+    const dateFormatter = (date) => {
+      return date.value.split("T")[0];
+    }
 
     const columns =[
         { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'date', headerName: 'Date', width: 150, type:'number' },
+        { field: 'date', headerName: 'Date', width: 150, type:'number', valueFormatter: dateFormatter },
         { field: 'reason', headerName: 'Reason', width: 250 },
         { field: 'status', headerName: 'Status', width: 150 },
         {

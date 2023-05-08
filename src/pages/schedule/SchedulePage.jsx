@@ -120,11 +120,14 @@ export default function MaintainancePage() {
       }
 
 
+    const dateFormatter = (date) => {
+      return date.value.split("T")[0];
+    }
 
     const columns =[
         { field: 'id', headerName: 'ID', width: 100 },
         { field: 'camera_number', headerName: 'Camera Number', width: 350, type:'number' },
-        { field: 'schedule_date', headerName: 'Schedule Date', width: 250 },
+        { field: 'schedule_date', headerName: 'Schedule Date', width: 250, valueFormatter: dateFormatter },
         { field: 'status', headerName: 'Status', width: 150 },
         { field: 'Action', 
         headerName: 'Action', 

@@ -60,10 +60,11 @@ const ScheduleNew = () => {
 
     axios.post('http://127.0.0.1:3002/schedule/', newEntry).then((res)=>{
       alert("new record is succesfully created")
+      navigate('/schedule');
     }).catch(error => {
       console.log(error);
   });
-    navigate('/schedule');
+   
   };
 
   return (

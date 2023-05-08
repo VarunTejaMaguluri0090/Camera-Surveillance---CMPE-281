@@ -16,3 +16,9 @@ This is for the other pages part, make it of width 4 times of the sidebar - flex
     flex: 4;
     background-color: red;
 } */
+
+.no-scroll {
+    margin: 0; 
+    height: 100vh; 
+    overflow: hidden;
+}

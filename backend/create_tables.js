@@ -35,3 +35,4 @@ connection.getConnection((err) => {
   }
   createTable(sqlTableData.reverse());
 });
+

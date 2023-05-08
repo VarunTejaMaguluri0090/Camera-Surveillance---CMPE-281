@@ -34,7 +34,10 @@ const EditSchedule = () => {
 
   useEffect(() => {
     axios.get(`http://127.0.0.1:3002/schedule/${id}`).then((res)=>{
-      setData(res.data)
+      let response = res.data
+      // let d = new Date(response.schedule_date);
+      response = {...response, schedule_date: response.schedule_date.split('T')[0]}
+      setData(response)
     })
   }, []);
 
@@ -65,7 +68,7 @@ const EditSchedule = () => {
         className={classes.textField}
         label=""
         type="date"
-        value={data.ScheduleDate}
+        value={data.schedule_date}
         sx={{
           input: {
             color: "black",
@@ -77,7 +80,7 @@ const EditSchedule = () => {
           }
         }}
         variant="outlined"
-        onChange={(e) => setData({ ...data, ScheduleDate: e.target.value })}
+        onChange={(e) => setData({ ...data, schedule_date: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
@@ -93,7 +96,7 @@ const EditSchedule = () => {
           variant="outlined"
           type="text"
           required
-          value={data.CameraNumber}
+          value={data.camera_number}
           sx={{
             input: {
               color: "black",
@@ -107,7 +110,7 @@ const EditSchedule = () => {
           InputLabelProps={{
             shrink: true,
           }}
-          onChange={(e) => setData({ ...data, CameraNumber: e.target.value })}
+          onChange={(e) => setData({ ...data, camera_number: e.target.value })}
         />
          <label class = "cameraStreamText">
          Status
@@ -117,7 +120,7 @@ const EditSchedule = () => {
           label=""
           variant="outlined"
           type="text"
-          value={data.Status}
+          value={data.status}
           sx={{
             input: {
               color: "black",
@@ -132,7 +135,7 @@ const EditSchedule = () => {
           InputLabelProps={{
             shrink: true,
           }}
-          onChange={(e) => setData({ ...data, Status: e.target.value })}
+          onChange={(e) => setData({ ...data, status: e.target.value })}
         />
         <Button
           className={classes.button}

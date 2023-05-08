@@ -5,11 +5,12 @@ import { useNavigate } from 'react-router-dom';
 // import './script.js';
 import './style.css';
 
-function LoginScreen() {
+function LoginScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const {maintain, admin, user} = props;
   
     const containerRef = useRef(null);
   
@@ -34,9 +35,18 @@ function LoginScreen() {
       });
       if (response.ok) {
         // Set user token in local storage and redirect to home page
-        const { token, isAdmin } = await response.json();
+        const res = await response.json();
+        const { token, isAdmin, isMaintainace } = res;
+
+        console.log(res);
         localStorage.setItem('userToken', token);
         localStorage.setItem('isAdmin', isAdmin);
+        localStorage.setItem('isMaintainace', isMaintainace);
+
+        maintain(isMaintainace);
+        admin(isAdmin);
+        user(token);
+
         navigate('/home');
       } else {
         // Handle login error

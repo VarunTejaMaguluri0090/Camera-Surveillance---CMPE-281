@@ -39,7 +39,7 @@ import {
               gutterBottom
               variant="overline"
             >
-            Number of User Requests
+            User Requests
               
             </Typography>
             <Typography variant="h4">

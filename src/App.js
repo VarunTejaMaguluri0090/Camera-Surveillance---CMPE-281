@@ -14,7 +14,7 @@ import Alert from "./pages/alert/Alert";
 import AlertMapView from "./pages/alertMapView/alertMapView";
 import AlertView from "./pages/alertView/AlertView";
 import AlertAnalysis from "./pages/alert/alertAnalysis";
-
+import { useState, useEffect } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReportPage from "./pages/report/reportPage";
@@ -26,15 +26,54 @@ import ManageProfile from './pages/manageProfile/ManageProfile'
 import ManageProfileEdit from './pages/manageProfile/ManageProfileEdit'
 import ManageProfileCreate from './pages/manageProfile/ManageProfileCreate'
 import 'react-datepicker/dist/react-datepicker.css';
+import HomeMaintain from "./pages/home/HomeMaintain";
+import TopBarMaintain from "./components/topBar/TopBarMaintain";
+import TopBarUser from "./components/topBar/TopBarUser";
+import SideBarMaintain from "./components/sideBar/SideBarMaintain";
+import SideBarUser from "./components/sideBar/SideBarUser";
 // import AlertViewTest1 from "./pages/alertsViewTest/alertViewTest1";
 
 
 
 function App() {
-  const userToken = localStorage.getItem('userToken');
+  const [isMaintain, setIsMaintain] = useState(localStorage.getItem('isMaintainace'));
+  const [userToken, setUserToken] = useState(localStorage.getItem('userToken'));
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin'));
+
+  // const [role, setRole] = useState("user");
+
+  useEffect(() => {
+    if (userToken) {
+      document.body.className = ""
+    } else {
+      document.body.className = "no-scroll"
+    }
+  }, [userToken]);
+
+
+  function renderTopBar () {
+    if (isMaintain == 1) {
+      return <TopBarMaintain user={setUserToken}/>
+    } else if (isAdmin == 1) {
+      return <TopBar user={setUserToken}/>
+    } else {
+      return <TopBarUser user={setUserToken}/>
+    }
+  }
+
+  function renderSideBar () {
+    if (isMaintain == 1) {
+      return <SideBarMaintain />
+    } else if (isAdmin == 1) { 
+      return <SideBar />
+    } else {
+      return <SideBarUser />
+    }
+  }
 
   return (
     <Router>
+
       <Routes>
         <Route
           path="/"
@@ -42,16 +81,21 @@ function App() {
             userToken ? <Navigate to="/home" /> : <Navigate to="/login" />
           }
         />
-        <Route exact path="/login" element={<LoginScreen />} />
+        <Route exact path="/login" element={<LoginScreen maintain={setIsMaintain} admin={setIsAdmin} user={setUserToken}/>} />
       </Routes>
-      <TopBar />
-
+      
+      {renderTopBar()}
+      
+      {/* {isMaintain == 1 ? <TopBarMaintain /> : <TopBar /> }  */}
       <div className="container">
 
-        <SideBar />
+        {/* <SideBar /> */}
+
+        {renderSideBar()}
 
         <Routes>
           <Route exact path="/home" element={<Home />} />
+          <Route exact path="/maintainhome" element={<HomeMaintain />} />
         </Routes>
 
         <Routes>

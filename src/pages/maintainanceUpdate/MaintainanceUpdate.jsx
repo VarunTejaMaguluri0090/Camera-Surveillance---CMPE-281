@@ -38,7 +38,10 @@ const EditMaintainance = () => {
       const url = `http://127.0.0.1:3002/maintainancePage/${id}`;
       await axios.get(url)
       .then(response => {
-        setData(response.data[0]);
+        let res = response.data[0];
+        let d = new Date(res.date);
+        res = {...res, date: d.toISOString().split('T')[0]}
+        setData(res);
       })
       .catch(error => {
         console.log(error);
@@ -62,22 +65,12 @@ const EditMaintainance = () => {
     <div className="editMaintainancePage" align="center" style={divStyle}>
       <h2>Maintainance Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
-        {/* <TextField
-          className={classes.textField}
-          label="Date"
-          variant="outlined"
-          type="text"
-          value={data.Date}
-          onChange={(e) => setData({ ...data, Date: e.target.value })}
-        /> */}
-         <label class = "cameraStreamText">
-         Date
-                </label>
+         <label class = "cameraStreamText">Date</label>
         <TextField
         className={classes.textField}
         label=""
         type="date"
-        value={data.Date}
+        value={data.date}
         sx={{
           input: {
             color: "black",
@@ -89,7 +82,7 @@ const EditMaintainance = () => {
           }
         }}
         variant="outlined"
-        onChange={(e) => setData({ ...data, Date: e.target.value })}
+        onChange={(e) => setData({ ...data, date: e.target.value })}
         required
         InputLabelProps={{
           shrink: true,
@@ -105,7 +98,7 @@ const EditMaintainance = () => {
           variant="outlined"
           type="text"
           required
-          value={data.Reason}
+          value={data.reason}
           sx={{
             input: {
               color: "black",
@@ -116,7 +109,7 @@ const EditMaintainance = () => {
               
             }
           }}
-          onChange={(e) => setData({ ...data, Reason: e.target.value })}
+          onChange={(e) => setData({ ...data, reason: e.target.value })}
         />
 
 <label class = "cameraStreamText">
@@ -127,7 +120,7 @@ Status
           label=""
           variant="outlined"
           type="text"
-          value={data.Status}
+          value={data.status}
           sx={{
             input: {
               color: "black",
@@ -139,7 +132,7 @@ Status
             }
           }}
           required
-          onChange={(e) => setData({ ...data, Status: e.target.value })}
+          onChange={(e) => setData({ ...data, status: e.target.value })}
         />
         <label class = "cameraStreamText">
         Location
@@ -149,7 +142,7 @@ Status
           label=""
           variant="outlined"
           type="text"
-          value={data.Location}
+          value={data.location}
           sx={{
             input: {
               color: "black",
@@ -161,7 +154,7 @@ Status
             }
           }}
           required
-          onChange={(e) => setData({ ...data, Location: e.target.value })}
+          onChange={(e) => setData({ ...data, location: e.target.value })}
         />
         <Button
           className={classes.button}

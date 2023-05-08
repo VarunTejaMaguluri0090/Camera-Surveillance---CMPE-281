@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export default function TopBar(props) {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Set initial login status
-  const {user}=props;
+  const {user} = props;
 
   useEffect(() => {
     if (localStorage.getItem('userToken')) {
@@ -36,7 +36,7 @@ export default function TopBar(props) {
             <div>
       {localStorage.getItem('userToken') ? (
         <div>
-          <h1>Welcome, Admin!</h1>
+          <h1>Welcome, User!</h1>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
@@ -45,7 +45,7 @@ export default function TopBar(props) {
       )}
     </div>
             <div className="topLeft">
-            <span className="logo">Admin Dashboard</span>
+            <span className="logo">User Dashboard</span>
             </div>
 
             <div className="topRight">

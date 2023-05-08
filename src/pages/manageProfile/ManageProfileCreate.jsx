@@ -55,12 +55,13 @@ const ProfileNew = () => {
     axios.post('http://127.0.0.1:3002/manageProfile/', newEntry)
       .then(response => {
         alert("New Entry Created !");
+        navigate('/manageProfile');
       })
       .catch(error => {
         console.log(error);
     });
 
-    navigate('/manageProfile');
+    
   };
 
   return (

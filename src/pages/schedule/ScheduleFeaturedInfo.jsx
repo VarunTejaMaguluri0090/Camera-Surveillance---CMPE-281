@@ -39,7 +39,7 @@ import {
               gutterBottom
               variant="overline"
             >
-              Number of Schedule Requests
+              Schedule Requests
             </Typography>
             <Typography variant="h4">
               {value}51
@@ -84,7 +84,7 @@ import {
               gutterBottom
               variant="overline"
             >
-              Active Schedule Requests
+              Active Requests
             </Typography>
             <Typography variant="h4">
               {value}30
@@ -126,7 +126,7 @@ import {
               gutterBottom
               variant="overline"
             >
-         Resolved Schedule Requests
+         Resolved Requests
             </Typography>
             <Typography variant="h4">
               {value}5
@@ -168,7 +168,7 @@ import {
               gutterBottom
               variant="overline"
             >
-        Unassigned Schedule Requests
+        Unassigned Requests
             </Typography>
             <Typography variant="h4">
               {value}8

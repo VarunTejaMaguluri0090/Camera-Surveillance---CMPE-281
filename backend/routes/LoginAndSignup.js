@@ -69,7 +69,7 @@ router.post('/login', (req, res) => {
       }
       // Generate JWT token
       const token = jwt.sign({ username }, 'mysecretkey');
-      return res.status(200).json({ token, isAdmin: results[0].isAdmin });
+      return res.status(200).json({ token, isAdmin: results[0].isAdmin, isMaintainace: results[0].isMaintainace });
     });
   });
 });

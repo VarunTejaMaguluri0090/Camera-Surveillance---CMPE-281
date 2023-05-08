@@ -50,8 +50,9 @@ const EditProfile = () => {
     //axios = request, request body. post .then() we get the response
     axios.put(`http://127.0.0.1:3002/manageProfile/${id}`, editEntry).then(res =>{
       alert("your data has been upadated")
+      navigate('/manageProfile');
     })
-    navigate('/manageProfile');
+    
   };
 
   return (
@@ -77,7 +78,7 @@ const EditProfile = () => {
             }
           }}
           required
-          // value={data.name}
+          value={data.name}
           InputLabelProps={{
             shrink: true,
           }}
