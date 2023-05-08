@@ -1,13 +1,9 @@
-
-
-  .Title{
-    margin-left: 20px;
-
-   
+.App {
+    height: 100vh;
+    width: 100vw;
   }
-
-  .Chart{
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 23px 6px 24px 7px rgba(0,0,0,0.1);
-}
+  
+  .map-container {
+    height: 100%;
+    width: 100%;
+  }

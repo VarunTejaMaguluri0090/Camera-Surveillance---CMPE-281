@@ -73,6 +73,10 @@ const MaintainanceNew = () => {
       Date
                 </label>
       <TextField
+      hiddenLabel
+      id="filled-hidden-label-normal"
+      defaultValue="Normal"
+      variant="filled"
         label=""
         type="date"
         value={date}
@@ -101,6 +105,10 @@ const MaintainanceNew = () => {
         label=""
         type="text"
         value={reason}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
         sx={{
           input: {
             color: "black",
@@ -130,6 +138,10 @@ const MaintainanceNew = () => {
         label=""
         type="text"
         value={location}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
         sx={{
           input: {
             color: "black",

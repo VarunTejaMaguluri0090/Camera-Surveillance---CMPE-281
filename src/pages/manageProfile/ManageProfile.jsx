@@ -123,8 +123,9 @@ export default function ProfilePage() {
 
     const columns =[
         { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'name', headerName: 'Name', width: 350, type:'number' },
+        { field: 'name', headerName: 'Name', width: 250, type:'number' },
         { field: 'age', headerName: 'Age', width: 250 },
+        { field: 'Persona', headerName: 'Persona', width: 250 },
         { field: 'Action', 
         headerName: 'Action', 
         width: 200,

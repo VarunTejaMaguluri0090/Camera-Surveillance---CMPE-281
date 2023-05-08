@@ -114,7 +114,9 @@ function LoginScreen() {
         
           <div className="col align-items-center flex-col sign-in">
           <form onSubmit={handleSubmit}>
+          <h1 className="heading-correction">Camera Surveillance Dashboard</h1>
             <div className="form-wrapper align-items-center">
+              
               <div className="form sign-in">
                 <div className="input-group">
                   <i className='bx bxs-user'></i>
@@ -124,22 +126,14 @@ function LoginScreen() {
                   <i className='bx bxs-lock-alt'></i>
                   <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="submit">Log In</button>
+                <button type="submit" className="EditButton1">Log In</button>
                 {/* <Link className='btn-cust' to={"/home"}>
                   Sign in
                 </Link> */}
                 <p>
-                  <b>
-                    Forgot password?
-                  </b>
+                 
                 </p>
                 <p>
-                  <span>
-                    Don't have an account?
-                  </span>
-                  <b onClick={toggle} className="pointer">
-                    Sign up here
-                  </b>
                 </p>
               </div>
             </div>
@@ -152,6 +146,7 @@ function LoginScreen() {
       {/* END FORM SECTION */}
       {/* CONTENT SECTION */}
       <div className="row content-row">
+        
         {/* SIGN IN CONTENT */}
         <div className="col align-items-center flex-col">
           <div className="text sign-in">
@@ -159,7 +154,9 @@ function LoginScreen() {
               Welcome User!
             </h2>
           </div>
+          
           <div className="img sign-in">
+            
           </div>
         </div>
         {/* END SIGN IN CONTENT */}
@@ -168,9 +165,7 @@ function LoginScreen() {
           <div className="img sign-up">
           </div>
           <div className="text sign-up">
-            <h2>
-              Join with us
-            </h2>
+            
           </div>
         </div>
         {/* END SIGN UP CONTENT */}

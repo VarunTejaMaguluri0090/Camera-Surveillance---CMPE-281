@@ -78,6 +78,10 @@ const EditMaintainance = () => {
         label=""
         type="date"
         value={data.Date}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
         sx={{
           input: {
             color: "black",
@@ -88,7 +92,7 @@ const EditMaintainance = () => {
             
           }
         }}
-        variant="outlined"
+        
         onChange={(e) => setData({ ...data, Date: e.target.value })}
         required
         InputLabelProps={{
@@ -106,6 +110,10 @@ const EditMaintainance = () => {
           type="text"
           required
           value={data.Reason}
+          hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+
           sx={{
             input: {
               color: "black",
@@ -125,9 +133,13 @@ Status
         <TextField
           className={classes.textField}
           label=""
-          variant="outlined"
+    
           type="text"
           value={data.Status}
+          hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
           sx={{
             input: {
               color: "black",
@@ -147,9 +159,13 @@ Status
         <TextField
           className={classes.textField}
           label=""
-          variant="outlined"
+         
           type="text"
           value={data.Location}
+          hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
           sx={{
             input: {
               color: "black",

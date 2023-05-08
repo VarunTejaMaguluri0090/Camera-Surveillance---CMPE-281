@@ -22,6 +22,7 @@ import MaintainanceNew from './pages/maintainancePage/MaintainanceNew';
 import SchedulePage from './pages/schedule/SchedulePage';
 import ScheduleUpdate from './pages/schedule/ScheduleUpdate';
 import ScheduleNew from './pages/schedule/ScheduleNew';
+import NewCamera from './pages/ViewCameras/NewCamera';
 import ManageProfile from './pages/manageProfile/ManageProfile'
 import ManageProfileEdit from './pages/manageProfile/ManageProfileEdit'
 import ManageProfileCreate from './pages/manageProfile/ManageProfileCreate'
@@ -70,6 +71,7 @@ function App() {
 
         <Routes>
           <Route exact path="/viewCameras" element={<ViewCameras />} />
+          <Route path="/viewCameras/new" element={<NewCamera />} />
         </Routes>
 
         <Routes>

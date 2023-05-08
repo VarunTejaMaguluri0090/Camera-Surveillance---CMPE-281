@@ -118,7 +118,10 @@ const states = [
                 </label>
                 <TextField
                   fullWidth
-                  
+                  hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
                   helperText=""
                   label=""
                   
@@ -150,7 +153,10 @@ const states = [
                   label=""
                   name="cameraLocation"
                   // onChange={handleChange}
-                  
+                  hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
                   value={"Engg. Building, 2nd Floor"}
                   sx={{
                     input: {
@@ -175,7 +181,10 @@ const states = [
                   label=""
                   name="cameraNumber"
                   onChange={handleChange}
-                  
+                  hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
                   value={"Camera 7"}
                   sx={{
                     input: {
@@ -200,7 +209,10 @@ const states = [
                   label=""
                   name="status"
                   onChange={handleChange}
-                  
+                  hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
                   value={"Active"}
                   sx={{
                     input: {

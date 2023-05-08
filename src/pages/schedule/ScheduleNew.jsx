@@ -77,7 +77,10 @@ const ScheduleNew = () => {
         label=""
         type="date"
         value={schedule_date}
-        
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
         onChange={handleScheduleDateChange}
         required
         fullWidth
@@ -103,6 +106,10 @@ const ScheduleNew = () => {
         label=""
         type="text"
         value={camera_number}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
         onChange={handleCameraNumberChange}
         required
         fullWidth
@@ -118,9 +125,12 @@ const ScheduleNew = () => {
           }
         }}
       />
-
+<label class = "cameraStreamText">
+  Priority
+                </label>
       <FormControl component="fieldset" margin="normal">
         <RadioGroup name="status" value={status} onChange={handleStatusChange} row>
+        
           <FormControlLabel value="Low" control={<Radio />} label="Low" />
           <FormControlLabel value="High" control={<Radio />} label="High" />
         </RadioGroup>

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
-import './Map.css'
+import './map.css'
 
 
 const containerStyle = {
@@ -28,9 +28,7 @@ export default function Map() {
                 Camera Map View
             </h3>
         <LoadScript
-
-            googleMapsApiKey="AIzaSyDkf4Ct9HB83HjZM0Et_X6pNVaBNeADqpc"
-        >
+googleMapsApiKey="AIzaSyB5PQAm_NkqjjKB-z8PJ16zVL08j0020us">
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
@@ -88,4 +86,3 @@ export default function Map() {
 //       );
   
 // }
-

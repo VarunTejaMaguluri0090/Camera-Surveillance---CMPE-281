@@ -66,6 +66,10 @@ const EditSchedule = () => {
         label=""
         type="date"
         value={data.ScheduleDate}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
         sx={{
           input: {
             color: "black",
@@ -76,7 +80,7 @@ const EditSchedule = () => {
             
           }
         }}
-        variant="outlined"
+        
         onChange={(e) => setData({ ...data, ScheduleDate: e.target.value })}
         required
         InputLabelProps={{
@@ -90,7 +94,10 @@ const EditSchedule = () => {
         <TextField
           className={classes.textField}
           label=""
-          variant="outlined"
+          hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
           type="text"
           required
           value={data.CameraNumber}
@@ -115,7 +122,10 @@ const EditSchedule = () => {
         <TextField
           className={classes.textField}
           label=""
-          variant="outlined"
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
           type="text"
           value={data.Status}
           sx={{
