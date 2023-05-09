@@ -13,6 +13,7 @@ import LoginScreen from "./pages/login/login";
 import Alert from "./pages/alert/Alert";
 import AlertMapView from "./pages/alertMapView/alertMapView";
 import AlertView from "./pages/alertView/AlertView";
+import CameraDisplayView from "./pages/cameraDisplayView/CameraDisplayView";
 import AlertAnalysis from "./pages/alert/alertAnalysis";
 
 import React from 'react';
@@ -72,6 +73,7 @@ function App() {
         <Routes>
           <Route exact path="/viewCameras" element={<ViewCameras />} />
           <Route path="/viewCameras/new" element={<NewCamera />} />
+          <Route exact path="/cameraDisplayView/:id" element={<CameraDisplayView />} />
         </Routes>
 
         <Routes>

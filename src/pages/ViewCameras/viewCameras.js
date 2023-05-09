@@ -195,7 +195,7 @@ export default function ViewCameras() {
 
                   </Link> */}
                   <Link to={"/viewCameraStream" + params.row.id}>
-                    <button className="EditButtonForCamera">Edit</button>
+                    <button className="EditButton">Edit</button>
                   </Link>
                   {/* <Link to={"" + params.row.id}>
                     <button className="RemoveButtonForCamera">Remove</button>
@@ -251,5 +251,4 @@ export default function ViewCameras() {
     
   );
 }
-
 

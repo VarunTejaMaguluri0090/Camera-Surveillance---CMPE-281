@@ -11,7 +11,7 @@ export default function Home() {
     <div className="Home">
       <FeaturedInfo />
       <Map /> 
-      <Chart />
+      {/* <Chart /> */}
     </div>
   );
 }
