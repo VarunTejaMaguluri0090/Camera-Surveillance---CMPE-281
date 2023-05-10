@@ -36,11 +36,11 @@ export default function TopBar(props) {
             <div>
       {localStorage.getItem('userToken') ? (
         <div>
-          <h1>Welcome, Admin!</h1>
+          <h1 className="heading-main">Welcome, Admin!</h1>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <h1>You are not logged in.</h1>
+        <h1 className="heading-main">You are not logged in.</h1>
         
       )}
     </div>

@@ -8,44 +8,44 @@ import { useState, useEffect } from "react";
 
 const ReportPage = () => {
   const systemMetrics = {
-    uptime: "99.5%",
-    downtime: "0.5%",
+    uptime: "02:34:43:000 Hours",
+    downtime: "01:22:28:000 Hours",
     responseTime: "250ms",
-    otherMetrics: "..."
+    otherMetrics: ""
   };
 
   const cameraHealth = [
     {
-      name: "Camera 1",
-      id: "12345",
-      location: "Main Entrance",
-      status: "Online",
-      details: "..."
+      name: "Cam1",
+      id: "578594933043",
+      location: "Engg. Building Main Entrance",
+      status: "Active",
+      details: "The camera health looks moderate"
     },
     {
-      name: "Camera 2",
-      id: "67890",
-      location: "Parking Lot",
+      name: "Cam2",
+      id: "67392889320323",
+      location: "Parking Lot East Entrance",
       status: "Offline",
-      details: "..."
+      details: "The camera is under maintainance"
     },
     // more cameras here...
   ];
 
   const incidentReports = [
     {
-      time: "2022-03-15 12:30:00",
-      location: "Main Entrance",
+      time: "2023-05-02 12:30:00",
+      location: "Engg. Building Main Entrance",
       type: "Intrusion",
       severity: "High",
-      details: "..."
+      details: "Intrusion alert raised at Engg. Building Main Entrance"
     },
     {
-      time: "2022-03-18 08:15:00",
-      location: "Back Door",
+      time: "2023-05-07 08:15:00",
+      location: "Student Union",
       type: "Unauthorized Access",
-      severity: "Medium",
-      details: "..."
+      severity: "High",
+      details: "Someone has been entered Student Union without proper authorization."
     },
     // more incidents here...
   ];
@@ -152,7 +152,7 @@ const ReportPage = () => {
         <p>Uptime: {systemMetrics.uptime}</p>
         <p>Downtime: {systemMetrics.downtime}</p>
         <p>Response Time: {systemMetrics.responseTime}</p>
-        <p>Other Metrics: {systemMetrics.otherMetrics}</p>
+        {/* <p>Other Metrics: {systemMetrics.otherMetrics}</p> */}
       </div>
       <div className="metric-column">
         <h2 className="heading-sub">Camera health status</h2>
@@ -181,29 +181,30 @@ const ReportPage = () => {
             </tr>
           </thead>
           <tbody>
+     
             <tr>
-              <td>2022-01-01 12:00:00</td>
-              <td>Entrance</td>
-              <td>Theft</td>
+              <td>2023-05-02 12:30:00</td>
+              <td>Engg. Building Main Entrance</td>
+              <td>Intrusion</td>
               <td>High</td>
             </tr>
             <tr>
-              <td>2022-01-02 08:30:00</td>
-              <td>Parking Lot</td>
-              <td>Vandalism</td>
-              <td>Medium</td>
+              <td>2023-05-07 08:15:00</td>
+              <td>Student Union</td>
+              <td>Unauthorized Access</td>
+              <td>High</td>
             </tr>
 
             <tr>
               <td>2023-04-10 14:32:12</td>
-              <td>Entrance</td>
-              <td>Intruder</td>
+              <td>Parking Lot Entrance</td>
+              <td>Vandalism</td>
               <td>High</td>
             </tr>
             <tr>
               <td>2023-04-09 18:12:45</td>
-              <td>Stairwell</td>
-              <td>Fire</td>
+              <td>Staircase</td>
+              <td>Fire Alert</td>
               <td>Medium</td>
             </tr>
         
@@ -225,14 +226,14 @@ const ReportPage = () => {
           </thead>
           <tbody>
             <tr>
-              <td>John Doe</td>
-              <td>Viewed Camera 1</td>
-              <td>2022-01-01 12:00:00</td>
+              <td>Campus Security</td>
+              <td>Accessed Cam3 Footage</td>
+              <td>2023-04-21 12:00:00</td>
             </tr>
             <tr>
-              <td>Jane Smith</td>
-              <td>Changed Camera 2 Settings</td>
-              <td>2022-01-02 08:30:00</td>
+              <td>Maintainance Team</td>
+              <td>Checked Cam2</td>
+              <td>2023-04-18 08:30:00</td>
             </tr>
             {/* more user activity logs */}
           </tbody>
@@ -260,19 +261,19 @@ const ReportPage = () => {
       <h2 className="heading-sub">User Activity Logs</h2>
       <div className="user-activity-logs-container">
         <div className="user-activity-log">
-          <p>User:</p>
-          <p>Action:</p>
-          <p>Time and date:</p>
+          <p>User: Johnson Drew</p>
+          <p>Action: Accessed Cam 5 Alert Logs</p>
+          <p>Time and date: 2023-04-21 12:00:00</p>
         </div>
         <div className="user-activity-log">
-          <p>User:</p>
-          <p>Action:</p>
-          <p>Time and date:</p>
+          <p>User: Kim Railey</p>
+          <p>Action: Accessed Cam 3 footage</p>
+          <p>Time and date: 2023-03-15 12:00:00</p>
         </div>
         <div className="user-activity-log">
-          <p>User:</p>
-          <p>Action:</p>
-          <p>Time and date:</p>
+          <p>User: Shirley</p>
+          <p>Action: Requested access for camera footages</p>
+          <p>Time and date: 2023-04-09 18:12:45</p>
         </div>
         {/* add more user activity logs */}
       </div>

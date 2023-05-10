@@ -4,9 +4,21 @@ import Chart from "chart.js/auto";
 
 import { useRef } from "react";
 import './alertAnalysis.css'
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Graphs = ({ data }) => {
- 
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  async function handleDateRangeChange(start, end) {
+    setStartDate(start);
+    setEndDate(end);
+    // axios.get(`http://127.0.0.1:3002/alerts?startDate=${new Date(startDate).toISOString()}&endDate=${new Date(endDate).toISOString()}`)
+    // .then(response => response.json())
+    // .then(data => setData(data))
+    // .catch(error => console.error(error));
+  }
 
 data = [
   { timestamp: "2023-04-01T10:23:00.000Z", alerts: 4, location: "Front Entrance" },
@@ -15,6 +27,39 @@ data = [
   { timestamp: "2023-04-04T08:30:00.000Z", alerts: 2, location: "Backdoor" },
   { timestamp: "2023-04-05T14:55:00.000Z", alerts: 3, location: "Lobby" },
 ]
+
+function DateRangePicker({ onChange }) {
+  // const [startDate, setStartDate] = useState(null);
+  // const [endDate, setEndDate] = useState(null);
+
+  function handleStartDateChange(date) {
+    setStartDate(date);
+    if (endDate && date < endDate) {
+      onChange(date, endDate);
+    }
+  }
+
+  function handleEndDateChange(date) {
+    setEndDate(date);
+    if (startDate && date > startDate) {
+      onChange(startDate, date);
+    }
+  }
+
+  return (
+   
+    <div class="date">
+    <div>
+      <label class="date_correction">Start Date:</label>
+      <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} class="field_correction"/>
+      <label class="date_correction">End Date:</label>
+      <input type="date" value={endDate} onChange={e => handleEndDateChange(e.target.value)} class="field_correction"/>
+    </div>
+    </div>
+  );
+}
+
+
  const lineChartRef = useRef();
   const barChartRef = useRef();
   const pieChartRef = useRef();
@@ -135,6 +180,11 @@ data = [
   }, [data]);
 
   return (
+    
+    <div className="report-page">
+     
+     <h1 className="heading-main">Alert Analysis</h1>
+     <DateRangePicker onChange={handleDateRangeChange} />
     <div class="Graphs">
       <div class="line">
         <canvas ref={lineChartRef} id="line-chart"></canvas>
@@ -144,6 +194,7 @@ data = [
       </div>
       <div class="pie">
         <canvas ref={pieChartRef} id="pie-chart"></canvas>
+      </div>
       </div>
     </div>
   );

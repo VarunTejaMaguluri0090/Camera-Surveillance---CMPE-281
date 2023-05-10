@@ -69,7 +69,7 @@ const ScheduleNew = () => {
 
   return (
     <div className="schedulePage" align="center" style={divStyle}>
-      <h2>Schedule Request </h2>
+      <h2 className="heading-main">Schedule Request </h2>
       <form className={classes.form} onSubmit={handleSubmit}>
       <label class = "cameraStreamText">
       Schedule Date

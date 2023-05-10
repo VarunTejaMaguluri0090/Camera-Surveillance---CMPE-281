@@ -261,7 +261,7 @@ export default function Map() {
 
     return (
       <div class="item">
-        <h2 class="Title">Camera Map View</h2>
+        <h2 className="heading-main">Camera Map View</h2>
       <img src={mapImage}/>
       {alerts.map(alert => (
         <Alert alertId={alert.id} x={alert.x} y={alert.y} title={alert.title} />

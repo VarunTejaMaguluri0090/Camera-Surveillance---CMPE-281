@@ -149,7 +149,7 @@ export default function ProfilePage() {
              <ManageProfileFeaturedInfo />
              <DateRangePicker onChange={handleDateRangeChange} />
             <div class="headRow">
-                <h2>Users</h2>
+                <h2 className="heading-main">Users</h2>
                 <Link to ={"/manageProfile/new"}>
                     <button className="EditButton">Create</button>
                 </Link>

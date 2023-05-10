@@ -25,6 +25,7 @@ function LoginScreen(props) {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
+     
       // Send login request to server with username and password
       const response = await fetch('http://localhost:3002/login', {
         method: 'POST',
@@ -50,6 +51,7 @@ function LoginScreen(props) {
         navigate('/home');
       } else {
         // Handle login error
+        
         console.error('Login error:', response.status);
       }
     };
@@ -160,7 +162,7 @@ function LoginScreen(props) {
         {/* SIGN IN CONTENT */}
         <div className="col align-items-center flex-col">
           <div className="text sign-in">
-            <h2>
+            <h2 className="heading-main">
               Welcome User!
             </h2>
           </div>

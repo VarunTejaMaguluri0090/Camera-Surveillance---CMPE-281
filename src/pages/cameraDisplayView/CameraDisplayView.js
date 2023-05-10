@@ -60,6 +60,7 @@ const CameraDisplayView = ({ alertId }) => {
   }
   const alertStatusClass = `alert-status ${alert.status.toLowerCase()}`;
 
+ 
   return (
     <div className="single-alert-view">
       <div className={alertStatusClass}>
@@ -99,7 +100,11 @@ const CameraDisplayView = ({ alertId }) => {
           )}
           
         </div>
-        <video id="video8" width="800" height="500"  src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-wide-view-slow-motion-shot-of-a-masked-hacker-walking-through-corporate-data-center-with-rows-of-working-rack-servers_hfpehsaj7__d768b34a501481545cf0d033e2e65b33__P360.mp4" controls></video>
+        <div className="single-alert-view">
+          <h2 className="feed-status-title">Live Feed</h2>
+        <video id="video8" width="800" height="500" display="block" margin = "0 auto" src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/msqd2XJ/videoblocks-wide-view-slow-motion-shot-of-a-masked-hacker-walking-through-corporate-data-center-with-rows-of-working-rack-servers_hfpehsaj7__d768b34a501481545cf0d033e2e65b33__P360.mp4" controls></video>
+          </div>
+        
       </div>
     </div>
   );

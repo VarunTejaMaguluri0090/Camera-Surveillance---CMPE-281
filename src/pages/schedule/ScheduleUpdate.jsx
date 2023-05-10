@@ -58,7 +58,7 @@ const EditSchedule = () => {
 
   return (
     <div className="schedulePage" align="center" style={divStyle}>
-      <h2>Schedule Request - ID - {id}</h2>
+      <h2 className="heading-main">Schedule Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
 
       <label class = "cameraStreamText">

@@ -72,7 +72,7 @@ const ProfileNew = () => {
 
   return (
     <div className="ProfilePage" align="center" style={divStyle}>
-      <h2>New User </h2>
+      <h2 className="heading-main">New User </h2>
       <form className={classes.form} onSubmit={handleSubmit}>
       <label class = "cameraStreamText">
       Name
