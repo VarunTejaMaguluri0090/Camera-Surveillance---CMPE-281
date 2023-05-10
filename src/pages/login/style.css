@@ -73,6 +73,7 @@ body {
   position: relative;
   width: 100%;
   margin: 1rem 0;
+  
 }
 
 .input-group i {
@@ -358,4 +359,34 @@ body {
     margin: 2rem 0;
     transition: 1s ease-in-out;
   }
+}
+
+.heading-correction
+{
+position: relative;
+text-align:center;
+bottom:0;
+width:100%;
+left:0%;
+
+overflow: hidden;
+font-weight: bold;
+color: #04AA6D;
+border: none;
+margin-bottom: 30px;
+}
+
+.EditButton1
+{
+  border: none;
+    border-radius: 10px;
+    background-color: #04AA6D;
+    cursor: pointer;
+    padding: 5px 15px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    margin-right: 20px;
+    width: 30%;
+    height: 30%;
 }

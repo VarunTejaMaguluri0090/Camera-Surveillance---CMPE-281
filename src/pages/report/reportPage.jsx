@@ -2,6 +2,9 @@ import React from "react";
 import "./reportPage.css";
 import SideBar from "../../components/sideBar/SideBar";
 //import InfiniteScroll from 'react-infinite-scroll-component'
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { useState, useEffect } from "react";
 
 const ReportPage = () => {
   const systemMetrics = {
@@ -84,21 +87,75 @@ const ReportPage = () => {
     otherSettings: "..."
   };
 
+
+  const [data, setData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [alertsPerPage] = useState(5); // Change this value to adjust the number of alerts per page
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    
+    async function handleDateRangeChange(start, end) {
+        setStartDate(start);
+        setEndDate(end);
+        // axios.get(`http://127.0.0.1:3002/alerts?startDate=${new Date(startDate).toISOString()}&endDate=${new Date(endDate).toISOString()}`)
+        // .then(response => response.json())
+        // .then(data => setData(data))
+        // .catch(error => console.error(error));
+      }
+    
+
+      function DateRangePicker({ onChange }) {
+        // const [startDate, setStartDate] = useState(null);
+        // const [endDate, setEndDate] = useState(null);
+      
+        function handleStartDateChange(date) {
+          setStartDate(date);
+          if (endDate && date < endDate) {
+            onChange(date, endDate);
+          }
+        }
+      
+        function handleEndDateChange(date) {
+          setEndDate(date);
+          if (startDate && date > startDate) {
+            onChange(startDate, date);
+          }
+        }
+      
+        return (
+         
+          <div class="date">
+          <div>
+            <label class="date_correction">Start Date:</label>
+            <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} class="field_correction"/>
+            <label class="date_correction">End Date:</label>
+            <input type="date" value={endDate} onChange={e => handleEndDateChange(e.target.value)} class="field_correction"/>
+          </div>
+          </div>
+        );
+      }
+
+
+
   return (
     <>
+    
     {/* <SideBar /> */}
+   
     <div className="report-page">
+    <h1 className="heading-main">Overall Report Analysis</h1>
+    <DateRangePicker onChange={handleDateRangeChange} />
      {/*  <h1>Infinite Scroll</h1> */}
       <div className="metric-column">
         
-        <h2>System performance metrics</h2>
+        <h2 className="heading-sub">System performance metrics</h2>
         <p>Uptime: {systemMetrics.uptime}</p>
         <p>Downtime: {systemMetrics.downtime}</p>
         <p>Response Time: {systemMetrics.responseTime}</p>
         <p>Other Metrics: {systemMetrics.otherMetrics}</p>
       </div>
       <div className="metric-column">
-        <h2>Camera health status</h2>
+        <h2 className="heading-sub">Camera health status</h2>
         {cameraHealth.map((camera) => (
           <div key={camera.id}>
             <p>Name: {camera.name}</p>
@@ -111,16 +168,16 @@ const ReportPage = () => {
         ))}
       </div>
 
-
+      <div className="metric-column">
     <div className="incident-reports">
-        <h2>Incident Reports</h2>
+        <h2 className="heading-sub">Incident Reports</h2>
         <table>
           <thead>
             <tr>
-              <th>Date/Time</th>
-              <th>Camera Location</th>
-              <th>Type</th>
-              <th>Severity</th>
+              <th className="heading-color">Date/Time</th>
+              <th className="heading-color">Camera Location</th>
+              <th className="heading-color">Type</th>
+              <th className="heading-color">Severity</th>
             </tr>
           </thead>
           <tbody>
@@ -157,13 +214,13 @@ const ReportPage = () => {
       </div>
 
       <div className="user-activity-logs" >
-        <h2>User Activity Logs</h2>
+        <h2 className="heading-sub">User Activity Logs</h2>
         <table>
           <thead>
             <tr>
-              <th>User</th>
-              <th>Action</th>
-              <th>Date/Time</th>
+              <th className="heading-color">User</th>
+              <th className="heading-color">Action</th>
+              <th className="heading-color">Date/Time</th>
             </tr>
           </thead>
           <tbody>
@@ -186,21 +243,21 @@ const ReportPage = () => {
 
 
       <div className="section">
-        <h2>Analytics and Insights</h2>
+        <h2 className="heading-sub">Analytics and Insights</h2>
         <p>This section includes advanced analytics and insights into the surveillance system's performance and usage, such as heat maps, motion detection, and facial recognition data.</p>
       </div>
       <div className="section">
-        <h2>Graphs and Charts</h2>
+        <h2 className="heading-sub">Graphs and Charts</h2>
         <p>This section displays visual representations of data related to the surveillance system's performance and usage, such as uptime charts, incident frequency graphs, and camera usage charts.</p>
       </div>
       <div className="section">
-        <h2>Configuration Settings</h2>
+        <h2 className="heading-sub">Configuration Settings</h2>
         <p>This section allows administrators to adjust the settings of the surveillance system, such as camera recording times, motion detection sensitivity, and access control permissions.</p>
       </div>
 
 
     <div>
-      <h2>User Activity Logs</h2>
+      <h2 className="heading-sub">User Activity Logs</h2>
       <div className="user-activity-logs-container">
         <div className="user-activity-log">
           <p>User:</p>
@@ -222,7 +279,7 @@ const ReportPage = () => {
     </div>
 
       </div>
-      
+      </div>
       </>
        )}
 

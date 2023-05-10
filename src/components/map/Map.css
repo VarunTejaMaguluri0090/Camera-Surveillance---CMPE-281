@@ -1,13 +1,13 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-
-  .Title{
-    margin-left: 20px;
-
-   
-  }
-
-  .Chart{
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 23px 6px 24px 7px rgba(0,0,0,0.1);
+.item {
+    width: 1100px;
+    min-height: 800px;
+    max-height: auto;
+    float: left;
+    margin: 30px;
+    padding: 30px;
 }

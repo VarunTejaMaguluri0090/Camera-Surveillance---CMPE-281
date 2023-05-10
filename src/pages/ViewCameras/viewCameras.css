@@ -8,7 +8,7 @@
 .EditButtonForCamera{
     border: none;
     border-radius: 10px;
-    background-color:  rgb(120, 167, 237);
+    background-color:#04AA6D;
     cursor: pointer;
     padding: 5px 15px;
     color: white;
@@ -20,7 +20,7 @@
 .ViewButtonForCamera{
     border: none;
     border-radius: 10px;
-    background-color: rgb(63, 157, 63);
+    background-color: #04AA6D;
     cursor: pointer;
     padding: 5px 15px;
     color: white;

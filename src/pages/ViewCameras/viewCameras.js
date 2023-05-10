@@ -82,79 +82,97 @@ export default function ViewCameras() {
     //     getAllData()
     // }
 
-    const data = [
-      {
-        id: '5e887ac47eed253', 
-        camera_number: 1,
-        camera_location: "2nd Floor",
-        status: 'Active',
+
+    const [data, setData] = useState([]);
+
+    // const data = [
+    //   {
+    //     id: '5e887ac47eed253', 
+    //     camera_number: 1,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: '4fgtfac47eed253', 
-        camera_number: 2,
-        camera_location: "2nd Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: '4fgtfac47eed253', 
+    //     camera_number: 2,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: '2qrt5ac47eed2530', 
-        camera_number: 3,
-        camera_location: "1st Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: '2qrt5ac47eed2530', 
+    //     camera_number: 3,
+    //     camera_location: "1st Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: '7yew9ac47eed2530', 
-        camera_number: 4,
-        camera_location: "2nd Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: '7yew9ac47eed2530', 
+    //     camera_number: 4,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: 'z12weac47eed253091', 
-        camera_number: 5,
-        camera_location: "1st Floor",
-        status: 'In Active',
+    //   },
+    //   {
+    //     id: 'z12weac47eed253091', 
+    //     camera_number: 5,
+    //     camera_location: "1st Floor",
+    //     status: 'In Active',
          
-      },
-      {
-        id: '1cvg5ac47eed253091', 
-        camera_number: 6,
-        camera_location: "2nd Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: '1cvg5ac47eed253091', 
+    //     camera_number: 6,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: 'f9uf6ac47eed253091', 
-        camera_number: 7,
-        camera_location: "3rd Floor",
-        status: 'In Active',
+    //   },
+    //   {
+    //     id: 'f9uf6ac47eed253091', 
+    //     camera_number: 7,
+    //     camera_location: "3rd Floor",
+    //     status: 'In Active',
          
-      },
-      {
-        id: 'm6gt8ac47eed2530', 
-        camera_number: 8,
-        camera_location: "2nd Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: 'm6gt8ac47eed2530', 
+    //     camera_number: 8,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: 'a2ed9ac47eed2530', 
-        camera_number: 9,
-        camera_location: "1st Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: 'a2ed9ac47eed2530', 
+    //     camera_number: 9,
+    //     camera_location: "1st Floor",
+    //     status: 'Active',
          
-      },
-      {
-        id: 'n0fhrac47eed253091', 
-        camera_number: 10,
-        camera_location: "2nd Floor",
-        status: 'Active',
+    //   },
+    //   {
+    //     id: 'n0fhrac47eed253091', 
+    //     camera_number: 10,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
          
-      }
+    //   }
       
-    ];
+    // ];
+
+    async function deletewait(id){
+      await axios.delete(`http://127.0.0.1:3002/viewCameras/${id}`)
+  }
+
+  async function getAllData(){
+      await axios.get(`http://127.0.0.1:3002/viewCameras`).then((res)=>{
+          setData(res.data)
+      })
+  }
+
+  const deleteFunction = (id) =>{
+      deletewait(id)
+      getAllData()
+  }
     
     const columns =[
       { field: 'id', headerName: 'ID', width: 200 },
@@ -171,17 +189,19 @@ export default function ViewCameras() {
 
              <div>
 
-                  <Link to={"/viewCameraStream"}>
+                  {/* <Link to={"/viewCameraStream"+ params.row.id}>
                     <button className="ViewButtonForCamera">View</button>
 
 
+                  </Link> */}
+                  <Link to={"/viewCameraStream" + params.row.id}>
+                    <button className="EditButton">Edit</button>
                   </Link>
-                  <Link to={"" + params.row.id}>
-                    <button className="EditButtonForCamera">Edit</button>
-                  </Link>
-                  <Link to={"" + params.row.id}>
+                  {/* <Link to={"" + params.row.id}>
                     <button className="RemoveButtonForCamera">Remove</button>
-                  </Link>
+                  </Link> */}
+
+<Delete className="DeleteButton" onClick= {()=>{ deleteFunction(params.row.id)}}/>
                   {/* <Delete className="DeleteButton" onClick= {()=>{ deleteFunction(params.row.id)}}/> */}
                 </div>
             )
@@ -197,7 +217,13 @@ export default function ViewCameras() {
      
         <div className="viewCamerasPage"  >
            <CameraFeaturedInfo />
-          
+           <div class="headRow">
+                <h2>View Cameras</h2>
+                
+                <Link to ={"/viewCameras/new"}>
+                    <button className="EditButton">Create</button>
+                </Link>
+            </div>
             
             <StripedDataGrid 
             sx={{
@@ -225,5 +251,4 @@ export default function ViewCameras() {
     
   );
 }
-
 

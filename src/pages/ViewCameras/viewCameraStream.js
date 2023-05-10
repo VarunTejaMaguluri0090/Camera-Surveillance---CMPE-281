@@ -118,7 +118,10 @@ const states = [
                 </label>
                 <TextField
                   fullWidth
-                  
+                  hiddenLabel
+                  id="filled-hidden-label-normal"
+                  defaultValue="Normal"
+                  variant="filled"
                   helperText=""
                   label=""
                   
@@ -126,16 +129,16 @@ const states = [
                   // onChange={handleChange}
                   
                   value={"65rhhjkjgdfd644rchh66"}
-                  sx={{
-                    input: {
-                      color: "black",
-                      background: "#F8F8F8",
-                      border: "solid 1px black",
-                      fontWeight:"bold",
-                      borderWidth:"2.3px"
+                  // sx={{
+                  //   input: {
+                  //     color: "black",
+                  //     background: "#F8F8F8",
+                  //     border: "solid 1px black",
+                  //     fontWeight:"bold",
+                  //     borderWidth:"2.3px"
                       
-                    }
-                  }}
+                  //   }
+                  // }}
                 />
               </Grid>
               <Grid
@@ -150,17 +153,20 @@ const states = [
                   label=""
                   name="cameraLocation"
                   // onChange={handleChange}
-                  
+                  hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
                   value={"Engg. Building, 2nd Floor"}
-                  sx={{
-                    input: {
-                      color: "black",
-                      background: "#F8F8F8",
-                      border: "solid 1px black",
-                      fontWeight:"bold",
-                      borderWidth:"2.3px"
-                    }
-                  }}
+                  // sx={{
+                  //   input: {
+                  //     color: "black",
+                  //     background: "#F8F8F8",
+                  //     border: "solid 1px black",
+                  //     fontWeight:"bold",
+                  //     borderWidth:"2.3px"
+                  //   }
+                  // }}
                 />
               </Grid>
               <Grid
@@ -175,17 +181,20 @@ const states = [
                   label=""
                   name="cameraNumber"
                   onChange={handleChange}
-                  
+                  hiddenLabel
+                  id="filled-hidden-label-normal"
+                  defaultValue="Normal"
+                  variant="filled"
                   value={"Camera 7"}
-                  sx={{
-                    input: {
-                      color: "black",
-                      background: "#F8F8F8",
-                      border: "solid 1px black",
-                      fontWeight:"bold",
-                      borderWidth:"2.3px"
-                    }
-                  }}
+                  // sx={{
+                  //   input: {
+                  //     color: "black",
+                  //     background: "#F8F8F8",
+                  //     border: "solid 1px black",
+                  //     fontWeight:"bold",
+                  //     borderWidth:"2.3px"
+                  //   }
+                  // }}
                 />
               </Grid>
               <Grid
@@ -200,18 +209,21 @@ const states = [
                   label=""
                   name="status"
                   onChange={handleChange}
-                  
+                  hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
                   value={"Active"}
-                  sx={{
-                    input: {
-                      color: "black",
-                      background: "#F8F8F8",
-                      border: "solid 1px black",
-                      fontWeight:"bold",
-                      borderWidth:"2.3px"
+                  // sx={{
+                  //   input: {
+                  //     color: "black",
+                  //     background: "#F8F8F8",
+                  //     border: "solid 1px black",
+                  //     fontWeight:"bold",
+                  //     borderWidth:"2.3px"
               
-                    }
-                  }}
+                  //   }
+                  // }}
                 />
               </Grid>
               <Grid
@@ -232,14 +244,20 @@ const states = [
               >
                
               </Grid>
+              <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
             </Grid>
+            
           </Box>
         </CardContent>
         <Divider />
         <CardActions sx={{ justifyContent: 'flex-end' }}>
           
         </CardActions>
+        
       </Card>
+      
     </form>
 
 

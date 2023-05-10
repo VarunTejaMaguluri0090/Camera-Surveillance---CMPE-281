@@ -42,21 +42,57 @@ const Map = () => {
       setAlerts([
             {
               "id": 1,
-              "title": "Fire in Building A",
+              "title": "Fire in Art Building",
               "x": 100,
               "y": 200
             },
             {
               "id": 2,
-              "title": "Gas Leak in Building B",
+              "title": "Gas Leak in Recreation Center",
               "x": 250,
               "y": 150
             },
             {
               "id": 3,
-              "title": "Water Leak in Building C",
+              "title": "Water Leak in Building 1",
+              "x": 600,
+              "y": 200
+            },
+            {
+              "id": 4,
+              "title": "Burglary in Engg. Building",
+              "x": 500,
+              "y": 250
+            },{
+              "id": 5,
+              "title": "Intrusion in Recreation Center",
+              "x": 300,
+              "y": 80
+            },{
+              "id": 6,
+              "title": "Unusual activity in Clark Hall",
+              "x": 200,
+              "y": 700
+            },{
+              "id": 7,
+              "title": "Fire Alert in Clark Hall",
+              "x": 600,
+              "y": 450
+            },{
+              "id": 8,
+              "title": "Intrusion in Health Building",
               "x": 400,
               "y": 300
+            },{
+              "id": 9,
+              "title": "Water Leak in Student Union",
+              "x": 400,
+              "y": 300
+            },{
+              "id": 10,
+              "title": "Individual with potential weapon at Martin Luther King, Jr. Building",
+              "x": 150,
+              "y": 500
             }
           ])
         console.log("@@@set alerts")

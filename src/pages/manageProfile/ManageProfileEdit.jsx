@@ -44,7 +44,8 @@ const EditProfile = () => {
     e.preventDefault();
     const editEntry = {
       name : data.name,
-      age: data.age
+      age: data.age,
+      persona: data.persona
     }
 
     //axios = request, request body. post .then() we get the response
@@ -65,7 +66,10 @@ const EditProfile = () => {
         <TextField
           className={classes.textField}
           label=""
-          variant="outlined"
+          hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
           type="text"
           sx={{
             input: {
@@ -90,7 +94,10 @@ const EditProfile = () => {
         <TextField
           className={classes.textField}
           label=""
-          variant="outlined"
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
           type="number"
           value={data.age}
           sx={{
@@ -108,6 +115,35 @@ const EditProfile = () => {
             shrink: true,
           }}
           onChange={(e) => setData({ ...data, age: e.target.value })}
+        />
+
+<label class = "cameraStreamText">
+      Persona
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
+          type="text"
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          // value={data.name}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, persona: e.target.value })}
         />
         <Button
           className={classes.button}
