@@ -162,7 +162,7 @@ function LoginScreen(props) {
         {/* SIGN IN CONTENT */}
         <div className="col align-items-center flex-col">
           <div className="text sign-in">
-            <h2 className="heading-main">
+            <h2>
               Welcome User!
             </h2>
           </div>
