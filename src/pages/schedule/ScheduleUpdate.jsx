@@ -68,15 +68,11 @@ const EditSchedule = () => {
         className={classes.textField}
         label=""
         type="date"
-<<<<<<< HEAD
         value={data.schedule_date}
-=======
-        value={data.ScheduleDate}
         hiddenLabel
   id="filled-hidden-label-normal"
   defaultValue="Normal"
   variant="filled"
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
         sx={{
           input: {
             color: "black",
@@ -87,13 +83,8 @@ const EditSchedule = () => {
             
           }
         }}
-<<<<<<< HEAD
-        variant="outlined"
+        // variant="outlined"
         onChange={(e) => setData({ ...data, schedule_date: e.target.value })}
-=======
-        
-        onChange={(e) => setData({ ...data, ScheduleDate: e.target.value })}
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
         required
         InputLabelProps={{
           shrink: true,

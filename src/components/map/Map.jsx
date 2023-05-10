@@ -1,7 +1,7 @@
 
 import React, { Component,useState, useEffect  } from 'react';
 import { GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
-import './map.css'
+import './Map.css'
 import mapImage from "./map.png"
 import { Link } from 'react-router-dom';
 

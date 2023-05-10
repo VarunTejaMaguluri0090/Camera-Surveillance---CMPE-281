@@ -67,35 +67,26 @@ const EditMaintainance = () => {
       <form className={classes.form} onSubmit={handleSubmit}>
          <label class = "cameraStreamText">Date</label>
         <TextField
-        className={classes.textField}
-        label=""
-        type="date"
-<<<<<<< HEAD
-        value={data.date}
-=======
-        value={data.Date}
-        hiddenLabel
-  id="filled-hidden-label-normal"
-  defaultValue="Normal"
-  variant="filled"
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
-        sx={{
-          input: {
-            color: "black",
-            background: "#F8F8F8",
-            border: "solid 1px black",
-            fontWeight:"bold",
-            borderWidth:"2.3px"
-            
-          }
-        }}
-<<<<<<< HEAD
-        variant="outlined"
+          className={classes.textField}
+          label=""
+          type="date"
+          value={data.date}
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+        // variant="outlined"
         onChange={(e) => setData({ ...data, date: e.target.value })}
-=======
-        
-        onChange={(e) => setData({ ...data, Date: e.target.value })}
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
         required
         InputLabelProps={{
           shrink: true,
@@ -111,15 +102,11 @@ const EditMaintainance = () => {
           variant="outlined"
           type="text"
           required
-<<<<<<< HEAD
           value={data.reason}
-=======
-          value={data.Reason}
           hiddenLabel
   id="filled-hidden-label-normal"
   defaultValue="Normal"
 
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
           sx={{
             input: {
               color: "black",
@@ -139,17 +126,12 @@ Status
         <TextField
           className={classes.textField}
           label=""
-    
           type="text"
-<<<<<<< HEAD
           value={data.status}
-=======
-          value={data.Status}
           hiddenLabel
-  id="filled-hidden-label-normal"
-  defaultValue="Normal"
-  variant="filled"
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
           sx={{
             input: {
               color: "black",
@@ -171,15 +153,11 @@ Status
           label=""
          
           type="text"
-<<<<<<< HEAD
           value={data.location}
-=======
-          value={data.Location}
           hiddenLabel
-  id="filled-hidden-label-normal"
-  defaultValue="Normal"
-  variant="filled"
->>>>>>> f8a242c99e34ef89151d761de228db9f44a0b85c
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
           sx={{
             input: {
               color: "black",
