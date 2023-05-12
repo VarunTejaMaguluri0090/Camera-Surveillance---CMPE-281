@@ -26,7 +26,11 @@ router.post('/', (req, res) => {
     date: req.body.date,
     reason: req.body.reason,
     status: req.body.status,
-    location: req.body.location
+    location: req.body.location,
+    assiged: req.body.assiged,
+    severity: req.body.severity,
+    issueDesc: req.body.issueDesc,
+    details: req.body.details
   };
   let sql = 'INSERT INTO maintenance SET ?';
   con.query(sql, entry, (err, result) => {
@@ -41,8 +45,13 @@ router.put('/:id', (req, res) => {
               date = '${req.body.date}',
               reason = '${req.body.reason}',
               status = '${req.body.status}',
-              location = '${req.body.location}'
+              location = '${req.body.location}',
+              assiged = '${req.body.assiged}',
+              severity = '${req.body.severity}',
+              issueDesc = '${req.body.issueDesc}',
+              details = '${req.body.details}'
               WHERE id = ${req.params.id}`;
+  console.log(sql);
   con.query(sql, (err, result) => {
     if(err) throw err;
     res.send('Maintenance entry updated...');

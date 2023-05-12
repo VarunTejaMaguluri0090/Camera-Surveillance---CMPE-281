@@ -95,6 +95,7 @@ const states = [
       noValidate
       onSubmit={handleSubmit}
     >
+      <div className="single-alert-view">
       <Card >
         <CardHeader class = "cameraInfoText" align="center"
           subheader=""
@@ -257,7 +258,7 @@ const states = [
         </CardActions>
         
       </Card>
-      
+      </div>
     </form>
 
 

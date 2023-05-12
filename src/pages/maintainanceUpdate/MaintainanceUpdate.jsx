@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
@@ -53,7 +54,6 @@ const EditMaintainance = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = `http://127.0.0.1:3002/maintainancePage/${id}`;
-    
     await axios.put(url, data).then(()=>{
       alert("The entry has been updated !")
     });
@@ -67,25 +67,21 @@ const EditMaintainance = () => {
       <form className={classes.form} onSubmit={handleSubmit}>
          <label class = "cameraStreamText">Date</label>
         <TextField
-          className={classes.textField}
-          label=""
-          type="date"
-          value={data.date}
-          hiddenLabel
-          id="filled-hidden-label-normal"
-          defaultValue="Normal"
-          variant="filled"
-          sx={{
-            input: {
-              color: "black",
-              background: "#F8F8F8",
-              border: "solid 1px black",
-              fontWeight:"bold",
-              borderWidth:"2.3px"
-              
-            }
-          }}
-        // variant="outlined"
+        className={classes.textField}
+        label=""
+        type="date"
+        value={data.date}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
+        variant="outlined"
         onChange={(e) => setData({ ...data, date: e.target.value })}
         required
         InputLabelProps={{
@@ -103,10 +99,6 @@ const EditMaintainance = () => {
           type="text"
           required
           value={data.reason}
-          hiddenLabel
-  id="filled-hidden-label-normal"
-  defaultValue="Normal"
-
           sx={{
             input: {
               color: "black",
@@ -126,12 +118,9 @@ Status
         <TextField
           className={classes.textField}
           label=""
+          variant="outlined"
           type="text"
           value={data.status}
-          hiddenLabel
-          id="filled-hidden-label-normal"
-          defaultValue="Normal"
-          variant="filled"
           sx={{
             input: {
               color: "black",
@@ -151,13 +140,9 @@ Status
         <TextField
           className={classes.textField}
           label=""
-         
+          variant="outlined"
           type="text"
           value={data.location}
-          hiddenLabel
-          id="filled-hidden-label-normal"
-          defaultValue="Normal"
-          variant="filled"
           sx={{
             input: {
               color: "black",
@@ -171,6 +156,100 @@ Status
           required
           onChange={(e) => setData({ ...data, location: e.target.value })}
         />
+
+<label class = "cameraStreamText">
+        Assigned
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          variant="outlined"
+          type="text"
+          value={data.assiged}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          onChange={(e) => setData({ ...data, assiged: e.target.value })}
+        />
+
+<label class = "cameraStreamText">
+Severity
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          variant="outlined"
+          type="text"
+          value={data.severity}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          onChange={(e) => setData({ ...data, severity: e.target.value })}
+        />
+
+<label class = "cameraStreamText">
+Issue Description
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          variant="outlined"
+          type="text"
+          value={data.issueDesc}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          onChange={(e) => setData({ ...data, issueDesc: e.target.value })}
+        />
+
+<label class = "cameraStreamText">
+Details
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          variant="outlined"
+          type="text"
+          value={data.details}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          onChange={(e) => setData({ ...data, details: e.target.value })}
+        />
+
+
         <Button
           className={classes.button}
           variant="contained"

@@ -58,7 +58,7 @@ const EditProfile = () => {
 
   return (
     <div className="ProfilePage" align="center" style={divStyle}>
-      <h2>User - ID - {id}</h2>
+      <h2>UserID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
       <label class = "cameraStreamText">
       Name
@@ -118,16 +118,17 @@ const EditProfile = () => {
         />
 
 <label class = "cameraStreamText">
-      Persona
+Persona
                 </label>
         <TextField
           className={classes.textField}
           label=""
           hiddenLabel
-  id="filled-hidden-label-normal"
-  defaultValue="Normal"
-  variant="filled"
-          type="text"
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
+          type="number"
+          value={data.persona}
           sx={{
             input: {
               color: "black",
@@ -139,12 +140,13 @@ const EditProfile = () => {
             }
           }}
           required
-          // value={data.name}
           InputLabelProps={{
             shrink: true,
           }}
           onChange={(e) => setData({ ...data, persona: e.target.value })}
         />
+
+
         <Button
           className={classes.button}
           variant="contained"

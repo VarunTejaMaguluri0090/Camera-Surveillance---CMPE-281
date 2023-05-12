@@ -22,7 +22,8 @@ router.get('/:id', function(req, res, next) {
 router.post('/', function(req, res, next) {
   let profile = {
     name: req.body.name,
-    age: req.body.age
+    age: req.body.age,
+    persona: req.body.persona
   };
   con.query('INSERT INTO ManageProfile SET ?', profile, function (err, result) {
     if (err) throw err;
@@ -34,7 +35,8 @@ router.post('/', function(req, res, next) {
 router.put('/:id', function(req, res, next) {
   let profile = {
     name: req.body.name,
-    age: req.body.age
+    age: req.body.age,
+    persona: req.body.persona
   };
   con.query('UPDATE ManageProfile SET ? WHERE id = ?', [profile, req.params.id], function (err, result) {
     if (err) throw err;

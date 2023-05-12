@@ -83,81 +83,81 @@ export default function ViewCameras() {
     // }
 
 
-    const [data, setData] = useState([]);
+    //const [data, setData] = useState([]);
 
-    // const data = [
-    //   {
-    //     id: '5e887ac47eed253', 
-    //     camera_number: 1,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
+    const data = [
+      {
+        id: '5e887ac47eed253', 
+        camera_number: 1,
+        camera_location: "2nd Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: '4fgtfac47eed253', 
-    //     camera_number: 2,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
+      },
+      {
+        id: '4fgtfac47eed253', 
+        camera_number: 2,
+        camera_location: "2nd Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: '2qrt5ac47eed2530', 
-    //     camera_number: 3,
-    //     camera_location: "1st Floor",
-    //     status: 'Active',
+      },
+      {
+        id: '2qrt5ac47eed2530', 
+        camera_number: 3,
+        camera_location: "1st Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: '7yew9ac47eed2530', 
-    //     camera_number: 4,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
+      },
+      {
+        id: '7yew9ac47eed2530', 
+        camera_number: 4,
+        camera_location: "2nd Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: 'z12weac47eed253091', 
-    //     camera_number: 5,
-    //     camera_location: "1st Floor",
-    //     status: 'In Active',
+      },
+      {
+        id: 'z12weac47eed253091', 
+        camera_number: 5,
+        camera_location: "1st Floor",
+        status: 'In Active',
          
-    //   },
-    //   {
-    //     id: '1cvg5ac47eed253091', 
-    //     camera_number: 6,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
+      },
+      {
+        id: '1cvg5ac47eed253091', 
+        camera_number: 6,
+        camera_location: "2nd Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: 'f9uf6ac47eed253091', 
-    //     camera_number: 7,
-    //     camera_location: "3rd Floor",
-    //     status: 'In Active',
+      },
+      {
+        id: 'f9uf6ac47eed253091', 
+        camera_number: 7,
+        camera_location: "3rd Floor",
+        status: 'In Active',
          
-    //   },
-    //   {
-    //     id: 'm6gt8ac47eed2530', 
-    //     camera_number: 8,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
+      },
+      {
+        id: 'm6gt8ac47eed2530', 
+        camera_number: 8,
+        camera_location: "2nd Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: 'a2ed9ac47eed2530', 
-    //     camera_number: 9,
-    //     camera_location: "1st Floor",
-    //     status: 'Active',
+      },
+      {
+        id: 'a2ed9ac47eed2530', 
+        camera_number: 9,
+        camera_location: "1st Floor",
+        status: 'Active',
          
-    //   },
-    //   {
-    //     id: 'n0fhrac47eed253091', 
-    //     camera_number: 10,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
+      },
+      {
+        id: 'n0fhrac47eed253091', 
+        camera_number: 10,
+        camera_location: "2nd Floor",
+        status: 'Active',
          
-    //   }
+      }
       
-    // ];
+    ];
 
     async function deletewait(id){
       await axios.delete(`http://127.0.0.1:3002/viewCameras/${id}`)
@@ -165,7 +165,7 @@ export default function ViewCameras() {
 
   async function getAllData(){
       await axios.get(`http://127.0.0.1:3002/viewCameras`).then((res)=>{
-          setData(res.data)
+          //setData(res.data)
       })
   }
 
@@ -189,14 +189,14 @@ export default function ViewCameras() {
 
              <div>
 
-                  {/* <Link to={"/viewCameraStream"+ params.row.id}>
+                  <Link to={"/viewCameraStream"}>
                     <button className="ViewButtonForCamera">View</button>
 
 
-                  </Link> */}
-                  <Link to={"/viewCameraStream" + params.row.id}>
-                    <button className="EditButton">Edit</button>
                   </Link>
+                  {/* <Link to={"/viewCameraStream" + params.row.id}>
+                    <button className="EditButton">Edit</button>
+                  </Link> */}
                   {/* <Link to={"" + params.row.id}>
                     <button className="RemoveButtonForCamera">Remove</button>
                   </Link> */}

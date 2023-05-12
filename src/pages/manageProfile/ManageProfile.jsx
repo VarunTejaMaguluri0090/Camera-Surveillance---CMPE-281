@@ -123,8 +123,8 @@ export default function ProfilePage() {
 
     const columns =[
         { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'name', headerName: 'Name', width: 250, type:'number' },
-        { field: 'age', headerName: 'Age', width: 250 },
+        { field: 'name', headerName: 'Name', width: 200, type:'number' },
+        { field: 'age', headerName: 'Age', width: 200 },
         { field: 'Persona', headerName: 'Persona', width: 250 },
         { field: 'Action', 
         headerName: 'Action', 
@@ -147,7 +147,7 @@ export default function ProfilePage() {
     return (
         <div className="profilePage" >
              <ManageProfileFeaturedInfo />
-             <DateRangePicker onChange={handleDateRangeChange} />
+             {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
             <div class="headRow">
                 <h2>Users</h2>
                 <Link to ={"/manageProfile/new"}>

@@ -125,13 +125,18 @@ export default function MaintainancePage() {
     }
 
     const columns =[
-        { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'camera_number', headerName: 'Camera Number', width: 350, type:'number' },
-        { field: 'schedule_date', headerName: 'Schedule Date', width: 250, valueFormatter: dateFormatter },
-        { field: 'status', headerName: 'Status', width: 150 },
+        { field: 'id', headerName: 'ID', width: 50 },
+        { field: 'camera_number', headerName: 'Camera Number', width: 150, type:'number' },
+        { field: 'schedule_date', headerName: 'Schedule Date', width: 100, valueFormatter: dateFormatter },
+        { field: 'status', headerName: 'Status', width: 100 },
+        { field: 'incharge', headerName: 'Incharge', width: 100 },
+        { field: 'type', headerName: 'Type', width: 100 },
+        { field: 'details', headerName: 'Details', width: 100 },
+        { field: 'location', headerName: 'Location', width: 100 },
+
         { field: 'Action', 
         headerName: 'Action', 
-        width: 200,
+        width: 150,
         // We are passing parameters here to the row like for each row we need to render the edit and delete option. 
         renderCell: (params) =>{
             return(
@@ -151,7 +156,7 @@ export default function MaintainancePage() {
     return (
         <div className="schedulePage" >
              <ScheduleFeaturedInfo />
-             <DateRangePicker onChange={handleDateRangeChange} />
+             {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
             <div class="headRow">
                 <h2>Schedule Requests</h2>
                 

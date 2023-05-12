@@ -52,7 +52,7 @@ const ProfileNew = () => {
         id: Profilerows.length + 1,
         name: name,
         age: age,
-        persona: persona
+        persona: persona,
       };
     console.log(newEntry);
 
@@ -161,7 +161,8 @@ Age
           shrink: true,
         }}
        
-      />
+  />
+  
       <Button type="submit" variant="contained" color="primary">
         Submit
       </Button>

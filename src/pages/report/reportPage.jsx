@@ -137,151 +137,152 @@ const ReportPage = () => {
 
 
 
-  return (
-    <>
-    
-    {/* <SideBar /> */}
-   
-    <div className="report-page">
-    <h1 className="heading-main">Overall Report Analysis</h1>
-    <DateRangePicker onChange={handleDateRangeChange} />
-     {/*  <h1>Infinite Scroll</h1> */}
-      <div className="metric-column">
+      return (
+        <>
         
-        <h2 className="heading-sub">System performance metrics</h2>
-        <p>Uptime: {systemMetrics.uptime}</p>
-        <p>Downtime: {systemMetrics.downtime}</p>
-        <p>Response Time: {systemMetrics.responseTime}</p>
-        <p>Other Metrics: {systemMetrics.otherMetrics}</p>
-      </div>
-      <div className="metric-column">
-        <h2 className="heading-sub">Camera health status</h2>
-        {cameraHealth.map((camera) => (
-          <div key={camera.id}>
-            <p>Name: {camera.name}</p>
-            <p>ID: {camera.id}</p>
-            <p>Location: {camera.location}</p>
-            <p>Status: {camera.status}</p>
-            <p>Details: {camera.details}</p>
+        {/* <SideBar /> */}
+       
+        <div className="report-page">
+        <h1 className="heading-main">Overall Report Analysis</h1>
+        {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+         {/*  <h1>Infinite Scroll</h1> */}
+          <div className="metric-column">
             
+            <h2 className="heading-sub">System performance metrics</h2>
+            <p>Uptime: {systemMetrics.uptime}</p>
+            <p>Downtime: {systemMetrics.downtime}</p>
+            <p>Response Time: {systemMetrics.responseTime}</p>
+            {/* <p>Other Metrics: {systemMetrics.otherMetrics}</p> */}
           </div>
-        ))}
-      </div>
-
-      <div className="metric-column">
-    <div className="incident-reports">
-        <h2 className="heading-sub">Incident Reports</h2>
-        <table>
-          <thead>
-            <tr>
-              <th className="heading-color">Date/Time</th>
-              <th className="heading-color">Camera Location</th>
-              <th className="heading-color">Type</th>
-              <th className="heading-color">Severity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2022-01-01 12:00:00</td>
-              <td>Entrance</td>
-              <td>Theft</td>
-              <td>High</td>
-            </tr>
-            <tr>
-              <td>2022-01-02 08:30:00</td>
-              <td>Parking Lot</td>
-              <td>Vandalism</td>
-              <td>Medium</td>
-            </tr>
-
-            <tr>
-              <td>2023-04-10 14:32:12</td>
-              <td>Entrance</td>
-              <td>Intruder</td>
-              <td>High</td>
-            </tr>
-            <tr>
-              <td>2023-04-09 18:12:45</td>
-              <td>Stairwell</td>
-              <td>Fire</td>
-              <td>Medium</td>
-            </tr>
-        
-
-            {/* more incident reports */}
-          </tbody>
-        </table>
-      </div>
-
-      <div className="user-activity-logs" >
-        <h2 className="heading-sub">User Activity Logs</h2>
-        <table>
-          <thead>
-            <tr>
-              <th className="heading-color">User</th>
-              <th className="heading-color">Action</th>
-              <th className="heading-color">Date/Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>Viewed Camera 1</td>
-              <td>2022-01-01 12:00:00</td>
-            </tr>
-            <tr>
-              <td>Jane Smith</td>
-              <td>Changed Camera 2 Settings</td>
-              <td>2022-01-02 08:30:00</td>
-            </tr>
-            {/* more user activity logs */}
-          </tbody>
-        </table>
-      </div>
-
-
-
-
-      <div className="section">
-        <h2 className="heading-sub">Analytics and Insights</h2>
-        <p>This section includes advanced analytics and insights into the surveillance system's performance and usage, such as heat maps, motion detection, and facial recognition data.</p>
-      </div>
-      <div className="section">
-        <h2 className="heading-sub">Graphs and Charts</h2>
-        <p>This section displays visual representations of data related to the surveillance system's performance and usage, such as uptime charts, incident frequency graphs, and camera usage charts.</p>
-      </div>
-      <div className="section">
-        <h2 className="heading-sub">Configuration Settings</h2>
-        <p>This section allows administrators to adjust the settings of the surveillance system, such as camera recording times, motion detection sensitivity, and access control permissions.</p>
-      </div>
-
-
-    <div>
-      <h2 className="heading-sub">User Activity Logs</h2>
-      <div className="user-activity-logs-container">
-        <div className="user-activity-log">
-          <p>User:</p>
-          <p>Action:</p>
-          <p>Time and date:</p>
+          <div className="metric-column">
+            <h2 className="heading-sub">Camera health status</h2>
+            {cameraHealth.map((camera) => (
+              <div key={camera.id}>
+                <p>Name: {camera.name}</p>
+                <p>ID: {camera.id}</p>
+                <p>Location: {camera.location}</p>
+                <p>Status: {camera.status}</p>
+                <p>Details: {camera.details}</p>
+                
+              </div>
+            ))}
+          </div>
+    
+          <div className="metric-column">
+        <div className="incident-reports">
+            <h2 className="heading-sub">Incident Reports</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th className="heading-color">Date/Time</th>
+                  <th className="heading-color">Camera Location</th>
+                  <th className="heading-color">Type</th>
+                  <th className="heading-color">Severity</th>
+                </tr>
+              </thead>
+              <tbody>
+         
+                <tr>
+                  <td>2023-05-02 12:30:00</td>
+                  <td>Engg. Building Main Entrance</td>
+                  <td>Intrusion</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>2023-05-07 08:15:00</td>
+                  <td>Student Union</td>
+                  <td>Unauthorized Access</td>
+                  <td>High</td>
+                </tr>
+    
+                <tr>
+                  <td>2023-04-10 14:32:12</td>
+                  <td>Parking Lot Entrance</td>
+                  <td>Vandalism</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>2023-04-09 18:12:45</td>
+                  <td>Staircase</td>
+                  <td>Fire Alert</td>
+                  <td>Medium</td>
+                </tr>
+            
+    
+                {/* more incident reports */}
+              </tbody>
+            </table>
+          </div>
+    
+          <div className="user-activity-logs" >
+            <h2 className="heading-sub">User Activity Logs</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th className="heading-color">User</th>
+                  <th className="heading-color">Action</th>
+                  <th className="heading-color">Date/Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Campus Security</td>
+                  <td>Accessed Cam3 Footage</td>
+                  <td>2023-04-21 12:00:00</td>
+                </tr>
+                <tr>
+                  <td>Maintainance Team</td>
+                  <td>Checked Cam2</td>
+                  <td>2023-04-18 08:30:00</td>
+                </tr>
+                {/* more user activity logs */}
+              </tbody>
+            </table>
+          </div>
+    
+    
+    
+    
+          <div className="section">
+            <h2 className="heading-sub">Analytics and Insights</h2>
+            <p>This section includes advanced analytics and insights into the surveillance system's performance and usage, such as heat maps, motion detection, and facial recognition data.</p>
+          </div>
+          <div className="section">
+            <h2 className="heading-sub">Graphs and Charts</h2>
+            <p>This section displays visual representations of data related to the surveillance system's performance and usage, such as uptime charts, incident frequency graphs, and camera usage charts.</p>
+          </div>
+          <div className="section">
+            <h2 className="heading-sub">Configuration Settings</h2>
+            <p>This section allows administrators to adjust the settings of the surveillance system, such as camera recording times, motion detection sensitivity, and access control permissions.</p>
+          </div>
+    
+    
+        <div>
+          <h2 className="heading-sub">User Activity Logs</h2>
+          <div className="user-activity-logs-container">
+            <div className="user-activity-log">
+              <p>User: Johnson Drew</p>
+              <p>Action: Accessed Cam 5 Alert Logs</p>
+              <p>Time and date: 2023-04-21 12:00:00</p>
+            </div>
+            <div className="user-activity-log">
+              <p>User: Kim Railey</p>
+              <p>Action: Accessed Cam 3 footage</p>
+              <p>Time and date: 2023-03-15 12:00:00</p>
+            </div>
+            <div className="user-activity-log">
+              <p>User: Shirley</p>
+              <p>Action: Requested access for camera footages</p>
+              <p>Time and date: 2023-04-09 18:12:45</p>
+            </div>
+            {/* add more user activity logs */}
+          </div>
         </div>
-        <div className="user-activity-log">
-          <p>User:</p>
-          <p>Action:</p>
-          <p>Time and date:</p>
-        </div>
-        <div className="user-activity-log">
-          <p>User:</p>
-          <p>Action:</p>
-          <p>Time and date:</p>
-        </div>
-        {/* add more user activity logs */}
-      </div>
-    </div>
-
-      </div>
-      </div>
-      </>
-       )}
+    
+          </div>
+          </div>
+          </>
+           )}
 
 
 

@@ -51,7 +51,7 @@ import {Link} from "react-router-dom";
 
     return(
         <div> 
-            <div class="date">
+            {/* <div class="date">
             <div>
             <label class="date_correction">Start Date:</label>
 <input
@@ -67,7 +67,7 @@ import {Link} from "react-router-dom";
     ref={dateInputRef} class="field_correction"/>
     </div>
 
-            </div>
+            </div> */}
        <div class="videos">
        <div class="container">
     

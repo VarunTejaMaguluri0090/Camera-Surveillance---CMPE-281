@@ -27,6 +27,10 @@ const ScheduleNew = () => {
   const [schedule_date, setschedule_date] = useState('');
     const [camera_number, setcamera_number] = useState('');
     const [status, setStatus] = useState('Low');
+    const [incharge, setIncharge] = useState('');
+    const [type, setType] = useState('');
+    const [details, setDetails] = useState('');
+    const [location, setLocation] = useState('');
   const classes = useStyles();
 
   const divStyle = {
@@ -42,10 +46,27 @@ const ScheduleNew = () => {
   const handleCameraNumberChange = (event) => {
     setcamera_number(event.target.value);
   };
-  
+
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
   };
+
+  const handleInchargeChange = (e) => {
+    setIncharge(e.target.value);
+  };
+
+  const handleTypeChange = (e) => {
+    setType(e.target.value);
+  };
+
+  const handleDetailChange = (e) => {
+    setDetails(e.target.value);
+  };
+
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +74,11 @@ const ScheduleNew = () => {
         id: Schedulerows.length + 1,
         schedule_date: schedule_date,
         camera_number: camera_number,
-        status: 'Active',
+        status: status,
+        incharge: incharge,
+        type: type,
+        details: details,
+        location: location
       };
     console.log(newEntry);
     
@@ -126,6 +151,115 @@ const ScheduleNew = () => {
           }
         }}
       />
+      <label class = "cameraStreamText">
+  Incharge
+                </label>
+      <TextField
+        label=""
+        type="text"
+        value={incharge}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
+        onChange={handleInchargeChange}
+        required
+        fullWidth
+        margin="normal"
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
+      />
+
+<label class = "cameraStreamText">
+  Type
+                </label>
+      <TextField
+        label=""
+        type="text"
+        value={type}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
+        onChange={handleTypeChange}
+        required
+        fullWidth
+        margin="normal"
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
+      />
+
+<label class = "cameraStreamText">
+  Details
+                </label>
+      <TextField
+        label=""
+        type="text"
+        value={details}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
+        onChange={handleDetailChange}
+        required
+        fullWidth
+        margin="normal"
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
+      />
+
+<label class = "cameraStreamText">
+  Location
+                </label>
+      <TextField
+        label=""
+        type="text"
+        value={location}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
+        onChange={handleLocationChange}
+        required
+        fullWidth
+        margin="normal"
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
+      />
+
+
 <label class = "cameraStreamText">
   Priority
                 </label>

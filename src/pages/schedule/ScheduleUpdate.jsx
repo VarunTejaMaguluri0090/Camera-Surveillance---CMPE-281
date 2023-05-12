@@ -46,11 +46,16 @@ const EditSchedule = () => {
     const editEntry = {
       schedule_date : data.schedule_date,
       camera_number : data.camera_number,
-      status : data.status
+      status : data.status,
+      incharge: data.incharge,
+      type: data.type,
+      details: data.details,
+      location: data.location
     }
 
    
       axios.put(`http://127.0.0.1:3002/schedule/${id}`, editEntry).then((res)=>{
+        console.log(data)
        alert("data has been succesfully updated")
       })
       navigate('/schedule')
@@ -91,6 +96,9 @@ const EditSchedule = () => {
         }}
         margin="normal"
       />
+
+
+
       <label class = "cameraStreamText">
       Camera Number
                 </label>
@@ -119,6 +127,9 @@ const EditSchedule = () => {
           }}
           onChange={(e) => setData({ ...data, camera_number: e.target.value })}
         />
+
+
+
          <label class = "cameraStreamText">
          Status
                 </label>
@@ -147,6 +158,133 @@ const EditSchedule = () => {
           }}
           onChange={(e) => setData({ ...data, status: e.target.value })}
         />
+
+
+
+<label class = "cameraStreamText">
+         Incharge
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
+          type="text"
+          value={data.incharge}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, incharge: e.target.value })}
+        />
+
+
+
+<label class = "cameraStreamText">
+         Type
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
+          type="text"
+          value={data.type}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, type: e.target.value })}
+        />
+
+
+
+<label class = "cameraStreamText">
+         Details
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
+          type="text"
+          value={data.details}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, details: e.target.value })}
+        />
+
+
+
+<label class = "cameraStreamText">
+         Location
+                </label>
+        <TextField
+          className={classes.textField}
+          label=""
+          hiddenLabel
+          id="filled-hidden-label-normal"
+          defaultValue="Normal"
+          variant="filled"
+          type="text"
+          value={data.location}
+          sx={{
+            input: {
+              color: "black",
+              background: "#F8F8F8",
+              border: "solid 1px black",
+              fontWeight:"bold",
+              borderWidth:"2.3px"
+              
+            }
+          }}
+          required
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => setData({ ...data, location: e.target.value })}
+        />
+
+
+
         <Button
           className={classes.button}
           variant="contained"

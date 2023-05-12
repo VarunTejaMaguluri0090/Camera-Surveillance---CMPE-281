@@ -80,6 +80,7 @@ async function handleDateRangeChange(start, end) {
     async function getAllData(){
         await axios.get("http://127.0.0.1:3002/maintainancePage/").then((res) => {
         setData(res.data);
+        console.log(res.data);
       })
     }
 
@@ -130,17 +131,21 @@ async function handleDateRangeChange(start, end) {
     }
 
     const columns =[
-        { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'date', headerName: 'Date', width: 150, type:'number', valueFormatter: dateFormatter },
-        { field: 'reason', headerName: 'Reason', width: 250 },
-        { field: 'status', headerName: 'Status', width: 150 },
+        { field: 'id', headerName: 'ID', width: 10 },
+        { field: 'date', headerName: 'Date', width: 100, type:'number', valueFormatter: dateFormatter },
+        { field: 'reason', headerName: 'Reason', width: 100 },
+        { field: 'status', headerName: 'Status', width: 100 },
         {
           field: 'location',
           headerName: 'Location',
           description: 'This column has a value getter and is not sortable.',
           sortable: false,
-          width: 200,
+          width: 100,
         },
+        { field: 'assiged', headerName: 'Assiged', width: 100 },
+        { field: 'severity', headerName: 'Severity', width: 100 },
+        { field: 'issueDesc', headerName: 'IssueDesc', width: 100 },
+        { field: 'details', headerName: 'Details', width: 100 },
         { field: 'Action', 
         headerName: 'Action', 
         width: 200,
@@ -164,7 +169,7 @@ async function handleDateRangeChange(start, end) {
     return (
         <div className="maintainancePage" >
              <MaintainanceFeaturedInfo />
-             <DateRangePicker onChange={handleDateRangeChange} />
+             {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
             <div class="headRow">
                 <h2>Maintainance Requests</h2>
                 <Link to ={"/maintain/new"}>

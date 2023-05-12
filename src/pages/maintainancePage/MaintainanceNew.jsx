@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useParams, useNavigate } from 'react-router-dom';
 import {Maintainancerows} from "../../dummyData"
 import { TextField, Button, Radio, RadioGroup, FormControlLabel, FormControl } from '@material-ui/core';
-
-
 //date
 //1.) initial variable date, state is '', function setDate will set the final changed date
 //onChange-> sligtest change to date is dynaically reflected via SetDate, when I press submit, final date is changed via API
@@ -16,13 +14,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(1),
   },
   textField: {
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
   },
   button: {
-    marginTop: theme.spacing(2),
+     marginTop: theme.spacing(1),
   },
 }));
 
@@ -31,6 +29,10 @@ const MaintainanceNew = () => {
   const [date, setDate] = useState('');
     const [reason, setReason] = useState('');
     const [location, setLocation] = useState('');
+    const [assiged, setAssiged] = useState('');
+    const [severity, setSeverity] = useState('');
+    const [issueDesc, setIssueDesc] = useState('');
+    const [details, setDetails] = useState('');
     const [status, setStatus] = useState('Active');
   const classes = useStyles();
 
@@ -52,6 +54,10 @@ const MaintainanceNew = () => {
         reason: reason,
         status: status,
         location: location,
+        assiged: assiged,
+        severity: severity,
+        issueDesc: issueDesc,
+        details: details
       };
       
     axios.post('http://127.0.0.1:3002/maintainancePage/', newEntry)
@@ -67,7 +73,7 @@ const MaintainanceNew = () => {
 
   return (
     <div className="editMaintainancePage" align="center" style={divStyle}>
-      <h2>Maintainance Request </h2>
+      <h3>Create a new Maintainance Request Update</h3>
       <form className={classes.form} onSubmit={handleSubmit}>
       <label class = "cameraStreamText">
       Date
@@ -125,12 +131,7 @@ const MaintainanceNew = () => {
         margin="normal"
       />
 
-      <FormControl component="fieldset" margin="normal">
-        <RadioGroup name="status" value={status} onChange={handleStatusChange} row>
-          <FormControlLabel value="Active" control={<Radio />} label="Active" />
-          <FormControlLabel value="Resolved" control={<Radio />} label="Resolved" />
-        </RadioGroup>
-      </FormControl>
+     
       <label class = "cameraStreamText">
       Location
                 </label>
@@ -157,6 +158,135 @@ const MaintainanceNew = () => {
         fullWidth
         margin="normal"
       />
+
+
+<label class = "cameraStreamText">
+      Assigned
+                </label>
+      <TextField
+        label=""
+        type="text"
+        value={assiged}
+        hiddenLabel
+  id="filled-hidden-label-normal"
+  defaultValue="Normal"
+  variant="filled"
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px"
+            
+          }
+        }}
+        onChange={(e) => setAssiged(e.target.value)}
+        required
+        fullWidth
+        margin="normal"
+      />
+
+
+
+<label class = "cameraStreamText">
+      Severity : 
+      </label>
+      <TextField
+      hiddenLabel
+      id="filled-hidden-label-normal"
+      defaultValue="Normal"
+      variant="filled"
+        label=""
+        type="text"
+        value={severity}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 0px black",
+            fontWeight:"bold",
+            borderWidth:"1px"
+            
+          }
+        }}
+        onChange={(e) => setSeverity(e.target.value)}
+        required
+        fullWidth
+        InputLabelProps={{
+          shrink: true,
+        }}
+        margin="normal"
+      />
+
+<label class = "cameraStreamText">
+      Issue Description : 
+      </label>
+      <TextField
+      hiddenLabel
+      id="filled-hidden-label-normal"
+      defaultValue="Normal"
+      variant="filled"
+        label=""
+        type="text"
+        value={issueDesc}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 0px black",
+            fontWeight:"bold",
+            borderWidth:"1px"
+            
+          }
+        }}
+        onChange={(e) => setIssueDesc(e.target.value)}
+        required
+        fullWidth
+        InputLabelProps={{
+          shrink: true,
+        }}
+        margin="normal"
+      />
+
+<label class = "cameraStreamText">
+      Additional Details : 
+      </label>
+      <TextField
+      hiddenLabel
+      id="filled-hidden-label-normal"
+      defaultValue="Normal"
+      variant="filled"
+        label=""
+        type="text"
+        value={details}
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 0px black",
+            fontWeight:"bold",
+            borderWidth:"1px"
+            
+          }
+        }}
+        onChange={(e) => setDetails(e.target.value)}
+        required
+        fullWidth
+        InputLabelProps={{
+          shrink: true,
+        }}
+        margin="normal"
+      />
+
+
+ <FormControl component="fieldset" margin="normal">
+        <RadioGroup name="status" value={status} onChange={handleStatusChange} row>
+          <FormControlLabel value="Active" control={<Radio />} label="Active" />
+          <FormControlLabel value="Resolved" control={<Radio />} label="Resolved" />
+        </RadioGroup>
+      </FormControl>
+
 
       <Button type="submit" variant="contained" color="primary">
         Submit

@@ -7,7 +7,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { DataGrid, gridClasses } from '@mui/x-data-grid';
 import { alpha, styled } from '@mui/material/styles';
-
 import 'react-datepicker/dist/react-datepicker.css';
 import { AlertFeaturedInfo } from "../../pages/alert/AlertFeaturedInfo";
 
@@ -204,7 +203,7 @@ useEffect(()=>{
       {/* <button style={{marginLeft: 50}} type="submit">Filter Alerts</button> */}
       <div className="alert-page">
       <AlertFeaturedInfo />
-      <DateRangePicker onChange={handleDateRangeChange} />
+      {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
       
         <h1>Alerts</h1>
         <table>
