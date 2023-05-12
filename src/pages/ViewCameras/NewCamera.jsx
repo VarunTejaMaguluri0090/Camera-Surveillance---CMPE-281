@@ -74,7 +74,7 @@ const NewCamera = () => {
 
   return (
     <div className="schedulePage" align="center" style={divStyle}>
-      <h2>Add Camera</h2>
+      <h2 className="heading-main">Add Camera</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
       <label class = "cameraStreamText">
       Camera ID

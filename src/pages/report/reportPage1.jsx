@@ -104,16 +104,16 @@ const ReportPage = () => {
     <SideBar/>
 
     <div className="report-container">
-      <h1>Surveillance System Report</h1>
+      <h1 className="heading-main">Surveillance System Report</h1>
       <div className="section">
-        <h2>System Performance Metrics</h2>
+        <h2 className="heading-main">System Performance Metrics</h2>
         <p>Uptime: {systemMetrics.uptime}</p>
         <p>Downtime: {systemMetrics.downtime}</p>
         <p>Response Time: {systemMetrics.responseTime}</p>
         {/* Other performance metrics can be displayed here */}
       </div>
       <div className="section">
-        <h2>Camera Health Status</h2>
+        <h2 className="heading-main">Camera Health Status</h2>
         {cameraHealth.map((camera) => (
           <div key={camera.id}>
             <p>Name: {camera.name}</p>
@@ -125,7 +125,7 @@ const ReportPage = () => {
         ))}
       </div>
       <div className="section">
-        <h2>Incident Reports</h2>
+        <h2 className="heading-main">Incident Reports</h2>
         {incidentReports.map((report) => (
           <div key={report.id}>
             <p>Date: {report.date}</p>
@@ -138,7 +138,7 @@ const ReportPage = () => {
         ))}
       </div>
       <div className="section">
-        <h2>User Activity Logs</h2>
+        <h2 className="heading-main">User Activity Logs</h2>
         {userActivityLogs.map((log) => (
           <div key={log.id}>
             <p>User: {log.user}</p>
@@ -149,7 +149,7 @@ const ReportPage = () => {
           </div>
            ))}
   
-  <h1>Audit Trails</h1>
+  <h1 className="heading-main">Audit Trails</h1>
   <div className="audit-trails">
     {auditTrails.map((trail) => (
       <div key={trail.id}>
@@ -161,7 +161,7 @@ const ReportPage = () => {
   </div>
 
   <div className="section">
-  <h2>Analytics and Insights</h2>
+  <h2 className="heading-main">Analytics and Insights</h2>
   <ul>
     {analytics.map((insight) => (
       <li key={insight.id}>
@@ -176,7 +176,7 @@ const ReportPage = () => {
 
 
 <div className="section">
-  <h2>Graphs and Charts</h2>
+  <h2 className="heading-main">Graphs and Charts</h2>
   <ul>
     {graphs.map((chart) => (
       <li key={chart.id}>
@@ -189,7 +189,7 @@ const ReportPage = () => {
   </ul>
 </div>
 <div className="section">
-  <h2>Configuration Settings</h2>
+  <h2 className="heading-main">Configuration Settings</h2>
   <ul>
     {configSettings.map((setting) => (
       <li key={setting.id}>

@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import { async } from "q";
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { CameraFeaturedInfo } from "../../pages/ViewCameras/CameraFeaturedInfo";
 
 const ODD_OPACITY = 0.2;
@@ -83,6 +85,7 @@ export default function ViewCameras() {
     // }
 
 
+<<<<<<< HEAD
     //const [data, setData] = useState([]);
 
     const data = [
@@ -91,6 +94,18 @@ export default function ViewCameras() {
         camera_number: 1,
         camera_location: "2nd Floor",
         status: 'Active',
+=======
+    const [data, setData] = useState([]);
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+
+    // const data = [
+    //   {
+    //     id: '5e887ac47eed253', 
+    //     camera_number: 1,
+    //     camera_location: "2nd Floor",
+    //     status: 'Active',
+>>>>>>> 4f1542306e3aee6f8f02fdf34f1cd2477e842536
          
       },
       {
@@ -169,9 +184,49 @@ export default function ViewCameras() {
       })
   }
 
+  async function handleDateRangeChange(start, end) {
+    setStartDate(start);
+    setEndDate(end);
+    // axios.get(`http://127.0.0.1:3002/alerts?startDate=${new Date(startDate).toISOString()}&endDate=${new Date(endDate).toISOString()}`)
+    // .then(response => response.json())
+    // .then(data => setData(data))
+    // .catch(error => console.error(error));
+  }
+
   const deleteFunction = (id) =>{
       deletewait(id)
       getAllData()
+  }
+
+  function DateRangePicker({ onChange }) {
+    // const [startDate, setStartDate] = useState(null);
+    // const [endDate, setEndDate] = useState(null);
+  
+    function handleStartDateChange(date) {
+      setStartDate(date);
+      if (endDate && date < endDate) {
+        onChange(date, endDate);
+      }
+    }
+  
+    function handleEndDateChange(date) {
+      setEndDate(date);
+      if (startDate && date > startDate) {
+        onChange(startDate, date);
+      }
+    }
+  
+    return (
+     
+      <div class="date">
+      <div>
+        <label class="date_correction">Start Date:</label>
+        <input type="date" value={startDate} onChange={e => handleStartDateChange(e.target.value)} class="field_correction"/>
+        <label class="date_correction">End Date:</label>
+        <input type="date" value={endDate} onChange={e => handleEndDateChange(e.target.value)} class="field_correction"/>
+      </div>
+      </div>
+    );
   }
     
     const columns =[
@@ -217,8 +272,9 @@ export default function ViewCameras() {
      
         <div className="viewCamerasPage"  >
            <CameraFeaturedInfo />
+           <DateRangePicker onChange={handleDateRangeChange} />
            <div class="headRow">
-                <h2>View Cameras</h2>
+                <h2 className="heading-main">View Cameras</h2>
                 
                 <Link to ={"/viewCameras/new"}>
                     <button className="EditButton">Create</button>

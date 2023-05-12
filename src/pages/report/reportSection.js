@@ -4,7 +4,7 @@ import "./reportSection.css";
 const ReportSection = ({ title, data }) => {
 return (
 <div className="report-section-container">
-<h2>{title}</h2>
+<h2 className="heading-main">{title}</h2>
 <div className="report-section-data">
 {data.map((item, index) => (
 <div key={index} className="report-section-data-item">

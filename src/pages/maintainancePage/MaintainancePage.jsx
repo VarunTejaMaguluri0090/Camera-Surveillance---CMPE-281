@@ -171,7 +171,7 @@ async function handleDateRangeChange(start, end) {
              <MaintainanceFeaturedInfo />
              {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
             <div class="headRow">
-                <h2>Maintainance Requests</h2>
+                <h2 className="heading-main">Maintainance Requests</h2>
                 <Link to ={"/maintain/new"}>
                     <button className="EditButton">Create</button>
                 </Link>

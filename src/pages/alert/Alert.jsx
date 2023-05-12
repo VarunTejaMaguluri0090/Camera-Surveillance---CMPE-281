@@ -205,7 +205,7 @@ useEffect(()=>{
       <AlertFeaturedInfo />
       {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
       
-        <h1>Alerts</h1>
+        <h1 className="heading-main">Alerts</h1>
         <table>
           <thead>
             <tr>

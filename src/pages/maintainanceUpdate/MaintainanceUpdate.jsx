@@ -63,7 +63,7 @@ const EditMaintainance = () => {
 
   return (
     <div className="editMaintainancePage" align="center" style={divStyle}>
-      <h2>Maintainance Request - ID - {id}</h2>
+      <h2 className="heading-main">Maintainance Request - ID - {id}</h2>
       <form className={classes.form} onSubmit={handleSubmit}>
          <label class = "cameraStreamText">Date</label>
         <TextField

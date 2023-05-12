@@ -158,7 +158,7 @@ export default function MaintainancePage() {
              <ScheduleFeaturedInfo />
              {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
             <div class="headRow">
-                <h2>Schedule Requests</h2>
+                <h2 className="heading-main">Schedule Requests</h2>
                 
                 <Link to ={"/schedule/new"}>
                     <button className="EditButton">Create</button>

@@ -31,6 +31,13 @@
     font-weight: bold;
     color:  #04AA6D;
   }
+
+  .feed-status-title {
+    font-size: 35px;
+    font-weight: bold;
+    color:  #04AA6D;
+    text-align: center;
+  }
   
   .alert-status-time {
     font-size: 14px;
