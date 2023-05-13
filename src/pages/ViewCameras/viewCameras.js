@@ -85,7 +85,6 @@ export default function ViewCameras() {
     // }
 
 
-<<<<<<< HEAD
     //const [data, setData] = useState([]);
 
     const data = [
@@ -94,18 +93,6 @@ export default function ViewCameras() {
         camera_number: 1,
         camera_location: "2nd Floor",
         status: 'Active',
-=======
-    const [data, setData] = useState([]);
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
-
-    // const data = [
-    //   {
-    //     id: '5e887ac47eed253', 
-    //     camera_number: 1,
-    //     camera_location: "2nd Floor",
-    //     status: 'Active',
->>>>>>> 4f1542306e3aee6f8f02fdf34f1cd2477e842536
          
       },
       {
@@ -173,6 +160,9 @@ export default function ViewCameras() {
       }
       
     ];
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    
 
     async function deletewait(id){
       await axios.delete(`http://127.0.0.1:3002/viewCameras/${id}`)
@@ -185,8 +175,8 @@ export default function ViewCameras() {
   }
 
   async function handleDateRangeChange(start, end) {
-    setStartDate(start);
-    setEndDate(end);
+    // setStartDate(start);
+    // setEndDate(end);
     // axios.get(`http://127.0.0.1:3002/alerts?startDate=${new Date(startDate).toISOString()}&endDate=${new Date(endDate).toISOString()}`)
     // .then(response => response.json())
     // .then(data => setData(data))

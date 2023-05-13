@@ -1,6 +1,7 @@
 img {
     max-width: 100%;
     height: auto;
+    
 }
 
 .item {
@@ -10,4 +11,5 @@ img {
     float: left;
     margin: 30px;
     padding: 30px;
+   
 }

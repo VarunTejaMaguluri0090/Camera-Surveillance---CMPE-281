@@ -3,6 +3,9 @@ import React, { Component,useState, useEffect  } from 'react';
 import { GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
 import './Map.css'
 import mapImage from "./map.png"
+import greenIcon from "./green.png"
+import redIcon from "./red.png"
+import yellowIcon from "./yellow.png"
 import { Link } from 'react-router-dom';
 
 
@@ -26,20 +29,21 @@ const Alert = ({ alertId, x, y, title }) => {
     setIsVisible(true);
   }, []);
   return (
-    <Link key={alertId} to={`/cameraDisplayView/${alertId}`} className="alert"
+    
+    <Link key={alertId} to={`/cameraDisplayView/${alertId}`} 
+    
       style={{
         position: 'absolute',
         left: x,
         top: y,
-        backgroundColor: 'Green',
         padding: '10px',
-        border: '1px solid black',
-        
         borderRadius: '5px',
         display: isVisible ? 'block' : 'none',
+        
       }}
     >
-      {title}
+     <img src={greenIcon} title={title}/>
+     
     </Link>
   );
 };
@@ -52,19 +56,16 @@ const Alert1 = ({ alertId, x, y, title }) => {
   }, []);
   return (
     <Link key={alertId} to={`/cameraDisplayView/${alertId}`} className="alert"
-      style={{
-        position: 'absolute',
-        left: x,
-        top: y,
-        backgroundColor: 'Red',
-        padding: '10px',
-        border: '1px solid black',
-        
-        borderRadius: '5px',
-        display: isVisible ? 'block' : 'none',
-      }}
-    >
-      {title}
+    style={{
+      position: 'absolute',
+      left: x,
+      top: y,
+      padding: '10px',
+      borderRadius: '5px',
+      display: isVisible ? 'block' : 'none',
+    }}
+  >
+   <img src={redIcon} title={title} />
     </Link>
   );
 };
@@ -77,19 +78,16 @@ const Alert2 = ({ alertId, x, y, title }) => {
   }, []);
   return (
     <Link key={alertId} to={`/cameraDisplayView/${alertId}`} className="alert"
-      style={{
-        position: 'absolute',
-        left: x,
-        top: y,
-        backgroundColor: 'Yellow',
-        padding: '10px',
-        border: '1px solid black',
-        
-        borderRadius: '5px',
-        display: isVisible ? 'block' : 'none',
-      }}
-    >
-      {title}
+    style={{
+      position: 'absolute',
+      left: x,
+      top: y,
+      padding: '10px',
+      borderRadius: '5px',
+      display: isVisible ? 'block' : 'none',
+    }}
+  >
+   <img src={yellowIcon} title={title} />
     </Link>
   );
 };
@@ -108,6 +106,7 @@ export default function Map() {
       setAlerts([
             {
               "id": 1,
+
               "title": "Cam2",
               "x": 300,
               "y": 520
@@ -172,55 +171,55 @@ export default function Map() {
       .catch(error => console.error(error));
       setAlerts1([
             {
-              "id": 1,
+              "id": 11,
               "title": "Cam1",
               "x": 200,
               "y": 290
             },
             {
-              "id": 2,
+              "id": 12,
               "title": "Cam3",
               "x": 250,
               "y": 240
             },
             {
-              "id": 3,
+              "id": 13,
               "title": "Cam5",
               "x": 600,
               "y": 200
             },
             {
-              "id": 4,
+              "id": 14,
               "title": "Cam7",
               "x": 500,
               "y": 250
             },{
-              "id": 5,
+              "id": 15,
               "title": "Cam9",
               "x": 490,
               "y": 150
             },{
-              "id": 6,
+              "id": 16,
               "title": "Cam11",
               "x": 170,
               "y": 350
             },{
-              "id": 7,
+              "id": 17,
               "title": "Cam12",
               "x": 600,
               "y": 490
             },{
-              "id": 8,
+              "id": 18,
               "title": "Cam16",
               "x": 400,
               "y": 450
             },{
-              "id": 9,
+              "id": 19,
               "title": "Cam13",
               "x": 400,
               "y": 240
             },{
-              "id": 10,
+              "id": 20,
               "title": "Cam15",
               "x": 150,
               "y": 500
@@ -237,19 +236,19 @@ export default function Map() {
       .catch(error => console.error(error));
       setAlerts2([
             {
-              "id": 1,
+              "id": 21,
               "title": "Cam20",
               "x": 100,
               "y": 290
             },
             {
-              "id": 2,
+              "id": 22,
               "title": "Cam22",
               "x": 250,
               "y": 240
             },
             {
-              "id": 3,
+              "id": 23,
               "title": "Cam23",
               "x": 600,
               "y": 200
@@ -261,7 +260,7 @@ export default function Map() {
 
     return (
       <div class="item">
-        <h2 className="heading-main">Camera Map View</h2>
+       <h2 className="heading-main">Camera Map View</h2>
       <img src={mapImage}/>
       {alerts.map(alert => (
         <Alert alertId={alert.id} x={alert.x} y={alert.y} title={alert.title} />

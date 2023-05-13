@@ -156,7 +156,7 @@ export default function MaintainancePage() {
     return (
         <div className="schedulePage" >
              <ScheduleFeaturedInfo />
-             {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+             <DateRangePicker onChange={handleDateRangeChange} />
             <div class="headRow">
                 <h2 className="heading-main">Schedule Requests</h2>
                 

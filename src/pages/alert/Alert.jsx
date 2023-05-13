@@ -203,7 +203,7 @@ useEffect(()=>{
       {/* <button style={{marginLeft: 50}} type="submit">Filter Alerts</button> */}
       <div className="alert-page">
       <AlertFeaturedInfo />
-      {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+      <DateRangePicker onChange={handleDateRangeChange} />
       
         <h1 className="heading-main">Alerts</h1>
         <table>
