@@ -13,7 +13,7 @@ export default function SideBar() {
           
 
           <h3 className="sideBarTitle" >Camera</h3>
-          <a href="/viewCameras">View Camera</a>
+          <a href="/viewCameras">Manage Cameras</a>
           <a href="/viewCameraFootage">Camera Footage</a>
 
           
