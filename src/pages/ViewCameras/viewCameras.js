@@ -11,6 +11,11 @@ import { async } from "q";
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { CameraFeaturedInfo } from "../../pages/ViewCameras/CameraFeaturedInfo";
 
 const ODD_OPACITY = 0.2;
@@ -86,6 +91,11 @@ export default function ViewCameras() {
 
 
     //const [data, setData] = useState([]);
+
+    const [building, setBuilding] = React.useState('');
+     const handleChange = (e) => {
+      setBuilding(e.target.value);
+        };
 
     const data = [
       {
@@ -260,16 +270,69 @@ export default function ViewCameras() {
     
     return (
      
+       
         <div className="viewCamerasPage"  >
            <CameraFeaturedInfo />
-           <DateRangePicker onChange={handleDateRangeChange} />
-           <div class="headRow">
-                <h2 className="heading-main">View Cameras</h2>
-                
-                <Link to ={"/viewCameras/new"}>
-                    <button className="EditButton">Create</button>
-                </Link>
-            </div>
+           <FormControl  >
+           <label class = "cameraStreamText1">
+      Select Building
+                </label>
+  
+  <Select  className="wgtmsr"
+   id="filled-hidden-label-normal"
+      defaultValue="ffdfd"
+      variant="filled"
+        type="building"
+     
+        
+        sx={{
+          input: {
+            color: "black",
+            background: "#F8F8F8",
+            border: "solid 1px black",
+            fontWeight:"bold",
+            borderWidth:"2.3px",
+           
+            
+          }
+        }}
+       
+        required
+       
+        InputLabelProps={{
+          shrink: true,
+        }}
+        margin="normal"
+    labelId="demo-simple-select-label"
+   
+    value={building}
+    // label="Building Name"
+    onChange={handleChange}
+  >
+    <MenuItem value={10}>Administration</MenuItem>
+    <MenuItem value={20}>Art Building</MenuItem>
+    <MenuItem value={30}>Career Center</MenuItem>
+    <MenuItem value={40}>Clark Hall</MenuItem>
+    <MenuItem value={50}>Dudley Moorhead Hall</MenuItem>
+    <MenuItem value={60}>Duncan Hall</MenuItem>
+    <MenuItem value={70}>Engineering Building</MenuItem>
+    <MenuItem value={80}>Health Building</MenuItem>
+    <MenuItem value={90}>Dr. Martin Luther King, Jr. Library</MenuItem>
+    <MenuItem value={100}>Morris Dailey Auditorium</MenuItem>
+    <MenuItem value={110}>Music Building</MenuItem>
+    <MenuItem value={120}>Science Building</MenuItem>
+    <MenuItem value={130}>Spartan Memorial</MenuItem>
+    <MenuItem value={140}>Spartan Recreation & Aquatic Center</MenuItem>
+    <MenuItem value={150}>Student Services Center</MenuItem>
+    <MenuItem value={160}>Student Union</MenuItem>
+    <MenuItem value={170}>Student Wellness Center</MenuItem>
+    <MenuItem value={180}>Tower Hall</MenuItem>
+    <MenuItem value={190}>University Theatre</MenuItem>
+    <MenuItem value={200}>Washburn Hall</MenuItem>
+    <MenuItem value={210}>Washington Square Hall</MenuItem>
+    <MenuItem value={220}>Yoshihiro Uchida Hall</MenuItem>
+  </Select>
+</FormControl>
             
             <StripedDataGrid 
             sx={{
@@ -294,6 +357,7 @@ export default function ViewCameras() {
                 }
             />
         </div>
+    
     
   );
 }

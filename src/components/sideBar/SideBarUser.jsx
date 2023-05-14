@@ -7,6 +7,7 @@ export default function SideBar() {
       <div class="sidebar">
          <h3 className="sideBarTitle">Dashboard</h3>
           <a href="/home">Home</a>
+          <a href="/payment">Billing</a>
           <a href="/report">Reports</a>
           <a href="/alert">Alerts</a>
           <a href="/alertAnalysis">Alert Analysis </a>

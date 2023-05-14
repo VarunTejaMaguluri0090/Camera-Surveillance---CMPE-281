@@ -147,7 +147,7 @@ export default function ProfilePage() {
     return (
         <div className="profilePage" >
              <ManageProfileFeaturedInfo />
-             {/* <DateRangePicker onChange={handleDateRangeChange} /> */}
+             <DateRangePicker onChange={handleDateRangeChange} />
             <div class="headRow">
                 <h2 className="heading-main">Users</h2>
                 <Link to ={"/manageProfile/new"}>

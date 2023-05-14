@@ -5,6 +5,13 @@ import SideBar from "../../components/sideBar/SideBar";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useState, useEffect } from "react";
+import ReportChart from "../../pages/report/reportChart";
+import ReportPieChart from "../../pages/report/reportPieChart";
+import ReportBarGraph from "../../pages/report/reportBarGraph";
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const ReportPage = () => {
   const systemMetrics = {
@@ -87,6 +94,14 @@ const ReportPage = () => {
     otherSettings: "..."
   };
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
 
   const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -148,24 +163,22 @@ const ReportPage = () => {
          {/*  <h1>Infinite Scroll</h1> */}
           <div className="metric-column">
             
-            <h2 className="heading-sub">System performance metrics</h2>
-            <p>Uptime: {systemMetrics.uptime}</p>
-            <p>Downtime: {systemMetrics.downtime}</p>
-            <p>Response Time: {systemMetrics.responseTime}</p>
+           
             {/* <p>Other Metrics: {systemMetrics.otherMetrics}</p> */}
           </div>
           <div className="metric-column">
             <h2 className="heading-sub">Camera health status</h2>
-            {cameraHealth.map((camera) => (
-              <div key={camera.id}>
-                <p>Name: {camera.name}</p>
-                <p>ID: {camera.id}</p>
-                <p>Location: {camera.location}</p>
-                <p>Status: {camera.status}</p>
-                <p>Details: {camera.details}</p>
-                
-              </div>
-            ))}
+
+    
+    <div class="Graphs1">
+   
+      <Grid item xs={12}>
+        <Item><ReportChart/></Item>
+      </Grid>
+      
+
+
+  </div>
           </div>
     
           <div className="metric-column">
@@ -213,6 +226,20 @@ const ReportPage = () => {
               </tbody>
             </table>
           </div>
+          <h2 className="heading-sub">Campus Incidents Analysis</h2>
+          <div class="Graphs1">
+    
+   
+      
+      {/* <Grid item xs={2}>
+      </Grid> */}
+      <Grid item xs={12}>
+        <Item><ReportPieChart/></Item>
+      </Grid>
+      
+
+
+  </div>
     
           <div className="user-activity-logs" >
             <h2 className="heading-sub">User Activity Logs</h2>
@@ -226,78 +253,58 @@ const ReportPage = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>Campus Security</td>
+                  <td>John Martin</td>
                   <td>Accessed Cam3 Footage</td>
                   <td>2023-04-21 12:00:00</td>
                 </tr>
                 <tr>
-                  <td>Maintainance Team</td>
-                  <td>Checked Cam2</td>
+                  <td>Andrew Lee</td>
+                  <td>Sent request to access Cam1 logs</td>
                   <td>2023-04-18 08:30:00</td>
+                </tr>
+                <tr>
+                  <td>Jenna Ortega</td>
+                  <td>Accessed Cam7 logs</td>
+                  <td>2023-04-18 08:30:00</td>
+                </tr>
+                <tr>
+                  <td>Chris Ma</td>
+                  <td>Sent request to access Cam5 logs</td>
+                  <td>2023-04-18 08:30:00</td>
+                </tr>
+                <tr>
+                  <td>Johnson Drew</td>
+                  <td>Accessed Cam5 Alert Logs</td>
+                  <td>2023-04-21 12:00:00</td>
+                </tr>
+                <tr>
+                  <td>Kim Railey</td>
+                  <td>Accessed Cam3 footage</td>
+                  <td>2023-03-15 12:00:00</td>
+                </tr>
+                <tr>
+                  <td>Shirley</td>
+                  <td>Requested access for camera footages</td>
+                  <td>2023-04-09 18:12:45</td>
                 </tr>
                 {/* more user activity logs */}
               </tbody>
             </table>
           </div>
-    
-    
-    
-    
-          <div className="section">
-            <h2 className="heading-sub">Analytics and Insights</h2>
-            <p>This section includes advanced analytics and insights into the surveillance system's performance and usage, such as heat maps, motion detection, and facial recognition data.</p>
+          <h2 className="heading-sub">Users Information</h2>
+            
+          
+            <div class="Graphs1">
+            
+              <Grid item xs={12}>
+                <Item><ReportBarGraph/></Item>
+              </Grid>
+        
           </div>
-          <div className="section">
-            <h2 className="heading-sub">Graphs and Charts</h2>
-            <p>This section displays visual representations of data related to the surveillance system's performance and usage, such as uptime charts, incident frequency graphs, and camera usage charts.</p>
-          </div>
-          <div className="section">
-            <h2 className="heading-sub">Configuration Settings</h2>
-            <p>This section allows administrators to adjust the settings of the surveillance system, such as camera recording times, motion detection sensitivity, and access control permissions.</p>
-          </div>
-    
-    
-        <div>
-          <h2 className="heading-sub">User Activity Logs</h2>
-          <div className="user-activity-logs-container">
-            <div className="user-activity-log">
-              <p>User: Johnson Drew</p>
-              <p>Action: Accessed Cam 5 Alert Logs</p>
-              <p>Time and date: 2023-04-21 12:00:00</p>
-            </div>
-            <div className="user-activity-log">
-              <p>User: Kim Railey</p>
-              <p>Action: Accessed Cam 3 footage</p>
-              <p>Time and date: 2023-03-15 12:00:00</p>
-            </div>
-            <div className="user-activity-log">
-              <p>User: Shirley</p>
-              <p>Action: Requested access for camera footages</p>
-              <p>Time and date: 2023-04-09 18:12:45</p>
-            </div>
-            {/* add more user activity logs */}
-          </div>
-        </div>
     
           </div>
           </div>
           </>
            )}
-
-
-
-
-
-
-
-
-      {/* <div className="metric-column">
-        <h2>Incident reports</h2>
-        {incidentReports.map((incident) => (
-          <div key={incident.time}>
-            <p>Time: {incident.time}</p>
-            <p>Location: {incident.location}</p>
-            <p>Type */}
-
 
 export default ReportPage

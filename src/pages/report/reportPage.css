@@ -1,628 +1,652 @@
 .container {
-    /* max-width: 1200px;  */
-    /* margin: 0 auto; */
-    overflow: auto;
-    height: 100%;
-  }
-
-  .heading-color{
-    color: #04AA6D;
-  }
-
-  .metric-column{
-    width: 100%;
-    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-    -moz-padding-start: calc(0.75rem - 3px);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #080808;
-    background-color: #fff;
-    font-weight: bold;
-   text-align: center;
-    border-radius: 0.5rem;
-    transition: border-color 
-  }
-  
-  .report-container {
-    height: 100vh;
-    width: 100%;
-  }
-  .section {
-    margin-bottom: 2rem;
-  }
-  
-  .section-header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  /* System performance metrics section */
-  .system-performance {
-    background-color: #f5f5f5;
-    padding: 1rem;
-    /* width: 2000px; */
-    margin-bottom: 30px;
-  }
-  
-  .performance-metric {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-  }
-  
-  .metric-label {
-    font-weight: bold;
-  }
-  
-  /* Camera health status section */
-  .camera-health {
-
-    background-color: #f5f5f5;
-
-    padding: 1rem;
-    width: 500px; 
-    margin-top: 2rem;
-  }
-  
-  .camera-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .camera-table th,
-  .camera-table td {
-    padding: 0.5rem;
-    text-align: center;
-    border: 1px solid #ccc;
-  }
-  
-  .camera-table th {
-    font-weight: bold;
-  }
-  
-  .camera-name {
-    font-weight: bold;
-  }
-  
-  .camera-status {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .camera-online {
-    color: green;
-  }
-  
-  .camera-offline {
-    color: red;
-  }
-  
-  /* Incident reports section */
-  .incident-reports {
-    margin-top: 2rem;
-  }
-  
-  .incident-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .incident-table th,
-  .incident-table td {
-    padding: 0.5rem;
-    text-align: center;
-    border: 1px solid #ccc;
-  }
-  
-  .incident-table th {
-    font-weight: bold;
-  }
-  
-  .severity-level {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  .severity-low {
-    color: green;
-  }
-  
-  .severity-medium {
-    color: orange;
-  }
-  
-  .severity-high {
-    color: red;
-  }
-  
-  /* User activity logs section */
-  .user-activity {
-    margin-top: 2rem;
-  }
-  
-  .user-activity-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .user-activity-table th,
-  .user-activity-table td {
-    padding: 0.5rem;
-    text-align: center;
-    border: 1px solid #ccc;
-  }
-  
-  .user-activity-table th {
-    font-weight: bold;
-  }
-  
-  /* Audit trails section */
-  .audit-trails {
-    margin-top: 2rem;
-  }
-  
-  .audit-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .audit-table th,
-  .audit-table td {
-    padding: 0.5rem;
-    text-align: center;
-    border: 1px solid #ccc;
-  }
-  
-  .audit-table th {
-    font-weight: bold;
-  }
-  
-  /* Configuration settings section */
-  .config-settings {
-    margin-top: 2rem;
-  }
-  
-  .settings-form {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-  
-  .settings-group {
-    flex-basis: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .settings-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .settings-group select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* System performance metrics section */
-.metrics-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .metric {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .metric-label {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .metric-value {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  /* Camera health status section */
-  .camera-container {
-    margin-bottom: 2rem;
-  }
-  
-  .camera-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .camera-table th,
-  .camera-table td {
-    padding: 0.75rem;
-    text-align: center;
-  }
-  
-  .camera-table th {
-    font-weight: bold;
-  }
-  
-  .camera-table td.camera-status {
-    color: white;
-    font-weight: bold;
-    border-radius: 1rem;
-    padding: 0.5rem;
-  }
-  
-  .camera-status-online {
-    background-color: green;
-  }
-  
-  .camera-status-offline {
-    background-color: red;
-  }
-  
-  .camera-status-issue {
-    background-color: orange;
-  }
-  
-  .camera-status-recording {
-    background-color: blue;
-    color: white;
-  }
-  
-  /* Incident reports section */
-  .incident-container {
-    margin-bottom: 2rem;
-  }
-  
-  .incident-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .incident-table th,
-  .incident-table td {
-    padding: 0.75rem;
-    text-align: center;
-  }
-  
-  .incident-table th {
-    font-weight: bold;
-  }
-  
-  .incident-table td.severity {
-    font-weight: bold;
-  }
-  
-  .severity-high {
-    color: red;
-  }
-  
-  .severity-medium {
-    color: orange;
-  }
-  
-  .severity-low {
-    color: green;
-  }
-  
-  /* User activity logs section */
-  .user-activity-container {
-    margin-bottom: 2rem;
-  }
-  
-  .user-activity-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .user-activity-table th,
-  .user-activity-table td {
-    padding: 0.75rem;
-    text-align: center;
-  }
-  
-  .user-activity-table th {
-    font-weight: bold;
-  }
-  
-  /* Audit trails section */
-  .audit-trail-container {
-    margin-bottom: 2rem;
-  }
-  
-  .audit-trail-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .audit-trail-table th,
-  .audit-trail-table td {
-    padding: 0.75rem;
-    text-align: center;
-  }
-  
-  .audit-trail-table th {
-    font-weight: bold;
-  }
-  
-  /* Configuration settings section */
-  .configuration-container {
-    margin-bottom: 2rem;
-  }
-  
-  .configuration-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .configuration-form label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .configuration-form input[type="text"],
-  .configuration-form input[type="number"],
-  .configuration-form select {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    font-size: 1.2rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-  }
-  
-  .configuration-form button {
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-  }
-  
-  .configuration-form button:hover {
-    cursor: pointer;
-    background-color: #0062cc;
-  }
-  
-
-  .report-page {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 2rem;
-    border: 3px solid black;
-     padding: 1px;
-     background-color:#f5f5f5;
-   
-  }
-
-  .heading-main
-  {
-    color: #04AA6D;
-    margin-bottom: 30px;
-  }
-
-  .heading-sub
-  {
-    color: #04AA6D;
-    margin-top: 30px;
-  }
-  
-  .section {
-    flex: 1 1 300px;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .camera-status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .camera-name {
-    font-weight: bold;
-  }
-  
-  .camera-id {
-    color: #999;
-    font-size: 0.9rem;
-  }
-  
-  .camera-location {
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .camera-status-text {
-    font-weight: bold;
-  }
-  
-  .camera-status-text.offline {
-    color: #ff0000;
-  }
-  
-  .camera-status-text.online {
-    color: #00ff00;
-  }
-  
-  .incident-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .incident-time {
-    color: #999;
-    font-size: 0.9rem;
-  }
-  
-  .incident-location {
-    font-weight: bold;
-  }
-  
-  .incident-type {
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .severity-level {
-    font-weight: bold;
-    color: #ff0000;
-  }
-  
-  .user-activity-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .user-activity-user {
-    font-weight: bold;
-  }
-  
-  .user-activity-action {
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .user-activity-time {
-    color: #999;
-    font-size: 0.9rem;
-  }
-  
-  .audit-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .audit-user {
-    font-weight: bold;
-  }
-  
-  .audit-action {
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .audit-time {
-    color: #999;
-    font-size: 0.9rem;
-  }
-  
-  .analytics-graph {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 1rem;
-  }
-  
-  .configuration-form {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .configuration-form-label {
-    flex: 1 1 100%;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .configuration-form-input {
-    flex: 1 1 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: #f2f2f2;
-  }
-  
-
-.report-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
+  /* max-width: 1200px;  */
+  /* margin: 0 auto; */
+  overflow: auto;
+  height: 100%;
 }
 
+.heading-color{
+  color: #04AA6D;
+}
+
+.metric-column{
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #080808;
+  background-color: #fff;
+  font-weight: bold;
+ text-align: center;
+  border-radius: 0.5rem;
+  transition: border-color 
+}
+
+.report-container {
+  height: 100vh;
+  width: 100%;
+}
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
-h2 {
-  margin-bottom: 16px;
+.section-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-p {
-  font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: 0;
+/* System performance metrics section */
+.system-performance {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  /* width: 2000px; */
+  margin-bottom: 30px;
+}
+
+.performance-metric {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-weight: bold;
+}
+
+/* Camera health status section */
+.camera-health {
+
+  background-color: #f5f5f5;
+
+  padding: 1rem;
+  width: 500px; 
+  margin-top: 2rem;
+}
+
+.camera-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.camera-table th,
+.camera-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.camera-table th {
+  font-weight: bold;
+}
+
+.camera-name {
+  font-weight: bold;
+}
+
+.camera-status {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.camera-online {
+  color: green;
+}
+
+.camera-offline {
+  color: red;
+}
+
+/* Incident reports section */
+.incident-reports {
+  margin-top: 2rem;
+}
+
+.incident-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.incident-table th,
+.incident-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.incident-table th {
+  font-weight: bold;
+}
+
+.severity-level {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.severity-low {
+  color: green;
+}
+
+.severity-medium {
+  color: orange;
+}
+
+.severity-high {
+  color: red;
+}
+
+/* User activity logs section */
+.user-activity {
+  margin-top: 2rem;
+}
+
+.user-activity-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-activity-table th,
+.user-activity-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.user-activity-table th {
+  font-weight: bold;
+}
+
+/* Audit trails section */
+.audit-trails {
+  margin-top: 2rem;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.audit-table th,
+.audit-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.audit-table th {
+  font-weight: bold;
+}
+
+/* Configuration settings section */
+.config-settings {
+  margin-top: 2rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.settings-group {
+  flex-basis: 100%;
+  margin-bottom: 1rem;
+}
+
+.settings-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.settings-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* System performance metrics section */
+.metrics-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Camera health status section */
+.camera-container {
+  margin-bottom: 2rem;
+}
+
+.camera-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.camera-table th,
+.camera-table td {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.camera-table th {
+  font-weight: bold;
+}
+
+.camera-table td.camera-status {
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.camera-status-online {
+  background-color: green;
+}
+
+.camera-status-offline {
+  background-color: red;
+}
+
+.camera-status-issue {
+  background-color: orange;
+}
+
+.camera-status-recording {
+  background-color: blue;
+  color: white;
+}
+
+/* Incident reports section */
+.incident-container {
+  margin-bottom: 2rem;
+}
+
+.incident-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.incident-table th,
+.incident-table td {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.incident-table th {
+  font-weight: bold;
+}
+
+.incident-table td.severity {
+  font-weight: bold;
+}
+
+.severity-high {
+  color: red;
+}
+
+.severity-medium {
+  color: orange;
+}
+
+.severity-low {
+  color: green;
+}
+
+/* User activity logs section */
+.user-activity-container {
+  margin-bottom: 2rem;
+}
+
+.user-activity-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-activity-table th,
+.user-activity-table td {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.user-activity-table th {
+  font-weight: bold;
+}
+
+/* Audit trails section */
+.audit-trail-container {
+  margin-bottom: 2rem;
+}
+
+.audit-trail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.audit-trail-table th,
+.audit-trail-table td {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.audit-trail-table th {
+  font-weight: bold;
+}
+
+/* Configuration settings section */
+.configuration-container {
+  margin-bottom: 2rem;
+}
+
+.configuration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.configuration-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.configuration-form input[type="text"],
+.configuration-form input[type="number"],
+.configuration-form select {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.configuration-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.configuration-form button:hover {
+  cursor: pointer;
+  background-color: #0062cc;
 }
 
 
 .report-page {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  border: 3px solid black;
+   padding: 1px;
+   background-color:#f5f5f5;
+ 
+}
+
+.heading-main
+{
+  color: #04AA6D;
+  margin-bottom: 30px;
+}
+
+.heading-sub
+{
+  color: #04AA6D;
+  margin-top: 30px;
 }
 
 .section {
-  margin-bottom: 50px;
+  flex: 1 1 300px;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.camera-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.camera-name {
+  font-weight: bold;
+}
+
+.camera-id {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.camera-location {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.camera-status-text {
+  font-weight: bold;
+}
+
+.camera-status-text.offline {
+  color: #ff0000;
+}
+
+.camera-status-text.online {
+  color: #00ff00;
+}
+
+.incident-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.incident-time {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.incident-location {
+  font-weight: bold;
+}
+
+.incident-type {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.severity-level {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.user-activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.user-activity-user {
+  font-weight: bold;
+}
+
+.user-activity-action {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.user-activity-time {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.audit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.audit-user {
+  font-weight: bold;
+}
+
+.audit-action {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.audit-time {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.analytics-graph {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1rem;
+}
+
+.configuration-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.configuration-form-label {
+  flex: 1 1 100%;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.configuration-form-input {
+  flex: 1 1 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f2f2f2;
+}
+
+
+.report-page {
+max-width: 800px;
+margin: 0 auto;
+padding: 40px;
+}
+
+.section {
+margin-bottom: 40px;
+}
+
+h2 {
+margin-bottom: 16px;
+}
+
+p {
+font-size: 16px;
+line-height: 1.4;
+margin-bottom: 0;
+}
+
+
+.report-page {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow-y: scroll;
+}
+
+.section {
+margin-bottom: 50px;
 }
 
 .section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+font-size: 28px;
+margin-bottom: 20px;
 }
 
 .trail-info,
 .insight-info,
 .chart-info,
 .setting-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
-  overflow-y: scroll;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: #f5f5f5;
+border-radius: 5px;
+overflow-y: scroll;
 }
 
 .trail-info div:first-child {
-  flex-basis: 25%;
-  overflow-y: scroll;
+flex-basis: 25%;
+overflow-y: scroll;
 }
 
 .trail-info div:nth-child(2) {
-  flex-basis: 50%;
-  overflow-y: scroll;
+flex-basis: 50%;
+overflow-y: scroll;
 
 
+}
+
+.Graphs1{
+width:800px;
+height:400px;
+align-items: center;
+}
+
+.line1{
+width:800px;
+height:1000px;
+align-items: center;
+}
+
+.bar1{
+width:1000px;
+height:1000px;
+align-items: center;
+}
+
+.pie1{
+width:1000px;
+height:1000px;
+align-items: center;
 }
 

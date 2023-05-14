@@ -15,6 +15,8 @@ import AlertMapView from "./pages/alertMapView/alertMapView";
 import AlertView from "./pages/alertView/AlertView";
 import CameraDisplayView from "./pages/cameraDisplayView/CameraDisplayView";
 import AlertAnalysis from "./pages/alert/alertAnalysis";
+import Payment from "./pages/PaymentPage/paymentPage";
+import Completion from "./pages/PaymentPage/Completion";
 import { useState, useEffect } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -146,6 +148,11 @@ function App() {
 
         <Routes>
           <Route exact path="/report" element={<ReportPage />} />
+        </Routes>
+
+        <Routes>
+        <Route exact path="/payment" element={<Payment />} />
+        <Route  path="/completion" element={<Completion />} />
         </Routes>
       </div>
     </Router>

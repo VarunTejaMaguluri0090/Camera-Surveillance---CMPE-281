@@ -8,7 +8,7 @@
 .EditButtonForCamera{
     border: none;
     border-radius: 10px;
-    background-color:#04AA6D;
+    background-color:  rgb(120, 167, 237);
     cursor: pointer;
     padding: 5px 15px;
     color: white;
@@ -20,7 +20,7 @@
 .ViewButtonForCamera{
     border: none;
     border-radius: 10px;
-    background-color: #04AA6D;
+    background-color: rgb(63, 157, 63);
     cursor: pointer;
     padding: 5px 15px;
     color: white;
@@ -35,5 +35,33 @@
     padding: 5px 15px;
     color: white;
     margin-right: 20px;
+}
+
+.wgtmsr
+{
+    width:500px; 
+    align-items: center;
+    margin-left: 250px;
+    margin-bottom: 20px;
+
+}
+
+.cameraStreamText1
+{
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #04AA6D;
+    background-color: #fff;
+    font-weight: bold;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+    
 }
 
